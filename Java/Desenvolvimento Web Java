@@ -1,0 +1,184 @@
+Topicos a se estudar
+
+-Como funciona o desenvolvimento web
+	-Ecommerce
+	-Rede Social
+
+-Servlet por dentro(A parte boa e a parte ruim)
+-Model view controller
+-Integração com BD(Mysql)
+-Desenvolvimento Front End(JavaScript PURO)
+	-Responsividade(bootstrap)
+	-AJAX
+	-JSON
+-web services
+*Plus
+- Gerenciamento de Dependencias Maven
+- Framework ORM - Hibernates
+- Framework MVC - Spring MVC
+
+
+
+
+Anotações
+
+Boa pratica para desenvolvimento web não se pode colocar codigo fonte java em uma página html ou seja juntar jsp com html.
+
+o arquivo que criamos .jsp no que craiamos no WEB-INF funciona como uma rota. Por debaixo dos panos ele vai pegar o jsp converter para um servlet compilar o servlet carregar o servlet para ai sim executar minha rota ou seja minha página.
+
+
+O código fonte do java fica na pasta source package la você cria um servlet e esse servlet será responsavel por guardar o código fonte da página.
+
+Introdução ao JSP é Servlets
+Servidor
+Armazena a aplicação
+Armazena as páginas web
+Responde requisições 
+
+Cliente
+Faz requisições ao servidor
+
+Servlets
+
+Classes java que tratam requisições http
+Primeira tecnologia java para desenvolvimento web
+Requer bom conhecimento da linguagem java
+
+JSP
+Páginas html podendo conter código fonte embutido
+Surgiu como uma extensão da tecnologia de servlets
+Não requer conhecimento avançado da linguagem java
+
+OBS: Uma página jsp e tranformado em um servlet pelo servidor para ser compilado
+
+Servidor possui uma jvm (java virtual machine) e um servlets container um local onde cóntem todos os servlets
+Servidor recebe a requisição e repassa ao container servlets
+Servlets/ jsp processa a requisição gerando código html.
+Código html é enviado ao navegador.
+Navegador ver isso como uma página web
+
+OBS: Os servlets são executado dentro do container servlets.
+
+Existe diversos servidores para rodar a aplicação
+Temos: jetty,jboss,resin e o Apache TomCat
+
+Porquê O Tom cat 
+Servidor de código fonte aberto
+Livre e gratuito
+Facilmente intragado a ide.
+
+Arquivos é pastas
+
+O que é um servlets
+
+E uma classe que extende httpServlets
+
+
+
+Exemplo de como programar um servlet?
+
+public class OláMundoServlet extends HttpServlet{
+	public void doGet(
+		HttpServletRequest request, HttpServletResponse response)
+		throws IOException, ServletException{ ....}
+}
+//Criamos um request e um response do tipo HttpServletRequest é HttpServletResponse
+//Pode lançar exceções durante o processamento da requisição.que é o ioexception.
+
+
+
+
+
+
+throws IOexception, ServletException{
+	printWriter out = response.getWriter();//Isso significa que vamos enviar como resposta uma página html
+		out.println("<html>");
+		out.println("<body>");
+		out.println("<h2>Olá Veeeii</h2>");
+		out.println("</body>");
+		out.println("</html>");
+
+
+}
+
+
+No arquivo web.xml podemos fazer a configuração do servlet 
+
+<servlet> Define o servlet</servlet>
+
+<servlet-mapping>Define a url de acesso para o servlet</servlet-mapping>	
+
+Em java string não é um tipo primitivo String é uma classe.
+
+JSP -> JAVA SERVER PAGES
+
+<% %> -> É chamado de Scriplet 
+contem comandos java
+No servlet inserido no metodo service
+
+<%= %> -> É chamado de expressão java
+Contém uma expressao java
+No servlet inserida com out.println no metodo service
+
+
+
+
+<%! %> -> É chamado de declarações
+
+ex: 
+
+tag que declara algo
+<%! 
+
+	public int retorna(int n){
+
+		return n*3;
+	} 
+
+	int num = 10;	
+
+
+%>
+
+Tag que executa o código
+<%=
+
+retorna(10);
+
+num;
+
+
+%>
+
+
+
+
+Contem uma declaração de metodo ou atributo
+no servlet inserido na classe servlet
+
+Uso comum: Servlet para tratar uma requisição jsp para exibir uma resposta.
+
+MVC
+
+É uma maneira de organizar as estruturas de um software como as pastas e as classe sendo assim cada executando uma determinada função em seu lugar.
+
+Objetos Implicitos
+
+Request
+
+request.getAlgumacoisa();
+
+Response
+
+response.algumaCoisa();
+
+ex:
+
+response.sendRedirect("http://WWW.google.com");
+
+Objeto implicito de aplicação
+
+
+
+
+

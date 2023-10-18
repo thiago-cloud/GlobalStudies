@@ -1,0 +1,252 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "matriz2",
+            "request": "launch",
+            "mainClass": "matriz2",
+            "projectName": "Fundamentos de java_9e29ef5c"
+        },
+        {
+            "type": "java",
+            "name": "Current File",
+            "request": "launch",
+            "mainClass": "${file}"
+        },
+        {
+            "type": "java",
+            "name": "Aula1",
+            "request": "launch",
+            "mainClass": "Aula1",
+            "projectName": "Fundamentos de java_9e29ef5c"
+        },
+        {
+            "type": "java",
+            "name": "Aula10_operadorDeAtribuição",
+            "request": "launch",
+            "mainClass": "Aula10_operadorDeAtribuição",
+            "projectName": "Fundamentos de java_9e29ef5c"
+        },
+        {
+            "type": "java",
+            "name": "Aula11_conversaoDoTipoPrimitivo",
+            "request": "launch",
+            "mainClass": "Aula11_conversaoDoTipoPrimitivo",
+            "projectName": "Fundamentos de java_9e29ef5c"
+        },
+        {
+            "type": "java",
+            "name": "Aula12_promocaoAritimetica",
+            "request": "launch",
+            "mainClass": "Aula12_promocaoAritimetica",
+            "projectName": "Fundamentos de java_9e29ef5c"
+        },
+        {
+            "type": "java",
+            "name": "Aula13_trabalhandoComString",
+            "request": "launch",
+            "mainClass": "Aula13_trabalhandoComString",
+            "projectName": "Fundamentos de java_9e29ef5c"
+        },
+        {
+            "type": "java",
+            "name": "Aula14_recebendoEntradaDeDados",
+            "request": "launch",
+            "mainClass": "Aula14_recebendoEntradaDeDados",
+            "projectName": "Fundamentos de java_9e29ef5c"
+        },
+        {
+            "type": "java",
+            "name": "Aula15_operadoresDeComparacoes",
+            "request": "launch",
+            "mainClass": "Aula15_operadoresDeComparacoes",
+            "projectName": "Fundamentos de java_9e29ef5c"
+        },
+        {
+            "type": "java",
+            "name": "Aula16_estruturaCondicional",
+            "request": "launch",
+            "mainClass": "Aula16_estruturaCondicional",
+            "projectName": "Fundamentos de java_9e29ef5c"
+        },
+        {
+            "type": "java",
+            "name": "Aula17_escopo",
+            "request": "launch",
+            "mainClass": "Aula17_escopo",
+            "projectName": "Fundamentos de java_9e29ef5c"
+        },
+        {
+            "type": "java",
+            "name": "Aula18_estruturaDeControle",
+            "request": "launch",
+            "mainClass": "Aula18_estruturaDeControle",
+            "projectName": "Fundamentos de java_9e29ef5c"
+        },
+        {
+            "type": "java",
+            "name": "Aula19_operadorTernario",
+            "request": "launch",
+            "mainClass": "Aula19_operadorTernario",
+            "projectName": "Fundamentos de java_9e29ef5c"
+        },
+        {
+            "type": "java",
+            "name": "Aula20_operadorDeIncrementoDecremento",
+            "request": "launch",
+            "mainClass": "Aula20_operadorDeIncrementoDecremento",
+            "projectName": "Fundamentos de java_9e29ef5c"
+        },
+        {
+            "type": "java",
+            "name": "Aula21_while",
+            "request": "launch",
+            "mainClass": "Aula21_while",
+            "projectName": "Fundamentos de java_9e29ef5c"
+        },
+        {
+            "type": "java",
+            "name": "Aula22_doWhile",
+            "request": "launch",
+            "mainClass": "Aula22_doWhile",
+            "projectName": "Fundamentos de java_9e29ef5c"
+        },
+        {
+            "type": "java",
+            "name": "Aula23_for",
+            "request": "launch",
+            "mainClass": "Aula23_for",
+            "projectName": "Fundamentos de java_9e29ef5c"
+        },
+        {
+            "type": "java",
+            "name": "Aula24_breakContinue",
+            "request": "launch",
+            "mainClass": "Aula24_breakContinue",
+            "projectName": "Fundamentos de java_9e29ef5c"
+        },
+        {
+            "type": "java",
+            "name": "Aula2_comentario",
+            "request": "launch",
+            "mainClass": "Aula2_comentario",
+            "projectName": "Fundamentos de java_9e29ef5c"
+        },
+        {
+            "type": "java",
+            "name": "Aula3_sequnciaDeEscape",
+            "request": "launch",
+            "mainClass": "Aula3_sequnciaDeEscape",
+            "projectName": "Fundamentos de java_9e29ef5c"
+        },
+        {
+            "type": "java",
+            "name": "Aula4_palavraReservadas",
+            "request": "launch",
+            "mainClass": "Aula4_palavraReservadas",
+            "projectName": "Fundamentos de java_9e29ef5c"
+        },
+        {
+            "type": "java",
+            "name": "Aula5_convencaoDeCodigo",
+            "request": "launch",
+            "mainClass": "Aula5_convencaoDeCodigo",
+            "projectName": "Fundamentos de java_9e29ef5c"
+        },
+        {
+            "type": "java",
+            "name": "Aula6_variavel",
+            "request": "launch",
+            "mainClass": "Aula6_variavel",
+            "projectName": "Fundamentos de java_9e29ef5c"
+        },
+        {
+            "type": "java",
+            "name": "Aula8_operadorAritimetico",
+            "request": "launch",
+            "mainClass": "Aula8_operadorAritimetico",
+            "projectName": "Fundamentos de java_9e29ef5c"
+        },
+        {
+            "type": "java",
+            "name": "Aula9_tiposPrimitivos",
+            "request": "launch",
+            "mainClass": "Aula9_tiposPrimitivos",
+            "projectName": "Fundamentos de java_9e29ef5c"
+        },
+        {
+            "type": "java",
+            "name": "CalculadoraProfessor",
+            "request": "launch",
+            "mainClass": "CalculadoraProfessor",
+            "projectName": "Fundamentos de java_9e29ef5c"
+        },
+        {
+            "type": "java",
+            "name": "anoBissexto",
+            "request": "launch",
+            "mainClass": "anoBissexto",
+            "projectName": "Fundamentos de java_9e29ef5c"
+        },
+        {
+            "type": "java",
+            "name": "exercicio1",
+            "request": "launch",
+            "mainClass": "exercicio1",
+            "projectName": "Fundamentos de java_9e29ef5c"
+        },
+        {
+            "type": "java",
+            "name": "exercicio2",
+            "request": "launch",
+            "mainClass": "exercicio2",
+            "projectName": "Fundamentos de java_9e29ef5c"
+        },
+        {
+            "type": "java",
+            "name": "javaArray",
+            "request": "launch",
+            "mainClass": "javaArray",
+            "projectName": "Fundamentos de java_9e29ef5c"
+        },
+        {
+            "type": "java",
+            "name": "matriz",
+            "request": "launch",
+            "mainClass": "matriz",
+            "projectName": "Fundamentos de java_9e29ef5c"
+        },
+        {
+            "type": "java",
+            "name": "multaVeiculo",
+            "request": "launch",
+            "mainClass": "multaVeiculo",
+            "projectName": "Fundamentos de java_9e29ef5c"
+        },
+        {
+            "type": "java",
+            "name": "precoMedioBombom",
+            "request": "launch",
+            "mainClass": "precoMedioBombom",
+            "projectName": "Fundamentos de java_9e29ef5c"
+        },
+        {
+            "type": "java",
+            "name": "uri1178",
+            "request": "launch",
+            "mainClass": "uri1178",
+            "projectName": "Fundamentos de java_9e29ef5c"
+        },
+        {
+            "type": "java",
+            "name": "uri1180",
+            "request": "launch",
+            "mainClass": "uri1180",
+            "projectName": "Fundamentos de java_9e29ef5c"
+        }
+    ]
+}

@@ -1,0 +1,3 @@
+protect-> com visibilidade externa limitada
+private-> com nenhuma visualização externa
+public -> com visualização externa

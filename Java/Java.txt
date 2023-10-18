@@ -1,0 +1,67 @@
+Macetes java
+
+
+
+Scanner
+
+o scanner no java serve para ler algo que o usuario digitou
+
+T = entrada.nextLine().charAt(0); -> o charAt permite ler a primeira letra da string no indice 0
+
+---------------------------------------------------//------------------------------------------------------------------------
+
+Gerenciamento de memoria (Garbage collector)
+O garbage collector e um programa dentro da jvm ele verificar objetos que não tem referencia de variavel e simplismente apaga da memoria heap liberando mais espaço de memoria para outros objetos. Além disso a jvm algumas vezes não necessariamente ela vai mandar o garbage collector excluir os objetos do heap sem referencia da variavel da pilha, ela pode simplismente aumentar o espaço de memoria heap para alocar novos objetos.
+
+
+
+objeto.hashCode() -> mostra o codigo identificador do objeto 
+
+O equals() ->Serve para comparar conteudos de dois objetos
+== ->compara o proprio objeto
+
+Pilha -> A pilha e responsavel por alocar as variaveis locais e as variaveis de parametros essas variaveis aponta para os objetos que se encontram alocados no heap
+
+Heap(amotoar) -O heap alocar os objetos
+
+---------------------------------------------------//------------------------------------------------------------------------
+
+Poo
+
+Herança
+ex: de herança carro e moto ambos os tipos são herdado da entidade veiculo
+
+Herança e um mecanismo que permite que caracteristicas em comum de classes sejam fatoradas de uma classe base ou seja a superclasse
+
+A Herança é uma forma de reutilização de software em que novas classes são criadas apartir de classes existentes absorvendo seus atributos e comportamentos e adicinando novos recursos que as novas classes exigem.
+
+Classes derivadas também são chamadas de subclasses 
+
+extends -> O extends significa que a subclasse e derivada de uma determinada superclasse 
+ex: public class subclasse extends superclasse{...}
+
+Toda vez que um método for declarado na subclasse e ele não estiver na subclasse esse metodo sera buscado na superclasse
+
+
+Object
+
+A Classe Object é a raiz de todas as classes todas as classes no java são derivadas de obeject
+Detalhes:
+https://docs.oracle.com/javase/8/docs/api/
+
+Overrider e sobrescrever algo no java
+
+-------------------------------------------------------//--------------------------------------------------------------------
+
+Polimorfismo
+
+A palavra polimorfismos significa muitas formas
+
+Um ponto a se levar em consideração é que codigos que utilizam metodos polimorficos e muito mais facil de se estender e se manter.
+
+o metodo polimorfismo e um metodo comum que pode ser de uso em geral para diferentes classes
+
+
+
+
+

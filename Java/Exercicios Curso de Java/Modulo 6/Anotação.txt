@@ -1,0 +1,9 @@
+O garbage collection
+
+Memoria heap -> É onde fica toda as classes do java.
+
+É um coletor de lixo do java, o coletor basicamente consiste em um algoritomo que verifica se uma devida classe ta sendo utilizada ou seja se tem alguma variavel apontando para ela apartir do momento em que não se tem nehuma variavel apontando para ela o algoritmo coleta a classe tira ela da memoria heap e leva ela para o lixo.
+
+A Configuração do garbage collection é muito importante na hora de criar aplicações, pois o garbage collectio pode ser executado a hora que ele quiser e dependendo da configuração ao ser executado ele pode fazer travar a aplicação em produção ocasionando prejuizos e uma aplicação
+mais legada.
+

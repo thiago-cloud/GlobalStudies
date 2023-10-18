@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="CalculoDoImc:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/CalculoDoImc_jar</output-path>
+    <root id="archive" name="CalculoDoImc.jar">
+      <element id="module-output" name="CalculoDoImc" />
+    </root>
+  </artifact>
+</component>
