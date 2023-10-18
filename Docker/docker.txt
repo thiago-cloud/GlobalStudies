@@ -1,8 +1,5 @@
 docker hub
 
-thiago1997
-970216@Thiago
-
 hub.docker.com -> site do docker
 
 Container: É um sistema de virtualização que server para rodar diversos tipos de aplicações paralelamente.
