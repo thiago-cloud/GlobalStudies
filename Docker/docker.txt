@@ -1,0 +1,318 @@
+docker hub
+
+thiago1997
+970216@Thiago
+
+hub.docker.com -> site do docker
+
+Container: É um sistema de virtualização que server para rodar diversos tipos de aplicações paralelamente.
+
+
+Parâmetro		Explicação
+-d		Execução do container em background
+-i		Modo interativo. Mantém o STDIN aberto mesmo sem console anexado
+-t		Aloca uma pseudo TTY
+--rm		Automaticamente remove o container após finalização ou seja quando ele não executar mais estiver em stop ele deixara de existir automaticamente (Não funciona com -d)
+--name		Nomear o container
+-v		Mapeamento de volume
+-p		Mapeamento de porta
+-m		Limitar o uso de memória RAM
+-c		Balancear o uso de CPU
+
+Esse tipo de virtualização tem uma diferença em relação as outras, a virtualização de container permite compartilhar o mesmo kernel do sistema operacional as varias outras aplicações que estão no container.
+
+Os servidores são as imagens que pode ser nginx, httpd(apache) e etc...
+
+Cluster-> São o agrupamento de containers
+
+Nos datacenter os varios container precisam de gerenciadores proprios os mais conhecidos são o kubernets e o openshift eles também podem ser chamados de orquestradores.
+
+Comandos do docker no terminal
+
+Cli -> interface de linha de comando
+
+Sintaxe do docker -> docker <comando> <subcomando> <opções>
+
+docker --version -> Mostra a versão do docker
+
+docker info -> retorna as informações gerais do docker esse comando mostra quantos container estã instalados
+quantos estão em execução quantas imagens existir no docker é etc...
+
+docker run -> executa os container
+
+docker ps -> lista os container em execução
+
+docker ps -a -> lista os container que estão em execução e os que estão parados
+
+docker container ls -> Lista todos os container igual o comando ps
+
+docker container ls -a -> É igual ao comando ps -a
+
+docker --help -> Mostra todos os comandos que podem ser utilizados para o docker
+
+docker image --help -> Mostra os comando que podemos utilizar para imagens
+
+docker network --help -> Mostra os comandos que podemos utilizar para redes
+
+docker container rm nomeDoContainer -> remove o container pelo nome
+
+docker container rm --help -> Mostra como podemos remover os containers.
+
+Ao iniciar o container temos duas opções  iniciar o container temos duas opções iniciar em primeiro plano ou segundo plano
+
+primeiro plano-> Ao iniciarmos o container em primeiro plano anexamos ao console de processos conhecido também como STDIN,STDOUT e STDERR 
+
+comandos
+docker run -d nginx -> Criar um container em segundo plano
+
+docker run -d -p 80:80 nginx -> cria um container na porta externa 80 e a porta 80 interna
+
+docker run --name irineu -d -p 8080:80 nginx -> cria um container com nome irineu -d em segundo plano -p na porta 8080 externamente e na porta 80 internamente
+
+docker container stop idDoContainer -> Interrompe  o container
+
+docker container run -d -P nginx -> Cria um container e da origem a uma porta randomicamente
+
+docker container run -d -p 80:80 --name web01 nginx -> Cria um container coloca em execução na porta 80 com nome web01 utilizando a imagem nginx
+
+Gerenciamento de containers dockers
+
+docker container logs -f nomeDoContainer -> Acompanha os logs do containers
+
+docker container top nomeDoContainer -> Mostra os processos que estão sendo executado pelo container
+
+docker container stats -> Fica mostrando o staus do meu container
+
+docker container stats nomeDoContainer -> Mostra apenas o container especifico sendo executado
+
+docker container inspect nomeDoContainer -> Mostra varias informações do container epecifico em detalhes no formato json.
+
+Conceitos de redes docker
+
+	Rede bridge
+
+	Rede padrão dos containers
+	A rede bridge é responsavel por fazer uma ponte ou seja e um ip para duas maquinas no caso do 	virtual box ele faz a ponte entre o container e o pc  ja no bridger do docker não o container usa 	o  ip de outra maquina que o docker cria o que é bizarro.
+ 
+	Comunicação interna entre os containers
+	Bridge (Nat)
+
+	Boas práticas é criar uma rede virtual para cada tipo de app 
+	my_web = mysql, apache, php
+	my_api = flask, nodejs
+
+
+
+Rede Host
+
+	para criar um container e definir uma rede para ele é necessario criar a rede primeiro.
+
+	Faz bridge
+
+	Essa rede faz uma ponte entre o container e o pc ou e o mesmo ip do pc para o container
+
+	Não consegue iniciar varios containers com a mesma porta, so poderia iniciar varios containers de 	mesma portas se cada tivesse ips diferentes ou seja como se o contaier fosse um pcs individual.
+
+	Não funciona em modo swarm
+
+nginx:alpine -> Essa imagem do neginx inclui o pacote ping a imagem padrão não
+
+docker container exec -it nomeDoContainer sh -> acessa o container pelo terminal
+
+ping ipDoContainer -> esse comando ser para pingar ver se o container tem conexão
+
+docker network create nomeDaRede -> Cria uma nova rede com um nome
+
+docker network ls -> Lista todas as redes disponiveis no docker
+
+docker network inspect bridge -> Mostra todas as redes no modo bridge
+
+docker network inspect nomeDaRede -> Inspeciona a rede que tem um determinado nome
+
+docker container inspect Começo_do_ID_do_Container -f '{{json $.Mounts}}' -> Formata a saida mostra so o mount
+
+docker network create --help -> Mostra as opções que se pode utilizar para criar uma rede personalizada.
+
+Agora podemos conectar um container idependente de ordem e so criar o container usando a mesma rede.
+
+docker container run -d --name container3 --network host01 nginx:alpine -> criando um container com a rede cirada host01
+
+
+	docker network create host --subnet ipContainer --gatway ipGateway -> Criando uma rede personalizada
+
+	docker network rm nomeDaRede --> Remove a rede definida
+
+	docker network prune -> remove todas as rede que não estão sendo utilizadas por nenhum container
+
+Conectar um container no outro
+
+	docker container run -d --name container1 --link container2 nginx:alpine -> esse comando serve para linkar um container no outro para poder pingar o container2 ja existe o container1 ainda não existe. Linkar container tem uma desvantagems se pingarmos o container2 primeiro ele não pinga tem que ser container1 ping container2 na ordem que foi linkado
+
+docker container exec -it container1 ping container2 -> Esse comando serve para pingar os container criado
+
+
+
+Volumes em containers
+ 
+Um problema conhecido quando trabalhamos com containers é a persistencia de dados, quando subimos um container a ideia é que a infra-estrutura seja imutavel para que eu não faça nenhuma alteração dentro dos containers, o container nasci e depois morre mais nunca e altrado
+
+precisas-se entender duas coisas antes trabalhar como containers
+
+Ciclo de vida dos containers
+	Um container nasci para morrer
+
+Persistência de dados
+	Volumes: São gerenciados pelo Docker host
+
+Bind Volumes
+	Depende de uma estrutura de diretorio no docker host.
+
+quando voce sobe um container sobe o volume também
+
+Quando for criar o container pode-se criar um volume
+
+-v mysql-db:/var/lib/mysql:ro -> Essa e a sintaxe para criar um volume -v de volume ou --volume, "mysql-db" nome do volume, "/var/lib/mysql" diretorio dentro do container onde estara localizado o volume, 
+o "ro" é opcional significa que o volume será read only ou read write(rw). O padrão é rw. 
+
+EX:
+docker run -d nginx -v mysql-db:/var/lib/mysql:ro -> criando um container é um volume do tipo read only
+
+ou
+
+Podemos utilizar também a sintaxe --mount
+
+A sintaxe da flag --mount (Composta por chave e valor)
+--mount 'type=volume,source=mysql-db,target=/var/lib/mysql,readonly'
+
+source -> nomea o volume pode ser também "src"
+
+target -> local do diretorio onde o volume se encontra dentro do container pode ser também "dst"
+
+Binde volume
+
+-v $(pwd)/mysql:/var/lib/mysql 
+
+$(pwd)/mysql -> Caminho do diretorio local o pwd é o caminho que o usuario se encontra no terminal
+
+/var/lib/mysql -> Diretório dentro do container
+
+É possivel informar se o volume "ro" ou "rw"
+
+ro(read only) -> Somente leitura
+rw(read write) -> permissão para escrita
+
+docker container prune -> Mostra todos os container que foram removido e quanto eles consumia
+
+Criando um container mysql
+
+docker container run --name mysql_db -d -e MYSQL_ROOT_PASSWORD=password mysql -> Criando um container mysql com a senha password
+
+docker container run -d --name mysql-db -v mysql-db:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=password mysql -> Cria um container mysql com volume
+
+---------------------------------------------//-----------------------------------------------------
+DockerFile
+
+O arquivo tem que ter o nome sempre "Dockerfile"
+
+Dockerfile -> são arquivos docker que serve para modificar determinada imagem através de um editor de codigo
+
+docker build -f nome_do_arquivo_Dockerfile -t meu_nmap . -> esse comando server para compilar o arquivo dockerfile, é meu_nmap é o nome da imagem do arquivo toda vez que alterar o arquivo e necessario buildar
+
+docker build -t nome_qualquer_para_imagem .-> buildar dokerfile
+
+docker run -it --rm meu_nmap -> Serve para rodar a imagem meu_nmap, apos rodar a imagem e so digitar nmap e verá que estar instalado a imagem
+
+docker history meu_nmap -> Mostra as camadas da imagem meu_nmap
+
+apt show nome_do_pacote -> mostra informações sobre determinado pacote instalado
+
+-e -> execute algo ex: -e variavel="irineu"
+
+-----------------------------------------------//----------------------------------------------
+
+Dentro do arquivo "Dockerfile"
+
+FROM ubuntu:20.04 -> O tipo de imagem que será executada
+
+FROM maven:3.8.7-eclipse-temurin-19-alpine AS nome_do_container -> maven é a imgame para carregar arquivos java AS serve para dar um nome ao container
+
+RUN apt-get update && \ apt-get install -y nmap \ --no-install-recommends &&\ rm -rf /var/lib/apt/lists/* -> O run do docker file serve para especificar o que será executado quando iniciar o dockerfile aki no caso instale as atualizações instale a imagem nmap e não instale pacotes extras recomendados, e não permita o comando apt-get para instalação de pacotes.
+
+COPY --chown=root:root ./script.sh /usr/local/bin/script.sh -> esse código informa que o script tem permissão root, origem do script que é ./script.sh e onde ele ficará localizado no container localizado /usr/local/bin/script.sh
+
+ENV VARIAVEL="irineu" -> define um valor a uma variavel
+
+ENTRYPOINT /usr/local/bin/script.sh -> executa assim que inicia o container com run
+
+CMD ["ls"] -> Executa o comando ls assim que iniciar o container
+
+WORKDIR /app -> ao acessar o container ele ja começa pelo diretorio definido no caso aki e o /app pode ser qualquer diretorio
+
+Especificar quem criou o dockerfile (opcional)
+
+LABEL org.opencontainers.image.version="1.0"
+LABEL org.opencontainers.image.descriptiom="Apenas um teste"
+LABEL org.opencontainers.image.authors="Irineu silva"
+LABEL org.opencontainers.image.documetation="https://google.com/"
+
+------------------------------------------------------------------//--------------------------------------------
+
+Docker Compose -> O docker compose é um arquivo que serve para gerenciar 1 ou mais containers e possivel rodar varios containers docker utilizando um unico comando do docker compose
+
+O docker compose pode funcionar sem o Dockerfile
+
+docker-compose.yml -> arquivo docker compose
+
+docker-compose up -d -> Rodar o container mais lembrese de estar no diretorio pelo comando cd
+
+docker-compose build -> compila a aplicação
+
+docker-compose rm -> remove a aplicação do docker
+
+-------------------------------------------------------------------//---------------------------------------------------
+
+Dentro de uma arquivo do docker-compose
+
+version: "3.7" -> informa a versão do arquivo docker-compose
+
+services:
+	app:
+		build: .
+		ports: "5000:5000"
+o services -> server para informar que será compilado o arquivo e as portas de acesso
+
+image: nginx:alpine -> serve para dizer a imagem que executara mais isso se a imagem não ja estiver no dockerfile
+
+services:
+	mysql:
+		env_file: .env -> O env_file serve para referencia um arquivo chamado .env que e criado dentro da pasta do projeto esse arquivo e responsavel por armazernar variaveis
+		environment:
+			MYSQL_ROOT_PASSWORD: ${SENHA} -> conecta com senha definida na variavel SENHA do arquivo .env
+			MYSQL_DATABASE: "wordpress"
+		volumes: caminho_na_minha_maquina_local:caminho_no_container -> serve para definer o volume do container
+		networks: nome_da_rede -> define o nome da rede do container 
+
+No arquivo do docker-compose pode conter um ou mais containers cada container com sua configuração os container fica no services
+
+ex:
+services:
+	mysql: -> container mysql
+	phpmyadmin: -> container phpmyadmin
+	wordpress: -> container wordpress
+
+OBS: se utilizarmos o phpmyadmin não acessaremos o mysql pelo host, o mysql será acessado pelo phpmyadmin é por conta disso a porta de acesso ao banco de dados e colocado so no container do phpmyadmim
+
+
+docker-compose.override.yml -> serve para substituir as configurações que ja estão no arquivo docker-compose.yml pelas configurações do arquivo docker-compose.override.yml
+
+-------------------------------------------------------------------------------------//-----------------------------------------------------------------------
+
+Registry
+
+Registry -> E o repositorio de imagens além disso podemos utilizar imagens ja pronta do site do docker que é o hub.docker.com lá temos varias imagens como a do servidor nginx, ubuntu, httpd que é o apche entre outros
+
+
+
+
+
+

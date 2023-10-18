@@ -1,0 +1,311 @@
+O que é angular
+Um framework com base na linguagem javascript
+
+Utilizado para criação de SPAs
+
+Possui uma arquitetura baseada em componentes
+
+Compõe a stack MEAN
+
+Angular 2+ é uma versão diferente do angularJS clássico
+
+Estrutura de organização do projeto bem definida, promove simplicidade e reaproveitamento do código
+
+Sistema de tooling muito rico: CLI, módulo HTTP, router e outros
+
+Integração nativa com typeScript
+
+Mantido pelo Google
+
+Podemos alterar os arquivos dentro da pasta app para refletir mudanças no navegador
+
+Instalar-> npm install -g @angular/cli
+
+criar projetos -> ng new <nome>
+
+testar o projeto -> ng serve
+
+
+//Estrutura do angular
+
+app/appcomponent.html -> template da aplicação
+
+//O que é criado apos um ng new
+
+node_modules -> dependências do projeto
+
+src -> Onde vamos programar a aplicação
+
+src/app -> Pasta principal para componenetes,sercvices e etc
+
+Os componentes são divididos em partes TS, HTML, CSS e testes
+
+TS -> lógica da aplicação
+
+HTML -> Estrutura html
+
+CSS -> Estilo da aplicação
+
+abaixo de src-> Temos arquivos de configuração em geralmente nã se meche tirando o gitIgnore
+
+package.json -> contem os scripts de inicialização do projeto e as dependencias
+
+angular.json -> contém configuração de build
+
+karma.conf.js -> responsavel pela configuração do karma, karma é o framework de teste
+---------------------------------------------//--------------------------------------------------------------
+
+//Dentro da pasta src
+
+index.html -> arquivo que o usuario acessa quando entra no navegador
+
+style.css -> contém os stylos globais do angular
+
+assetes -> pasta onde fica as imagens como um logo por exemplo
+
+enviroments -> essa pasta e responsavel pelos ambientes em produção onde o angular vai rodar
+
+
+----------------------------------------------------//-------------------------------------------------------
+
+<app-root></app-root> -> Por meio dessa tag temos o arquivo que contém o componente angula rodando na pagina index.html
+
+-----------------------------------------------------//----------------------------------------------------------------------
+//Dentro da pasta app
+Essa pasta é responsavel pela criação de componentes
+
+comando de criar componente é -> ng generate c <nome>
+
+comando abreviado -> ng g c <nome_pasta>/nome_da_pasta_dos_componentes>
+
+c -> significa criar componente
+s -> siginifica criar um service
+
+app.module.ts -> Arquivo de configuração responsavel pela importação dos componentes criados
+
+É importante saber que os arquivos raiz da pasta componentes estão localizados app/arquivos
+É os componentes que serão criados ficam em uma pasta criada com nome qualquer app/components/componente1
+Os arquivos dos componenetes da pasta components serão importado para os arquivos da pasta raiz app
+
+dentro do arquivo .ts temos o selector
+selector-> mostra o nome de identificação do componente que serve para coloca no index como tag para importação do componente no app
+
+-----------------------------------------------------//----------------------------------------------------------------------
+//Interpolação de dados
+
+É um recurso que vai nos ensinar a trabalhar com os componenetes do angular
+
+Vamos criar nossa variavel no arquivo .ts dentro da classe
+
+Essas variaveis são propriedades da classe
+
+E então teremos acesso a estes dados no arquivo .html, o template
+
+A impressão é feita através de: {{ dado }}
+
+ATENÇÃO -> sempre que for feita alteração não esquecer de compilar o código com o comando "ng serve"
+
+Ex de interplação:
+<p> nome: {{ nome }}<p> -> No arquivo html
+
+nome:string = "irineu" -> No arquivo de lógica do ts
+------------------------------------------------//-------------------------------------
+Css no angular 
+
+Os estilos em aplicações angular podem ser feitos de duas maneiras
+
+Global: utilizando o arquivo "style.css" que fica na pasta src
+Scoped: estilos a nível de componente, criamos quando damos um generate
+
+
+----------------------------------//---------------------------------------------------
+
+//Compartilhando dados
+No react e chamado de props
+
+Em angular podemos compartilhar dados do componente pai com o componente filho
+
+Para isso vamos disponibilizar na chamada do componente o nome do dado que será recebido com a seguinte sintaxe: [dado]
+
+E no código .ts do componente filho vamos utilizar o decorator @input que tem como papel entregar o dado para o template;
+
+A ideia e compartilhar um dados de componente pai para componente filho
+
+------------------------------------------------------------------------------------
+como compartilhar do componente pai para o filho:
+
+1. Os valores são criados no compnente pai
+2. a tag do dado e declarada no componente pai [ nomeDoFilho ] = "nomeDoPai"
+3. Os valores dos dados são colocados  e tipados no @Input do componente filho no arquivo .ts
+4. A interpolação e colocado no index.html do componente filho <p> {{ nomeFilho }} </p>
+
+--------------------------------------------------//-----------------------------------
+//Diretivas
+
+Em angular temos um recursor chamado diretivas
+Que pode realizar diversas funções como aplicar stylos a um elemento
+Elas começam sempre com ng o nome fica como: ngAlgumaCoisa
+
+Ex: <h2 [ngStyle]="{'font-size':'10px'}">Testando diretivas</h2>
+
+As diretivas de classes podem agrupar varias classes
+
+Ex: <h2 [ngClass]="nomeDaDiretivaDeClass">Testando diretivas</h2>
+
+nomeDaDiretivaDeClass = ['class1','class2','class3']
+
+------------------------------------------------//-------------------------------------
+//Renderização condicional
+
+É possivel exibir determinado conteúdo por meio de uma condicional
+
+Utilizamos a diretiva ngIf para isso
+
+Os valores podem ser dinâmicos (propriedades),mas podemos realizar outros tipos de comparação
+
+Há a possibilidade também de imprimir um cenário para validação de falso, com o else
+
+é a estrutura condicional do angular
+
+Sintaxe:
+
+	<div *ngIf="nome === 'Irineu' ; else nomeErrado>Seu nome e irineu</div>
+	<ng-template #nomeErrado>
+		<p>nome incorreto</p>
+	</ng-template>
+
+
+
+no arquivo .ts
+	nome:string = 'Irineu'
+
+
+-------------------------------------------------------------------------------------------------------------------
+
+//Eventos
+
+Podemos ativar eventos nos componentes para disparar algum método
+
+Um evento classico que utilizamos muito é o click
+
+A sintaxe é: 
+(click)="algumaFuncao()"
+
+Os metodos ficam na classe
+
+Futuramente utilizaremos este recursi para acessar uma API
+
+
+//Emitindo eventos
+
+Podemos comunicar eventos de um componente filho para um o pai
+
+Para isso vamos precisar o @Output, que vai fazer a saida do evento do componente filho
+
+Na tag de invocação do componente no template, escolhemos um método para executar quando o evento for emitido
+
+sintaxe:
+(emit)="onEmit()"
+
+----------------------------------------------------------------//---------------------
+//Interfaces
+
+Toda entidade que vamos trabalar precisa de uma interface
+
+Isso tornara o codigo mais simples
+
+Padronizando ele e facilitando a manuntenção
+
+-------------------------------------------------------//------------------------------
+//Pipe operators
+
+Os pipe operators são recursos para trabalhar com strings nos templates
+
+Podemos realizar diversas funções, como deixar o texto em caixa alta
+
+A sintaxe é: {{ dado | algumPipeOperator }}
+
+Desta maneira nos poupamos de regras de css ou manipulação de strings com js;
+
+
+
+---------------------------------------------------------//----------------------------
+
+//Two way data binding
+
+O two way data biding é um recurso muito interessante para trabalho com formulario
+
+Basicamente conseguimos alterar props e o template com o preenchimento de inputs
+
+E necessario importar o forms module no componente principal
+
+E também declarar o ngModel no input, além de preencher também o atributo name, todos com o mesmo valor
+
+O two way data biding serve para mapear o valor digitado no input e refletir em outro lugar
+
+
+-----------------------------------------------------------------//--------------------
+
+//Services
+
+O service é outra parte fundamental da arquitetura do angular
+
+Geralmente ficam as requisições para as APIs que utilizamos no projeto
+
+Para criar um service o comando é "ng generate service <nome>"
+
+Se quiser deixar organizado se cria uma pasta service: "ng g s <pasta\nomeService>
+
+O service são serviços que deletam dados ou seja ele e muito utilizado para deletar dados no banco de dados
+
+
+
+
+------------------------------------------------//-------------------------------------
+
+//Angular Router
+
+E um tipo de configuração para projetos
+
+Serve para navegar entre páginas
+
+Cada componente pode virar uma página
+
+Nós vamos criar um novo arquivo para declarar nossas rotas;
+
+Nele vamos importar os módulos routerModule e Routes
+
+Após a definição estas rotas precisam ser importadas em app.module.ts;
+
+E por fim no template principal criamos as rotas
+
+E substituimos os componentes por <router-outlet>
+
+
+-------------------------------------------------------------//----------------------------------------------------
+//Requisição HTTP
+
+Vamos realizar requisições HTTP nos nossos services;
+
+Precisamos importar dois pacotes: HttpClient e HttpHeaders;
+
+E necessario uma api para fazer o request com o json-server;
+
+Também e necessario inicializar o modúlo HttpClientModule em app.module.ts;
+
+comando para instalar o pacote json-server: "npm i json-server"
+
+colocar no arquivo package.json em scripts o seguinte comando: "server": "json-server --watch db.js"
+
+digite o comando: "npm run server" para rodar o servidor
+
+
+
+
+
+
+
+
+
+
+

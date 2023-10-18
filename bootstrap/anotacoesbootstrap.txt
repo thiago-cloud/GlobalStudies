@@ -1,0 +1,35 @@
+drecomendado baixar a extenssão do bootstrap 5
+
+bs5-$ -> Digite na index.html sem nada para criar uma pagina ja com todas as cdns necessarias do bootstrap mais antes de fazer isso e necessario ter a extenssão do bootstrap 5 no vs code.
+
+Sistema de cores
+bg-primary -> bg de background primary o tipo de cor que no caso primary e a cor azul no bootstrap
+
+text-primary -> O text muda a cor dos texto
+
+Grid
+O sistema de grid do bootstrap aceita até 12 colunas
+row -> faz com que o elemento ocupe toda linha ex: <div class="row"><p>a</p></div>
+col -> faz com que o elemento seja uma coluna ex:<div class="col"><p>teste</p></div> e necessario estar dentro de um elemento row o elemento de linha
+col-6 -> voce quer que sua coluna ocupe o espaço de 6 colunas
+
+rows="4" -> O elemento ocupara quatro linhas
+
+
+border
+border border-primary  border-5-> border aplica uma bordar, border-primary a cor da borda, border-5 a espessura da bordar sobre o elemento
+
+bloco
+o valor maximo e 5
+m-5 -> aplica uma margin de 5 sobre o elemento <div class="m-5"></div>
+p-5 -> aplicar um padding de 5 sobre o elemento
+pt-5 -> aplica um padding no topo t de topo
+pb-5 -> aplica um padding no bottom
+ps-2 -> aplica um padding do lado esquerdo s de start
+pe-4 -> aplica um padding do lado direito e de end
+
+formulario
+form-control -> deixa a parte interna do input centralizada
+form-check-input -> deixa o checkbox com a stylização do bootstrap server tambem para o checkbox do tipo radio
+form-range -> seletor do tipo range estilizado com bootstrap
+form-select -> seletor estilizado 
