@@ -33,3 +33,37 @@ form-control -> deixa a parte interna do input centralizada
 form-check-input -> deixa o checkbox com a stylização do bootstrap server tambem para o checkbox do tipo radio
 form-range -> seletor do tipo range estilizado com bootstrap
 form-select -> seletor estilizado 
+
+botões
+As classes btn podem ser colocadas em inputs e links da tag a.
+
+btn -> para criar um botão e so digitar a classe btn porem o botão vem sem estilização ex: class="btn"
+btn btn-primary -> botão estilizado com a cor btn-primary ex: "btn btn-primary"
+btn btn-outline-primary -> background transparente e borda azul com efeito hover
+btn-sm -> essa classe define que o botão seja menor sm significa small ex: class="btn btn-primary btn-sm"
+btn-lg -> essa classe deixa o botão tamanho grande
+d-grid -> essa classe permite que o botão ocupe uma linha inteira ex: <div class="d-grid"><button class="btn btn-success">Enviar</button></div>
+
+tipografia
+
+text-center -> Centraliza a linha
+text-end -> coloca a linha no final
+text-start -> coloca a linha no começo
+text-danger -> coloca o color do paragra em vermelho
+display-1 -> a classe display deixa o texto maior ela varia de 1 ate o 6
+
+Imagens
+
+img-thumbnail -> Essa classe adiciona uma moldura a imagem
+rounded -> Adiciona uma borda arredondada na imagem 
+shadow -> Adciona uma sombra na imagem
+shadow-lg -> Adiciona uma sombra maior
+img-fluid -> ajusta a imagem de acordo com a largura e altura deixando centralizado e no tamanho adequado
+table -> Essa classe determina que a tag e uma tabela
+table table-striped -> Essa classe determina uma tabela listrada
+table table-hover -> Essa classe mostra um hover na tabela
+table table-primary -> Colorir tabela
+
+Mensagem de alerta
+
+alert alert-success -> Essa classe coloca uma mensagem como alerta com background de acordo com a opção de cor no caso aki success ex: <div class="alert alert-success">Mensagem</div>
