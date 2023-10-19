@@ -1,0 +1,100 @@
+Tipos de funções
+
+Função literal
+
+function fun1(){}
+
+função armazenada em uma variavel
+
+const fun2 = function(){}
+
+Armazenar em uma array
+
+Armazenando dentro de uma array
+
+const array = [function (a,b) { return a + b}, fun1, fun2]
+
+Passar função como parametro
+
+function run(fun){
+    fun()
+}
+
+run(function(){console.log("executar...")})
+
+Armazenar em um atributo de objeto
+
+const obj = {}
+obj.falar = function(){return 'veeei'}
+
+console.log(obj.falar())
+
+Parametros e retornos são opcionais em javascript
+
+this 
+É um ponteiro de uma variavel ele basicamente apontara para variavel que fica dentro do contexto.
+
+se  o this estiver dentro de um escopo de um objeto ele vai se referir ao objeto se o this não estiver dentro de nenhum escopo ele vai se refere ao objeto window.
+
+O bind serve para amarrar o this
+
+O set interval é um temporizador que ficara chamando uma função de acordo a cada quantia de tempo que for definida com o setinterval e o setTimeout podemos criar no software uma ação que será executada em tempos em tempos.
+um dos argumentos dessa função é o callback function.
+
+Uma função que é passada como argumento para outra ou seja uma função que se encontra no parametro de outra é considerada como uma callback.
+
+Difrença do setInterval para o setTimeout
+
+O setInterval executa uma ação a cada intervalo de tempo determinado so que de forma infinita
+
+O setTimeout faz a mesma função do setInterval so que não executa a ação de forma infinita executa apenas uma vez.
+
+Promises
+
+Promises são como promessas da vida real ela está esperando algum retorno
+Para criar uma promessa instanciamos a classe promise;
+ela pode levar dois argumentos resolve(solução) e reject(erro);
+Para encadear mais processos utilizamos o metodo then
+Alguns recursos de JS (Fetch api) e bibliotecas retornam promises;
+
+Obs: a classe promises ja e nativa do javascript você não precisa baixar a biblioteca.thiago97
+
+Funções construtora
+
+Função Pura: E uma função que não depende de meios externos.
+
+Função Factory: É uma função que retorna um objeto.
+
+Resumo da opera voce pode criar um objeto apartir de uma classe ou de uma função construtora ou de uma factory
+
+Pascal case:
+todas as palavras iniciais são maiusculas
+ex:CarroDeCorrida
+
+camel case
+todas as palavras inciais menos a primeira sao maiusculas
+ex: motoDeCorrida
+
+Regras
+
+1 regra -> uma função nunca pode ser declarada dentro de outra.
+2 regra -> O nome da função nunca pode começar com numero.
+ex: funcao 2nomedafuncao(){
+
+}forma errada
+
+ex2: funcao nomedafuncao(){
+
+}forma correta
+
+
+estrutura da função
+
+funcao escrevaLinha(){
+	escreva("-------------") -> essa parte e chamada de corpo da função e criado para justamente resolver o problema da função que criar uma linha
+
+}
+
+3 funções pode ter retorno ou não se não tiver retorno e chamada de função do tipo vazio(void).
+
+

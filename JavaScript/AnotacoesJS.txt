@@ -1,0 +1,380 @@
+Como mostrar a mensagem ao iniciar a página no javascript
+
+window.alert("Olá, Mundo")
+
+como manipular uma tag html no javascript
+
+window.document.getElementById("id_da_tag")
+
+O que significa BOM
+browser object Model
+
+O que significa DOM
+document object model
+a pergunta que não quer calar o dom faz parte do html ou do javascript de nenhum dos dois ele faz parte do browser.
+
+Hierarquia de tags html 
+
+A tag Pai e chamada de parent
+
+A tag filha e chamada de child
+
+e cada tag indvidulamente no javascript e caracterizado como nó(node).
+
+No javaScript existe uma coisa chamada arvore onde window estar localizado no topo apos o window temos o document cada um deles sao dividos em parte como se fosse um objeto.
+
+window: frames[] history location navigator screen -> Document anchors[] applets[] areas[]  embeds[] forms[] images[] layers[] link[]
+
+
+atravês dessa arvore podemos montar diversos códigos
+
+como 
+console.log(window.screen.width)
+
+se caso quiser saber quais o metodos disponiveis no screen. basta colocarmos console.log(window.screen) -> ele irá mostra todos os métodos que poderemos utilizar com scrren.
+
+Além disso podemos observar o que dentro do objeto window poderemos ter
+
+console.log(window)
+após isso podemos observar o quanto o objeto window pode ter.
+
+como acessar os objetos do BOM(browser object model)
+basta colocarmos console.log(window.location) ou window.frames ou podemos colocar window.history ou window.navigator e assim vai...
+
+Podemos utilizar os comandos dentro do console.log
+console.log(window.alert(window.screen.width)) -> não e tao necesario esse comando ja podemos utilizar apenas o window.alert() que terá a mesma função.
+
+innerHtml -> O innerHtml é basicamente uma forma de inserir html atravês da página javascript sem precisar de inserir na página html.
+
+ex:
+	var teste1 = document.querySelector("#container");
+
+        teste1.innerHTML = "<h2>Irineu</h2>";
+
+innetText -> O innerText faz a mesma coisa do innerHtml a diferença e que ele so ler texto então se colocarmos uma tag html ele vai ler tag como uma string.
+ex: 
+	 var teste2 = document.querySelector("#container_b");
+
+        teste2.innerText = "bayblade";
+
+Formas de manipular tags html atravês do javascript
+
+    document.getElementById();
+    document.getElementsByClass();
+    document.getElementsByTagName();
+    document.querySelector();
+    document.querySelectorAll();
+    document.createElement();
+    element.addEventListener();
+
+Fazendo stylização de elementos atravês do javascript.
+
+<div>Olá, Mundo </div>
+
+var texto = document.querySelector("div")
+texto.style.color = "red"
+
+createElement 
+Serve para Criar elementos
+
+
+var novoElemento = documnet.createElement("h1")
+
+novoElemento.innerText = "Veei" -> criamos um elemento h1 com o texto dentro chamado veei
+
+obs: Após criar um elemento com o createElement esse elemento so será visivel na página html após acrescentar ele com appendChild
+
+appendChild é removeChild
+
+appendChild
+Serve para inserir o elemento filho em um elemento pai.
+ex:
+
+childNodes
+
+Nós são filhos de um elemento pai.
+
+O comando childNodes serve para ver quais elementos estão inserido na tag pai atravês do console.log
+
+ex:
+
+html
+<div id="container">
+</div>
+
+javascript
+cria.style.textAlign = "center"
+cria.innerText = "Lorem Ipsum é simplesmente uma simulação de texto da indústria tipográfica e de impressos, e vem sendo utilizado desde o século XVI, quando um impressor desconhecido pegou uma bandeja de tipos e os embaralhou para fazer um livro de modelos de tipos. Lorem Ipsum sobreviveu não só a cinco séculos, como também ao salto para a editoração eletrônica, permanecendo essencialmente inalterado. Se popularizou na década de 60, quando a Letraset lançou decalques contendo passagens de Lorem Ipsum, e mais recentemente quando passou a ser integrado a softwares de editoração eletrônica como Aldus PageMaker"
+
+
+document.querySelector("#container").appendChild(cria) -> Aki a variavel cria que um paragrafo estar sendo adicionado ao container.
+
+console.log(document.body.childNodes)
+
+como saber a tag pai do elemento filho
+
+console.log(documnet.querySelector("#filho").parentNode
+
+getAttribute setAttribute é removeAttribute
+
+<h1 id="title">Deus Seja Louvado</div>
+  <div>
+    <button class="btn-set">Set</button>
+    <button class="btn-remove">Remove</button>
+    <button class="btn-get">Get</button>
+  </div>
+  
+  <div id="adicionar">
+    
+  </div>
+
+var alterarBody = document.querySelector("body")
+alterarBody.style.backgroundColor = "azure"
+
+document.querySelector(".btn-set").addEventListener("click", function(){
+  document.querySelector("#title").setAttribute("class", "blue","red")
+})
+
+document.querySelector(".btn-remove").addEventListener("click", function(){
+  document.querySelector("#title").removeAttribute("class", "blue")
+})
+
+document.querySelector(".btn-get").addEventListener("click", function(){
+  var pegar = document.querySelector("#title").getAttribute("class")
+  document.querySelector("#adicionar").innerHTML = pegar
+})
+
+createTextNode e textContent
+ 
+o createTextNode Serve para adicionar um texto a mais
+textContent Serve para alterar o texto
+
+html
+ <h2> Ryan Gamers</h2>
+ 
+javascript
+var titulo2 = document.querySelector("h2")
+titulo2.textContent ="GAMERS"
+
+var titulo2 = document.querySelector("h2")
+var titulo3 = document.createTextNode(" Um Texto a Mais")
+
+titulo2.appendChild(titulo3)
+
+null e Undefined
+
+undefined e null são considerados também tipos de dados.
+
+null -> É um tipo de dado que representa um valor
+
+undefined -> Representa um tipo de dado para uma variavel porem com o valor não atribuido.
+
+hoisting -> É a ordem de execução do codigo que começa de cima para baixo.
+
+insertBefore e children
+
+insertBefore -> Serve para inserir um elemento em uma determinada lista.
+
+children -> São os filhos da lista
+
+ex: 
+	<html>
+	<ul>
+		<li></li>
+		<li></li>
+		<li></li>
+	</ul>
+
+	javascript
+	
+var Lista = document.getElementsByTagName("ul")
+console.log(Lista.children) ->  O children possibilita vermos os filhos da lista.
+
+var item = document.createElement("li")
+item.textContent = "Mais um na lista"
+
+Agora vamos adicionar o item a Lista
+
+var itensDaLista = Lista.children
+
+Lista.insertBefore(item, itensDaLista[0]) -> Aqui ele insere o elemento e coloca na primeira posição a 0.
+console.log(itensDaLista)
+
+Replacechild
+
+Serve para substituir o elemento.
+
+Tipos de Dados
+
+String -> e Tudo aquilo no javascript que e declarado como caractere
+ex:
+	var nome = "Ryan"
+	console.log(typeof(nome)) -> ele retornara como string
+
+Number -> E tudo aquilo no javascript que declarado de forma numerica
+	ex
+		var idade = 50
+		alert(typeof(idade))
+Boolean -> E tudo aquilo que for declarado de forma lógica true(veradeiro) ou false(false)
+	ex
+		var casado = false
+			alert(typeof(casado))
+array -> E uma variavel que contem diversos objetos dentro dela mais apesar de ser uma array ela e definida no typeof do javascript como object(objeto)
+	ex:
+		var carros = ["Mercedezs","Camaro","Ferrari"]
+			alert(typeof(carros))
+
+Object(Obejeto) -> É um dado com uma devida caracteristica.
+
+ex: 
+	var Frutas = new Object()
+
+Frutas.cor = "red"
+Frutas.nome = "Maçã"
+
+Objeto dentro da array 
+var array = ["biscoito", "Pastel", {Frutas}]
+
+Além disso voce pode ter objeto dentro de objeto.
+
+ex:
+
+
+function 
+
+var soma = function(a,b){
+  return a+b
+}
+
+alert(soma(9,5))
+
+Variaveis
+
+var (Acesso ao escopo global) let(Acesso ao escopo local) const(Acesso ao escopo local porem se mantem inalteravel)
+
+ex:
+	var nome = "Thiago"
+ 
+	let nome = "Thiago"
+
+	const nome = "Thiago"
+
+array
+	E uma variavel com varios vetores ou seja dados
+
+ex:
+	var informática = ["Notebook", 1800, {Memoria: "16gb", hd: "2tb"}] -> Uma array com um objeto dentro.
+
+Uma Array dentro de uma array
+
+	var informática = ["Notebook", "PC",2000, {Memoria:"16gb",Hd:"3tb"},["Notebook Dell", "Notebook Lenovo","Notebook Asus"]]
+
+alert(informática[4][0])
+
+Operadores aritimeticos
+
+Operadores de atribuição
+
+x = 10 -> Aqui estamos atribuindo um valor a x que no caso é 10
+
+y = 5
+
+x = x+y -> Aqui estamos atribuindo um valor a x que no caso é x+y. Alem disso podemos utilizar  o operador de incremeto para diminuir o código que no caso terá a mesma função x += y
+
+Operadores lógicos de comparação e ternario
+
+Operadores Lógico
+
+&& -> e
+|| -> ou
+
+Operadores de comparação
+
+= -> Atribuiçao
+== -> Comparação
+=== -> Exatamente igual
+
+=> -> maior ou igual
+<= - menor ou igual
+
+Operador Ternario
+
+E basicamente um operador condicional sendo menor 
+
+ex
+
+var idade = 16
+
+var eleitor = (16 <= idade) ? "Pode Votar" : "Não Pode Votar"
+
+IF ELSE
+
+É uma estrutura de condição 
+
+ex:
+
+let n1 = 10
+let n2 = 5
+let n3 = 1 
+let n4 = 9
+
+var media = (n1+n2+n3+n4)/4
+
+if(media == 7){
+  console.log("Você estar aprovado por média")
+}else if(media == 8 && media < 9){
+  console.log("Você tirou ",media," uma nota boa parabéns, estar aprovado!!!")
+}else if(media >= 9 && media < 10){
+  console.log("Parabéns você estar entre os melhores alunos APROVADO!!!")
+}else if(media < 7){
+  console.log("Reprovado")
+}else{
+  console.log("Valor Inválido")
+}
+
+Switch
+	É uma estrutura de Seleção onde você definirar uma opção e essa opção correspondera.
+
+let pais = "Bolivia"
+
+switch(pais){
+    case "Brasil":
+        console.log("Sim, Brasil")
+        break
+    case "canada":
+        console.log("Sim, Canadá")
+        break
+    case "Bolivia" :
+        console.log("Sim, Bolivia")
+        break
+    case "Venezuela" :
+        console.log("Sim, Venezuela")
+        break
+    default:
+        console.log("Pais indefinido")
+        break
+}
+
+for in e for of ->
+	for in serve para percorrer um objeto
+	for of serve para percorrer uma array 	
+
+	ex:
+		let objeto = {Nome:"Thiago",idade:25,Email:"thiago.al154@gmail.com"}
+		let array = ["carro","bicicleta","moto"]
+
+		for(let percorrer in objeto){console.log(objeto[percorrer])}
+		
+		for(let percorrendo of array){console.log(percorrendo)}
+	
+
+comando alert confirm e prompt
+
+	alert: O alert serve para exibir um mensagem logo quando abre o navegador
+	confirm: O confirm serve para exibir uma mensagem mais dois botões o ok e o cancelar o navegador ler ok como true e o cancelar como false
+	prompt: O prompt e basicamente um input ele exibi uma mensagem com uma caixa input para digitar alguma coisa.
+
+	ex: 
+		alert("Veei")
+		confirm("veeei")
+		prompt("veei")

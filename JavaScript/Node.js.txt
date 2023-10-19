@@ -1,0 +1,432 @@
+Node js é uma plataforma que interpreta o javascript sem precisar do navegador ela serve para fazer aplicações backend com javascript. Ele serve para criar sistemas como uma api que possibilita o frontend a se integrar com o banco de dados
+
+cmd
+
+navegar no terminal: cd nomedapasta
+ver o que tem dentro da pasta: dir
+interpreta um arquivo js: node app.js
+
+Módulo 
+Cada arquivo no node e considerado um modulo
+O modulo serve para permitir trabalhar com bibliotecas externas. Álem de contribuir para a organização do código e exportar arquivos para ser executado em outros arquivos.
+
+como converter para módulo
+
+ex: arquivo1.js
+
+	var somafunc = function(a,b){
+		return a+b 
+	}
+	module.exports = somafunc
+	
+	arquivo2.js
+	
+	var soma = require("./arquivo.js"
+	
+	console.log(somar(3,5)
+
+	terminal
+	
+node arquivo2.js -> o terminal exibira na tela 8 que é a soma de 3 é 5.
+
+
+O node js tem modulos http que ja vem nele bastante limitados por conta disso se usa frameworks com o express.
+
+como adicionar o modulo http no arquivo js
+
+var http = require('http')
+
+http.crateServer().listen(8081) -> Ele ta chamando um servidor http listen significa em qual porta vai ser chamada esse servidor o skype por exemplo utiliza a porta 80. Além disso podemos colocar mais de uma porta que no caso aki temos a 
+80 e 81
+
+fazendo você acaba de criar um servidor http na sua máquina.
+
+Para fechar o servidor você irá pressionar ctrl + c no cmd -> Lembrando que a cada alteração que for feita para ver a execução dessa alteração e necessario fechar e abrir novamente
+
+para exibir algo no navegador e necessario colocar uma função dentro createServer com parametros de requisição e resposta
+
+ex:
+	function(req,res){
+		res.end("olá)
+
+var http = require('http')
+
+http.createServer(function(req,res){
+res.end("olá).listen(8081)
+
+Express
+
+o express e um framework que funciona como http, como http tem as funções limitadas agente utiliza o express. Além disso o express e um framework orientado a rotas.
+
+
+Instalação do express vá no cmd
+
+
+1. vá ate pasta do projeto que você vai instalar o express
+2. Digite npm install express --save
+
+Executando o express:
+
+	const express = require('express') -> importando dentro do arquivo
+	const app = express() ->convertando a chamada da função express para a variavel const app
+	
+	app.listen(8081,function(){
+		console.log("Servidor Rodando na url http//localhost:8081")
+	}) -> chamando a função express e declarando as porta 8081 da aplicação alem de exibir uma função de callback com uma mesnsagem quando iniciamos o servidor no cmd.
+
+
+rotas
+
+Rotas são os caminhos para sua aplicação
+ex: Você pode colocar um caminho /home, /sobre, /blog é assim por diante.
+
+Existe também varios tipos de rotas temos a get a post patch e etc....
+	
+const express = require("express")
+
+const app2 = express()
+
+app2.get("/",function(req,res){
+    res.send("Bem vindo a página principal! ") ->rota principal
+})
+app2.get("/sobre",function(req,res){
+    res.send("Bem vindo a página sobre! ") ->rota sobre
+})
+
+app2.get("/sevicos",function(req,res){
+    res.send("Bem vindo a página de servicos! ") -> rota servicos
+})
+
+app2.get("/blog",function(req,res){
+    res.send("Bem vindo a página blog! ") -> rota blog
+})
+
+
+app2.listen(8081,function(){
+    console.log("Servidor Funcionando! ")
+})
+
+Parametros
+
+app2.get("/ola/:nome/:cargo",function(req,res){
+	res.send("Mostrando no navegador")
+)}
+
+ou
+
+app2.get("/ola/:nome/:cargo",function(req,res){
+	res.send(req.params) -> O req params faz com que os parametro digitados na url do browser mostre na tela. Lembrando que o send so pode ser enviado uma vez.
+)}
+
+ex2:
+	app2.get("/pessoa/:nome/:cargo/:idade/:genero",function(req,res){
+    res.send("<h1>Seu nome é: "+req.params.nome+"</h1>"+"<h2>Seu cargo é: "+req.params.cargo+"</h2>"+"<h3>Seu cargo é: "+req.params.cargo+"</h3>"+"<h4>Seu genero é: "+req.params.genero+"</h4>")
+})
+lembrando para concatenar tem que ser o + se colocar virgula a concatenação não funciona
+
+
+
+no browser terá que digitat localhost:8081/ola/thiago/programador
+
+nodemon
+
+O nodemon serve para voce não ter que tá fechando e abrindo o arquivo no cmd quando tiver feito alterações no arquivo ou seja ele atualiza automaticamente.
+
+instalando o nodemon
+
+npm install nodemon -g -> esse -g siginifica que o programa vai ser instalado globalmente.
+
+após o nodemon instalado sempre que você for executar seu arquivo você vai executar com o nodemon.
+
+nodemon arquivo.js
+
+Exibindo HTML com express
+__dirname -> siginifica diretorio raiz
+sendFiler -> Siginifica mandar arquivo
+
+ex: 
+diretorio raiz
+
+diretorioHTML/index.html
+
+	<body>
+		<h1>Exibindo atravês do node com express</h1>
+	</body>
+
+arquivo.js
+
+const express = require('express')
+const callex = express()
+
+	callex.get("/", function(req,res){
+		res.sendFile(__dirName+"/diretorioHTML/index.html") -> aqui ele vai exibir na tela o html de acordo com caminho deifinido
+	})
+
+callex.listen(8081,function(){
+	console.log("Servidor Rodando no terminal!")
+})
+
+
+Acessando o mysql pelo terminal
+
+mysql -h localhost -u root -p;
+
+
+Criando um banco de dados
+
+create database sistemaDeCadastro;
+
+sempre colocando ponto e virgula no final
+
+para sair de algum campo clique ctrl + c
+
+para usar o banco de dados digite:
+
+use nomeDoBancodeDados
+
+tipos de dados do banco de dados
+
+int 
+float
+text
+char
+varchar
+blob
+date
+
+tabelas
+
+Como criar tabelas
+
+create table usuarios(
+	nome varchar(50)
+	idade int
+	email varchar(100)
+);
+
+Mostrar como ficou a tabela:
+
+ describe usuarios;
+
+Inserir dados dentro da tabela:
+
+insert into usuarios(nome,idade,email) values(
+"thiago alves",
+25,
+"thiago@teste.com"
+);
+
+Obs: aqui temos que se ligar na ordem no caso aki 1 nome 2 idade 3 email os valores tem que obdecer a mesma ordem.
+
+As tabelas ficam dentro do banco de dados
+
+para ver se possui tabelas digite:
+show tables;
+
+Para mostrar todos os dados da tabela que foi inserido
+
+select *from usuarios;  -> * siginifica todos
+
+como selecionar determinado dados da tabela:
+
+select *from NomeDaTabela where itemdaTabela = valor;
+
+ex: select *from usuarios where idade = 30; -> selecione os individuos da tabela usuario que tem 30 anos;
+
+Delete:
+
+Deletar um banco de dados
+
+drop database bancoDeDados;
+
+Deletar toda a tabela e todos os registros:
+	delete from usuarios;
+Deletar um determinado registro da tabela:
+	delete from usuarios where nome = "jurubeba";
+
+Atualizando registros:
+
+update usuarios set nome = "novoNome" where nome = "antigoNome";
+
+Sequelize
+
+O sequelize é uma dependencia que serve para ajudar o desenvolvedor a trabalhar com banco de dados diretamente do nodejs ou seja e uma orm.
+
+o que é orm
+orm tem como função abstrair o banco de dados para que você não tenha que digitar os códigos do banco de dados.
+
+Models
+
+É uma referencia da sua tabela dentro do sequelize
+
+Criando tabela no vscode com o auxilio do sequelize:
+
+Conexao com o banco de dados:
+
+primeiro e necessario instalar as dependencias sequelize é mysql2 atravês do npm.
+
+
+//Conexão com banco de dados cadastro colocando nos parametros o banco de dados 'cadastro' o 'root' usuario a senha '', o host 'localhost' local do servidor dialect 'mysql' a linguagem de banco de dados. 
+const conexaoComDb = new sequelize('cadastros','root','',{
+    host: 'localhost',
+    dialect: 'mysql'
+})
+
+Criação de tabela no vs code:
+
+//Criando tabela no banco de dados cadastro
+const tabela1 = conexaoComDb.define('usuarios1',{
+    nome: {
+        type: sequelize.STRING
+    },
+    sobrenome: {
+        type: sequelize.STRING
+    },
+    idade: {
+        type: sequelize.INTEGER
+    }
+})
+
+Inserindo dados na tabela:
+
+//Inserindo dados na tabela
+tabela1.create({
+    nome: "jose",
+    sobrenome: "ramos",
+    idade: 80
+})
+
+//Forçando a sycronização da tabela com mysql para nã dar erro
+tabela1.sync({force: true})
+
+Código completo:
+
+// adicionando o framework sequelize.
+const sequelize = require('sequelize')
+
+//Conexão com banco de dados cadastro colocando nos parametros o banco de dados 'cadastro' o 'root' usuario a senha '', o host 'localhost' local do servidor dialect 'mysql' a linguagem de banco de dados. 
+const conexaoComDb = new sequelize('cadastros','root','',{
+    host: 'localhost',
+    dialect: 'mysql'
+})
+
+// Mostrando uma mensagem de conectado com sucesso no terminal ou falha ao se conectar then catch sao funçoes nativas do javascript que tem a mesma função de if else so que utilizada para authenticação.
+conexaoComDb.authenticate().then(function(){
+    console.log("Conectado com sucesso!")
+}).catch(function(){
+    console.log("Falha ao se conectar com banco de dados cadastro!")
+})
+
+//Criando tabela no banco de dados cadastro
+const tabela1 = conexaoComDb.define('usuarios1',{
+    nome: {
+        type: sequelize.STRING
+    },
+    sobrenome: {
+        type: sequelize.STRING
+    },
+    idade: {
+        type: sequelize.INTEGER
+    }
+})
+
+//Inserindo dados na tabela
+tabela1.create({
+    nome: "jose",
+    sobrenome: "ramos",
+    idade: 80
+})
+//Forçando a sycronização da tabela com mysql para nã dar erro
+tabela1.sync({force: true})
+
+
+
+
+Handlebars
+
+O handlebars serve para voce pegar dados do seu back end e exibir no seu html no front end
+
+ex: imaginemos que temos uma variavel chamada nome = "thiago" o handbalrs vai pegar essa variavel que estar la no backend e exibir no html. ele também da muitas funcionalidades ao html com estrutura condicionais estrutura de repetições
+e principalmente você consegue exibir dados do seu backEnd no seu arquivo html.
+
+A primeira situação a ser tomada e que a instalação do haldebars será para o express:
+
+você digitara no cmd:
+
+npm install --save express-handlebars
+
+O que é um template e parte visual do site junto com as funcionalidades.
+
+
+Method
+
+O method do formulario é forma de como o formulario séra enviado para o backend. á forma mais eficaz e o post que faz o envio de informações de forma segura ao contrario do get que deixa as informações visiveis na url.
+
+Action 
+O action serve para dizer para qual rota séra enviado os dados do formulario.
+
+
+Framework Body parser
+
+
+O body-parser é pra converter o body da requisição para vários formatos, inclusive json.
+
+Configuração do bodyParser:
+
+variavelExpress.use(bodyParser.urlencoded({extend: false})
+variavelExpress.use(bodyParser.json())
+
+rota
+Ele vai postar dos dados do formulario com method post atravês da rota express, Na rota '/add'.
+
+variavelExpress.post('/add',function(req,res){
+res.send("Titulo: "+req.body.titulo+" Conteudo: "+req+.body.conteudo)
+})
+
+
+Obs: executar o código: nomedatabela.sync({force:true}) -> Porque se não ele vai criar a tabela mais de uma vez.
+
+Estruturando o banco de dados
+
+Para estruturar o banco de dados ou seja deixar tudo organizado e necessario colocar a pasta models dentro da pasta do projeto e dentro da pasta models teremos os seguintes arquivos, um arquivo.js para se conectar ao banco de dados
+e outro arquivo1.js para colocar tabelas do banco de dados:
+
+pasta models
+
+/arquivoDeConexao.js
+
+const sequelize = require('sequelize')
+
+const Sequelize = new sequelize('nomeDobanco','root','',{
+local: 'localhost',
+dialect: 'mysql'
+})
+
+//Esse module exports vai fazer a conexão com o banco de dados desse arquivo seja exportado para qualque arquivo sem precisar de reescrever esse código em outro arquivo.
+module.exports = {
+	Sequelize: Sequelize,
+	sequelize: sequelize
+}
+
+
+/arquivoDeCriacaodetabelas
+	
+	const conexaodb = require('./arquivoDeConexao.js')
+	
+	const tabela = conexaodb.Sequelize.define('bancoDeDados',{
+	titulo: {
+		type: conexaodb.sequelize.STRING
+	}
+	conteudo: {
+		type: conexaodb.sequelize.TEXT
+	}
+})
+
+tabela.sync({force:true})
+
+
+
+
+
+
+

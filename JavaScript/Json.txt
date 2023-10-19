@@ -1,0 +1,29 @@
+O que é json
+
+json = javascript object notation
+É um formato de representação de dados
+Mais simple de que xml, que é utilizado para fins parecidos
+utiliza o formato de chave e valor
+É leve para ser enviado por requisições
+Muito utilizado para api e também arquivos de configuração
+
+Tipos de dados que o json suporta
+	Arrays = [1,2,3]
+	Objetos = {"nome": "Thiago"}
+	Dados nulos = null
+	Strings = "ola veei"
+	Números = 1 ou 1.5 
+
+
+Comandos
+
+Converter json para objeto
+
+const variavel1 = JSON.stringify(objeto)
+
+Converter objeto para json 
+
+const variavel2 = JSON.parser(json)
+
+
+

@@ -1,0 +1,9 @@
+Async e await
+
+As funções assincronuas são que nem as promises porem com uma sintaxe mais simples
+Precisamos declarar a função com a palavra async
+E quando precisamos aguardar por algo a instrução precisa de await
+Podemos aplicar o recurso em funções anonimas e métodos de classe
+Tentar usar o async sem o await gera um erro
+Exemplo de uso:inserção de dado no banco.
+

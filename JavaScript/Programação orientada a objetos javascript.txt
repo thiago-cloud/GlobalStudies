@@ -1,0 +1,85 @@
+Conceito
+
+POO antes de criarmos um objeto criamos a classe, a classe e o tipo do objeto que dentro pode conter varios objetos do mesmo tipo, Além disso cada objeto contém atributos e metodos, os atributos da caracteristicas ao objeto
+enquanto os metodos da a funcionalidade ao objeto. cada caracteristica atribuida a um atributo e chamado de valor.
+
+Resumo da opera: Uma classe e um conjunto de caracteristicas e metodos que definem o conjunto de objetos.
+
+#Encapsulamento
+Encapsulamento de atributos  e métodos impede o vazamento de escopo onde o atributo ou método e visivel por alguem que não deveria vê-lo. como outro objeto ou classe. isso evita a confusão de variaveis globais.
+#Herança
+O conceito de herança tem como intenção dar a classe filha devidas caracteristicas que a classe pai tem.
+
+#Interface 
+E algo que você não herdar de uma classe, você implementa e basicamente uma definição de como as classes que vão ser incluidas dentro daquela interface deve ser estruturadas.
+
+#Polimorfismos
+são metodos ou atributos que sofrem modificações.
+
+Solid
+
+S: Principio da responsabilidade ou single responsibility principle esse principio diz que sua classe deve resolver um problema.
+O: Principio do aberto/fechado ou open/closed principle. esse principio diz que deve ser aberto para extensões e fechados para modificações.
+L: Principio de liskov. esse principio diz que se uma classe c ela e herdada de b ela tambem pode ser herdada de a e assim tudo deve funcionar normalmente.
+I: Principio de segregação de interface. esse prncipio diz que se você tem uma interface muito grande possivelmente você tera uma classe com muitas responsabilidades o que vai gerar um problema então e muito mais interessante que você tenha pequenas interfaces.
+D: Principio da inversão de dependencia. esse principio
+
+
+
+
+
+
+Procedural 
+
+e um paradigma de programação que estar relacionado a rotinas e sub-rotinas.
+
+A ideia de programação orientado a objetos é que o no mundo real tudo e formado por objetos esses objetos possui comportamentos e atributos
+e eles podem conter outro objetos dentro.
+
+Abstração:
+
+Principios importante da programção orientada a objetos:
+
+1. abstração
+2. encapsulamento
+3. herança 
+4. Polimorfismo
+
+Objeto
+
+const carro = {
+
+modelo: 'a5',
+valor: 90000,
+proprieatario: {
+	nome: 'João'
+	idade: 60
+
+	endereco: {
+		logradouro: 'rua 10',
+		numero: 80
+		}
+	},
+condutores: [{
+	nome: 'ribeiro',
+	idade: 80
+}, {
+	nome: 'lucas',
+	idade: 90
+	}]
+}
+ acessa um obejeto que estar dentro de um objeto é atribuir um valor:
+
+carro.proprietario endereco.numero = 1500
+
+deletar um determinado objeto:
+
+delete carro.proprietario 
+formas diferentes de se criar objetos:
+
+
+
+
+
+
+

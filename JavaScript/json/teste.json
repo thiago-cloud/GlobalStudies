@@ -1,0 +1,10 @@
+{
+    "nome": "Irineu",
+    "idade": 30,
+    "esta_trabalhando": true,
+    "detalhes_profissão": {
+        "profissao": "Programador",
+        "empresa": "Google"
+    },
+    "array": ["Objeto1", "Objeto2", "Objeto3"]   
+}
