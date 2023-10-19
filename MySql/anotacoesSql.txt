@@ -1,0 +1,386 @@
+SQL-> O sql e uma liguagem de consulta de banco de dados ele e dividido em 4 partes
+
+DDL(Data definition language)-> É dividido em 6 partes create, alter, drop, rename, truncate, coment
+
+DQL(Data Query Language) -> Essa parte e responsavel pela consulta que é select
+
+DML(Data Manipulation Language) -> insert, update, delete, merge, call, explain plan, lock table
+
+DCL(Data Control Language -> grant, revoke
+
+Utlizando o banco de dados com dbeaver
+
+
+banco de dados/ tabela/ create new tabela -> Cria uma tabela no dbeaver
+
+banco de dados/ create new column -> cria uma coluna na tabela
+
+INT UNSIGNED -> Essa opção de coluna suporta mais numero int de que o proprio INT
+
+Colunas -> São Campos
+Linhas -> São Registros
+
+-------------------------------------------------//---------------------------------------------------------------------
+Campo data
+
+Existe dois campos importante que deve ser criado na tabela um campo e o de data de criação e o outro e do data de atualização de algum dados geralmente e chamado de created_at e update_at os dois são do tipo DATATIME
+
+ALTER TABLE base_de_dados.users ADD created_at DATATIME DEFAULT now() NOT NULL; -> altera no banco de dados chamado base_de_dados na tabela users, adiciona o campo com o nome created-at do tipo DATATIME o padrão é a função now() e não pode conter valores nulos que é NOT NULL
+
+now() -> essa funçao serve para colocar no campo como padrão, ela permite que mostre a data em que o dado foi criado
+
+now() on update now() -> Essa função permite mostrar a data e a hora apos uma alteração de algum dado
+
+--------------------------------------------------------------//----------------------------------------------------------
+
+USE, SHOW, DESCRIBE e INSERT
+
+utilizando scripts sql
+
+/*Seleciona a base de dados*/
+use base_de_dados
+
+/*Mostra as tabelas da base de dados*/
+show tables
+
+/*Descreve as colunas da tabela*/
+describe users;
+
+/*Insere novos registros na tabela*/
+insert into users
+(first_name, last_name,email,password_hash) values 
+("João","Rodrigues","Joao@gmail.com","123456"),
+("Yuri","Yagami","yuri123@hotmail.com","456789");
+
+
+Insert mais avançado
+
+/*Insira na tabela de permissões PUT, GET, DELETE, POST isso significa que cada usuario pode receber peermissões a partir dessa tabela*/
+INSERT INTO roles(name) VALUES ('POST'),('GET'),('DELETE'),('PUT');
+
+/*Insira todos os dados da tabela roles e da tabela users com permissões aleatorias na tabela users_roles*/
+INSERT INTO users_roles (users_id, role_id) 
+SELECT
+id,
+(SELECT id FROM roles ORDER BY RAND() LIMIT 1) AS qualquer From users;
+
+
+
+--------------------------------------------//---------------------------------------------------------------------
+
+SQL/New sql script -> Serve para fazer consultas na base de dados
+
+------------------------------------------------//---------------------------------------------------------------
+ALIAS
+ Alias são apelidos que se pode dar a campos e tabelas
+
+SELECT nome_coluna AS apelido FROM tabela;
+
+
+
+
+------------------------------------------------------//---------------------------------------------------------------------
+
+WHERE
+
+where filtra registros
+podemos usar = < <= > >=
+sinais que indicam diferenças <> !=
+
+SELECT * FROM users WHERE id>=100;
+
+
+-------------------------------------------------------------//----------------------------------------------------
+
+
+
+Select
+
+O select é o script responsavel por fazer consultas
+
+/*Selecione todas as colunas da tabela users*/
+SELECT * FROM users;
+
+/*Seleciona a tabela user e dar um apilido "u"*/
+select * from users u
+
+/*Seleciona so a coluna email e primeiro nome*/
+SELECT email,first_name FROM users;
+
+/*Selecione as colunas e der apalidos a cada uma*/
+SELECT email e, id i, first_name fn FROM users;
+
+/*Selecione toda a tabela users e mostre so o id 110*/
+SELECT * FROM users where id=110.1;
+
+OPCIONAL
+
+/*Selecione as colunas com o apelido da tabela u*/ 
+SELECT u.email uemail, u.id uid, u.first_name ufirst_name FROM users as u;
+
+/*Selecione so as datas da tabela maior que 2023-06-22 16:37:16*/
+SELECT * FROM users WHERE crated_at > '2023-06-22 16:37:16'
+
+/*Selecione as datas da tabela useres maior que '2023-06-22 16:37:16' ou o first_name ='Luiz';*/
+SELECT * FROM users WHERE created_at < '2020-12-15 23:33:41' or first_name='Luiz'; -> se as duas condições forem verdaeiras o or que ou retornara as duas.
+
+/*Selecione as nomes jurubeba é luis da tablea users*/
+SELECT * FROM useres WHERE first_name="jurubeba" and first_name="Luis"; -> só retornara os dois valores se as duas condições forem verdadeiras
+
+/*Selecione varias tabelas ao mesmo tempo*/
+SELECT users.id, users.first_name, profiles.bio FROM users, profiles;
+
+/*Função que gera um numero aleatorio*/
+rand()
+
+/*Função que gera um numero aleatorio multiplicado por 10000 que no maximo tenha duas casas decimais*/
+SELECT ROUND(RAND() * 10000, 2);
+
+/*Insira salarios aleatorios na tabela users na coluna salary*/
+UPDATE users SET salary = ROUND(RAND() * 10000,2); -> O round informa que para multiplicar o valor aleatorio por 10000 e o valor resultado no maximo tem que ter duas casas decimais.
+
+/*Selecione tudo na tabela users que possui salario de 2000 a 5000 na ordem crescente*/
+SELECT * FROM users WHERE salary BETWEEN 2000 AND 5000 ORDER BY ASC;
+
+-------------------------------------------------------------//----------------------------------------------------
+
+UPDATE
+
+OBS: O update so funcionara com claúsula where ele é um atualizador de registros
+Geralmente se utiliza o update quando não podemos deletar um determinado registro porque esse registro estar interligado a outra tabela, sendo assim utilizamos o update.
+
+/*atualize o first_name para jurubeba da tabela users no id 120*/
+UPDATE users SET first_name = 'Jurubeba' WHERE id = 120;
+
+
+
+----------------------------------------------------------------------//-------------------------------------------
+
+BETWEEN
+
+Filtrar valores dentro de um range
+
+/*Selecione todas as datas da tabela users na coluna created_at que estiver entre '2020-06-12 17:38:52' e '2020-09-04 19:06:55'*/
+SELECT * FROM users WHERE created_at beteween '2020-06-12 17:38:52' and '2020-09-04 19:06:55';
+
+/*Selecione todas as datas que estivere entre '2021-01-26 02:40:51' e '2023-06-22 16:37:16' e todos os ids que estiverem entre 163 e 210
+SELECT * FROM users WHERE created_at BETEWEEN '2021-01-26 02:40:51' AND '2023-06-22 16:37:16' AND id BETEWEEN 163 AND 210;
+
+----------------------------------------------------------//--------------------------------------------------------
+IN
+Filtrar valores dentro de uma lista de valores
+
+/*Selecio os id 1,100 e 150*/
+SELECT * FROM users WHERE id IN (1,100,150);
+
+/*Selecione os entre os id 100, 101 e 168 os nomes Thiago*/
+SELECT * FROM users WHERE id IN (1,50,140) AND first_name ('Thiago')
+
+
+-------------------------------------------------------------//----------------------------------------------------
+
+LIKE
+
+O like serve para encontrar caracteres ou numeros especificos
+
+/*Selecione os valores que terminam com a*/
+SELECT * FROM users WHERE first_name LIKE '%a'; -> % significa qualquer coisa depois o 'a'
+
+/*Selecione na tabela users valores que começa com a */
+SELECT * FROM users WHERE first_name LIKE 'a%';
+
+/*Selecione na tabela users, na coluna first_name palavra em que tenha b entre as letras*/
+SELECT * FROM users WHERE first_name LIKE '%b%';
+
+-----------------------------------------------------------//------------------------------------------------------
+
+ORDER BY 
+
+/*Selecione id first_name e email na tabela user e coloque um apelido no email com o intervalo no id de 100 a 150 em ordem decrecente o firt_name*/
+SELECT id, first_name,email FROM users WHERE id BETWEEN 150 AND 250 ORDER BY id DESC; 
+
+/*Selecione a coluna em ordem alfabetica de A a Z*/
+SELECT 
+*
+FROM 
+tabela
+ORDER BY coluna asc
+
+--------------------------------------------------------------//---------------------------------------------------
+
+LIMIT E OFFSET
+
+/*Selecione id first_name e email na tabela users no limite de 3 registro começando pelo registro 0 que e o offset*/
+SELECT id,first_name, email FROM users WHERE id LIMIT 2 offset 0;
+
+------------------------------------------------------------//-----------------------------------------------------
+Criando um insert baseado em um select de outra tabela
+
+
+------------------------------------------------------------------//---------------------------------------------------------
+DELETE
+
+/*Elemine o registro da tabela users com id 115*/
+DELETE FROM users WHERE id BETWEEN 110 AND 120;
+
+-----------------------------------------------------------------//----------------------------------------------------------
+JOIN
+
+Join é a junção de uma mais tabelas
+
+INNER JOIN -> São valores que de tabelas que estão relacionados entre si
+
+Quando dizemos que vamos consultar valores de uma tabela que estão relacionados a outra tabela isso e um chamado de inner join, sendo assim essa coluna so retornara valores se existir relação de uma tabela com a outra.
+
+/*Selecione a tabela users e profiles onde user_id e igual uid*/
+SELECT 
+users.id AS uid, profiles.id AS pid, profiles.bio,users.first_name 
+FROM 
+users 
+INNER JOIN 
+profiles ON users.id = profiles.user_id;
+
+LEFT JOIN -> Ele retornar dados da tabela a esquerda, e tabém dados da tabela a esquerda que não estão relacionados a tabela a direita
+
+/*Selecione a tabela users e profiles onde user_id e igual uid*/
+SELECT 
+users.id AS uid, profiles.id AS pid, profiles.bio,users.first_name 
+FROM 
+users 
+LEFT JOIN 
+profiles ON users.id = profiles.user_id;
+
+RIGHT JOIN -> Ele retornara dados da tabela a direita, e tabém dados da tabela a direita que não estão relacionados a tabela a esquerda
+
+/*Selecione a tabela users e profiles onde user_id e igual uid*/
+SELECT 
+users.id AS uid, profiles.id AS pid, profiles.bio,users.first_name 
+FROM 
+users 
+RIGHT JOIN 
+profiles ON users.id = profiles.user_id;
+
+OUTER JOIN -> Retornara os valores das duas tabela tanto a da esquerda como a da direita e todos os dados os dados independentes que tenham relacinamentos ou não
+
+/*Selecione a tabela users e profiles onde user_id e igual uid*/
+SELECT 
+users.id AS uid, profiles.id AS pid, profiles.bio,users.first_name 
+FROM 
+users 
+FULL OUTER JOIN 
+profiles ON users.id = profiles.user_id;
+
+/*Selecione a tabela users e profiles onde user_id e igual uid onde as letras do first_name termina com o na ordem decrescente e que no maximo apareça uma lista de 3*/
+
+SELECT u.id AS uid, u.first_name AS first_name, p.bio AS bio, p.id AS pid FROM users AS u INNER JOIN profiles AS p ON u.id = p.user_id 
+WHERE u.first_name LIKE '%o' 
+ORDER BY u.first_name DESC
+LIMIT 3; 
+
+
+OBS: Para saber qual é a tabela que estar a esquerda e a tabela a direita e só verificar o diagrama da base_de_dados que tem as tabelas. A junção da tabela e chamado de inner join
+
+/*Selecine as colunas da tabela users e a tabela profiles e em seguida mostre a relação entre users e profiles dando enfase na left*/
+SELECT u.id AS Uid, u.first_name AS Ufirst_name, p.bio AS Pbio, p.id AS Pid FROM users AS u LEFT JOIN profiles AS p on u.id = p.user_id; 
+
+
+----------------------------------------------------------------//-----------------------------------------------------------
+
+UPDATE COM VARIOS JOIN(many to many)
+
+UPDATE users 
+JOIN profiles  ON users.id = profiles.user_id 
+SET profiles.bio = 'Atleta'
+WHERE 
+users.id = "104";
+
+
+----------------------------------------------------------//-----------------------------------------------------------------
+CAST
+O cast serve para fazer conversões
+
+/*Faça conversão da coluna preços na tabela produtos_ti*/
+SELECT
+	CAST(preços AS FLOAT)
+FROM
+	produtos_ti
+
+--------------------------------------------------------//-------------------------------------------------------------------
+
+CONCAT
+ serve para concatenar duas String em colunas separadas
+
+SELECT
+	CONCAT(nome_da_coluna1,"to",nome_da_coluna2)AS novoNome_para_novaColuna
+FROM
+	nome_da_tabela
+
+/*coloque mais argumentos na coluna de descrção*/
+
+UPDATE profiles
+SET profiles.descricao = CONCAT(profiles.descricao, 'Argumetos a mais')
+WHERE profiles.id = 104;
+
+
+-------------------------------------------------------//--------------------------------------------------------------------
+GROUP BY
+ O GROUP BY serve para agrupar valores que se repetem mais so e possivel utilizalo com a função COUNT()
+
+ /*Selecione valores que se repete e mostre a quantidade de vezes que se repete*/
+
+SELECT
+first_name, COUNT(first_name) AS total
+FROM
+users
+GROUP BY first_name
+ORDER BY total DESC;
+
+-------------------------------------------------------//--------------------------------------------------------------------
+MAX
+ Serve para achar o maior valor entre as colunas
+ 
+/* Selecione o maior valor na coluna salary da tabela users*/
+SELECT MAX(salary) FROM users
+
+------------------------------------------------------//---------------------------------------------------------------------
+MIN
+ Serve para selecionar o menor valor da coluna
+ /* Selecione o menor valor da coluna salary da tabela users*/
+ SELECT MIN(salary) FROM users
+
+-------
+SUM
+ Serve para mostrar a soma total dos valores da coluna
+ /*Mostre a soma total de todos os valores da coluna salary da tabela users*/
+ SELECT SUM(salary) FROM users;
+
+-------
+AVG
+ Serve para mostrar a média dos valores da coluna
+/* Mostre a média da coluna salary na tabela users*/
+SELECT AVG(salary) FROM users;
+
+
+--------------
+COUNT
+ Serve para contar a quantidade de registros de uma determinada coluna
+ /* Mostre a quantidade de salarios da coluna salary na tabela users*/
+ SELECT COUNT(salary) FROM users;
+
+
+------------
+HAVING
+
+O having serve para dar uma condição ao GROUP BY
+
+SELECT 
+departament_cod, AVG(salary)
+FROM
+empregados
+WHERE 
+salary > 350
+GROUP BY departament_cod
+HAVING AVG(salary) > 500
+
+----------
+
