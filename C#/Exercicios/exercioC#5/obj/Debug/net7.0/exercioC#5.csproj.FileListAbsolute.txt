@@ -1,0 +1,14 @@
+C:\Users\pejo5\Desktop\exercioC#5\bin\Debug\net7.0\exercioC#5.exe
+C:\Users\pejo5\Desktop\exercioC#5\bin\Debug\net7.0\exercioC#5.deps.json
+C:\Users\pejo5\Desktop\exercioC#5\bin\Debug\net7.0\exercioC#5.runtimeconfig.json
+C:\Users\pejo5\Desktop\exercioC#5\bin\Debug\net7.0\exercioC#5.dll
+C:\Users\pejo5\Desktop\exercioC#5\bin\Debug\net7.0\exercioC#5.pdb
+C:\Users\pejo5\Desktop\exercioC#5\obj\Debug\net7.0\exercioC#5.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\pejo5\Desktop\exercioC#5\obj\Debug\net7.0\exercioC#5.AssemblyInfoInputs.cache
+C:\Users\pejo5\Desktop\exercioC#5\obj\Debug\net7.0\exercioC#5.AssemblyInfo.cs
+C:\Users\pejo5\Desktop\exercioC#5\obj\Debug\net7.0\exercioC#5.csproj.CoreCompileInputs.cache
+C:\Users\pejo5\Desktop\exercioC#5\obj\Debug\net7.0\exercioC#5.dll
+C:\Users\pejo5\Desktop\exercioC#5\obj\Debug\net7.0\refint\exercioC#5.dll
+C:\Users\pejo5\Desktop\exercioC#5\obj\Debug\net7.0\exercioC#5.pdb
+C:\Users\pejo5\Desktop\exercioC#5\obj\Debug\net7.0\exercioC#5.genruntimeconfig.cache
+C:\Users\pejo5\Desktop\exercioC#5\obj\Debug\net7.0\ref\exercioC#5.dll

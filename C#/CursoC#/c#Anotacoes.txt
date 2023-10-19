@@ -1,0 +1,43 @@
+1 instalar o dotnet sdk para desenvolvimento c# na plataforma dotnet e para execução das aplicações dotnet runtime para execução das aplicações clientes
+2 instalar as extensões no vs code as extensões: c# e c# extension
+3 abrir o terminal na pasta do c# podemos digitar "dotnet -h" para ver as opções de comando
+ctrl + , -> configuração do vs code para aumentar letras
+
+Iniciar projeto:
+
+dotnet new -> mostra os tipos de projetos que podemos executar
+dotnet new console -> cria um projeto do tipo console
+ctrl + shift + p -> para mostrar a barra de pesquisa do vscode procure pelo pacote .NET Generate assets... para instalar o pacote .vscode
+dotnet run -> Para executar o projeto
+
+
+C# -> É uma linguagem orientada a objetos
+
+10 -> Ao colocarmos qualquer numero sem tipar o compilado do c# entende que é um inteiro
+
+tipos de variaveis no c#
+
+bool -> do tipo boolean
+char -> armazena apenas um caractere
+byte ->valores ate 255
+int -> inteiro
+long -> numero grande
+float -> numero com virgula
+double -> aceita o dobro de numeros que o float muito utilizado para calculos cientifico
+decimal -> muito utilizado para valore monetario
+string -> sequencio de caractere
+
+declarando variaveis
+
+string nome,sobrenome;
+
+string nome = "irineu" ->recebendo um valor;
+
+O c# e uma linguagem do tipo estatico ou seja a tipagem sempre será o tipo que foi declarada se for int sera int e assim por diante
+O typescript e de tipagem estatica tambem
+
+Para ver referncias dos recursos da linguagem
+
+cursor + F12 em cima do console por exemplo
+
+console. -> mostra todos os membros do tipo console

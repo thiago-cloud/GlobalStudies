@@ -1,0 +1,52 @@
+Typescript
+
+TypeScript é um superset para a linguagem javascript;
+
+Ou seja adiciona funções ao javaScript, como a declaração de tipos de variavel;
+
+Pode ser utilizado com frameworks/libs, como: Express e React;
+
+Precisa ser compilado em javaScript, ou seja, não executamos TS;
+
+Desenvolvido e mantido pela Microsoft;
+
+Adiciona confiabilidade ao programa;
+
+Provê novas funcionalidade ao JS, como interfaces;
+
+Com TS podemos verificar os erros antes da execução do código ou seja no desenvolvimento;
+
+Deixa javaScript mais explicito, diminuindo a quantidade de bugs;
+
+Por estes e outros motivos perdemos menos tempo com debug;
+
+Instalação do typeScript
+
+	Para instalar o typeScript vamos utilizar o npm;
+	
+	O nome do pacote é typescript;
+
+	E vamos adicionar de forma global com a flag -g;
+
+	A partir da instalação temos como executar/compilar TS em qualquer local
+	da nossa máquina, com o comando tsc;
+	
+	comando instalação do typescript -> npm i -g typescript
+	comando que mostra versão confirmando se foi instalado -> tsc -v
+	
+
+Criando o arquivo typescript
+	
+	index.ts	
+	comando para criar arquivo de configuração do typescript -> tsc --init
+
+tsconfig.json
+
+	"rootDir": "./src" -> Nessa parte do arquivo colocamos o caminho do arquivo
+	"outDir": "./dist/js/", -> Nessa parte do arquivo o diretorio de saida ou seja o diretorio de deploy é nesse diriterio que arquivo typescript vai cair
+	"target": "ES2016" -> Nessa parte do arquivo e responsavel por alterar a versão do js, esse caso pode ser interessante se o projeto a ser criado for para rodar em navegadores ja que alguns navegadores não aceita versões mais recentes o ideal seria colocar versões mais antigas.	
+	"removeComents": true, ->Habilita ou desabilita comentarios no arquivo js		
+	comando para fazer a compilação-> tsc
+
+
+

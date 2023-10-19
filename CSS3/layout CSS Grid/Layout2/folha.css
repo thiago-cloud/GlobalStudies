@@ -1,0 +1,53 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+
+
+.container{
+    background-color: aqua;
+    border: 2px solid black;
+    padding: 10px;
+    
+    width: 100vw;
+    height: 100vh;
+
+    display: grid;
+    grid-template-areas: 
+    "i1 i1"
+    "i2 i3"
+    "i4 i4"
+    ;/*i1 i1 na primeira coluna que sera o head*/
+    /*i1 sera o menu e o aside(lateral)*/
+    /*i4 i4 sera o rodape(footer)*/
+
+}
+
+.item-1{
+    grid-area: i1;/*Nomeando a area grid que se chamara i1*/
+    background-color: blue;
+    color: azure;
+    height: 20vh;
+}
+.item-2{
+    grid-area: i2;
+    background-color: yellow;
+    color: azure;
+    height: 60vh;
+    width: 80vw;
+}
+.item-3{
+    grid-area: i3;
+    background-color: black;
+    color: azure;
+    height:60vh;
+    width: 20vw;
+}
+.item-4{
+    grid-area: i4;
+    background-color: red;
+    color: azure;
+    height:20vh;
+}

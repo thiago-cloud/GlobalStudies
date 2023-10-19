@@ -1,0 +1,258 @@
+
+
+
+UX -> O termo ux design foi criado por Don Norman apartir de 1990, O ux designer serve para trazer uma melhor experiência do usuario com software.
+
+Brading -> É uma estrategia de gestão da marca que busca ser mais reconhecida atravês de uma logo que traga as caracteristicas da empresa em si.
+
+Merketing ->
+
+Iconografia -> É uma forma de linguagem visual, que usa imagens para representar um determinado tema.
+
+Wireframe -> É um rascunho feito com o objetivo de criar um novo produto
+
+----------------------------------------------------//-------------------------------------------------------------------------
+
+Principios do Designer
+
+
+Equidade -> Foca na necessidade que o usuario tem para utilizar um produto ou seja uma pessoa com deficiencia visual tem a necessidade de utilizar um site com serviço de voz
+
+--------------------------------------------------------//-------------------------------------------------------------------
+As Perguntas importante de ux que precisa ser respondidas são
+
+O designer é usavel
+
+O designer é util
+
+O designer é agradavel
+
+O designer é Equitativo
+
+--------------------------------------------------//-------------------------------------------------------------------------
+Estruturas mais comuns para design de UX
+
+O designer deve ser Centrado no usuario
+
+Existe um procosso que faz com que UX seja centrado no usuario composto por 4 etapas
+
+Entender -> Especificar -> Projetar -> Avaliar
+
+
+
+
+Estruturas importantes no design de UX
+
+Estratégia, Escopo, Estrutura, Esqueleto e superficie
+
+Cada elemento refere-se a uma parte importante para criação da experiência do usuário
+
+Estratégia -> Nessa etapa nasce a ideia
+Escopo -> após a ideia e necessario definir as metas
+Estrutura -> Nessa etapa cria o projeto com objetivo de mostrar como será a estrutura
+Esqueleto -> Nessa etapa montasse o esqueleto do projeto 
+Superficie -> Nessa etapa o projeto ja estar pronto para ser avaliado pelo usuario
+
+
+
+
+Design Thinking
+
+Empatia -> Definir -> idealizar -> Prototipar -> Testar
+
+Empatia -> O objetivo dessa etapa é entender o usuario
+
+Definição -> O objetivo dessa etapa é criar uma definição clara do problema
+
+Idealização -> O objetivo dessa etapa é obter o maior numero de soluções de design
+
+Prototipa -> O objetivo e criar um designer resumido com apenas alguns pontos mais importantes
+
+Teste -> O objetivo dessa etapa e obeter feedbacks claros sobre o designe antes que o produto seja construido por engenheiros e lançados ao publico.
+
+-----------------------------------------------------------//----------------------------------------------------------------
+
+Lean ux é Double Diamond
+
+Lean UX -> O objetivo do lean ux e ser um processo de desenvolvimento de design mais rapido possivel composto por três etapas 
+Pensar -> Fazer -> Verificar
+
+Double Diamond -> Esse processo é mais tradicional é cada faze e composta por duas etapas
+
+Etapas:
+Descobrir o problema -> Definir o problema -> Desenvolver solução para o problema -> Entregar o produto
+
+----------------------------------------------------------------//-------------------------------------------------------
+
+NBU(next billion users) -> Nomeclatura que significa o proximo bilhão de usuario que estão acessando a internet no exato momento.
+
+Quatro problemas que o próximo bilhão de usuario pode enfrentar>
+
+Custo -> Conectividade -> alfabetização digital -> alfabetização
+
+----------------------------------------------------------------//--------------------------------------------------------
+Plataformas de Design
+
+TV inteligentes -> mobile -> Web -> Portatéis -> Tablets
+
+Os quatro cs do design para varias plataformas
+
+Consistência -> Continuidade -> Contexto -> Complementaridade
+
+Concistencia -> Ao criar um designer ele precisa ser fiel familiar a marca e a voz da empresa
+
+Continuidade -> E necessario priorizar a continuidade do designer a diferentes plataformas ou seja independente de plataforma o design deve ser semelhante em cada plataforma.
+
+Contexto -> E necessario o design ser adequado para cada plataforma
+
+Complementaridade -> Uma boa pratica e garantir algo novo para cada platoforma enriquecendo a experiência do usuaria dando um toque de diferença e inovação para cada plataforma
+
+--------------------------------------------------------//-----------------------------------------------------------------
+Design universal, design inclusivo, design focado na equidade.
+
+
+
+
+-------------------------------------------------------//-------------------------------------------------------------------
+Tecnologias assistiva -> São tecnologias para pessoas que possuem deficiencia
+
+Modificação de cor -> Controle de Voz -> Leitores de Tela -> Texto Alternativo
+
+-----------------------------------------------------//----------------------------------------------------------------------
+Sprint Design
+
+O sprint de design serve para resolver um problema atravês do design
+
+É constituido por 5 etapas compreensão,idealização, Decisão Protótipo e teste
+
+O que torna a sprint design tão util
+
+Poupa tempo
+Cria um caminho eficaz do produto para o mercado
+Priorizam o usuario
+Testa o produto antes do lançamento
+
+Retrospectiva -> É uma crítica colaborativa onde e discutido o que deu certo e o que pode melhorar
+
+-----------------------------------------------------//----------------------------------------------------------------------
+Sugestões de alguns criadores de site para programar:
+
+Webflow
+Wix
+Google Sites
+Squarespace
+
+O que deve ter no site:
+
+Nome e Logotipo
+Menu de navegação
+Amostra de trabalho
+Sobre Mim
+Informações de contato
+Esquema de cores
+
+OBS: Colocar uma "marca" e muito importante pois ajuda a voce se destacar no meio de uma multidão de candidatos
+
+Comunidades para designer
+
+Dribbble
+Behance
+---------------------------------------------------//------------------------------------------------------------------------
+Curso 2
+
+Historia de usuario:
+
+Quem, O quê é Porquê
+
+Empatia ->
+
+Antecipar as necessidades do usuario
+
+Mapa da jornada do usuario -> É uma documentação que descreve toda interação do usuario nele e possivel mostrar alguns pontos importante para melhorar a interação do usuario
+
+Pontos fracos -> São problemas que podem se apresentar na interação do usuario em que o design não tinha pensado
+
+Auditorias competitivas -> 
+
+Desenho de esboço -> São rascunhos desenhos idealistas em forma de rascunhos
+
+método Crazy Eights -> É uma forma de idealizar 8 ideias no papel em 8 minutos Se tiver mais de 8 ideias repita o exercicio em outra folha
+
+---------------------------------------------------------------//------------------------------------------------------------
+Curso 3 Wireframes
+
+Wireframes -> são rascunho de desenhos
+
+Storyboard -> Roteiro que contêm desenhos em sequência cronológica, mostrando as cenas e ações mais importantes na decupagem de um filme
+
+
+Design de baixa fidelidade -> É um design simples criado por rascunhos chamados de wireframes, esses design por serem muito simples são rapidos de criar, são frequentemente usados para ter ideias rapidas
+
+Design de alta fedelidade -> É um design mais complexo e mais bem feito criados apartir de ferramentas como figma é adobe XD
+
+
+Estrutura do  wireframe
+
+textos -> Os textos nos wireframe são representados por linhas
+
+avatar -> Os avatar são representados por bolinhas
+
+Botões de enviar ou escrever -> Os botões são representados por retangulos ou circulos
+
+Imagens -> As imagens são representadas por quadrados maiore com um x
+
+
+--------------------------------------------------//-------------------------------------------------------------------------Figma
+
+O figma é uma ferramenta que serve para criar prototipos ou seja os wireframes
+
+uma folha em branco no figma se chama "art boards"
+
+Aperte "f" para criar um art board eescolha um local click com mouse
+
+para centralizar aperte no art board y = 0 e x = 0
+
+Para deixar objeto em formato perfeito selecione "shift"
+
+OBS: Vale lembrar que o figma ja incluir as fonts do "google fonts"
+
+SVG -> É um formato de imagem escalavel ou seja se aumentarmos o zoom da imagem ela não perde a qualidade não fica distorcida
+
+Site de gradients -> webgradients.com
+
+"share" -> compartilha o link
+
+Slice -> Serve para cortar
+Atalhos do figma:
+interrogação canto inferior direito / change keyboard layout -> Mostra todos os atalhos que o figma tem
+
+shift + i -> Essa tecla abre uma janela para adicionar plugins
+
+c -> Comenta
+
+ctrl + shif + 3 -> Mostra os desenhos em formatos de linhas bem interessante para trabalhar com vetores
+
+shift + s -> criar uma sessão que serve para colocar frames dentro ou seja o art boards
+
+maim menu/ text / spell check -> Altera a ortografia para protuguês e mostra a correção toda vez que escrever algo de acordo com a ortografia que foi definida
+
+plugins / Find more plugins -> Instala um plugin um bom plugin é o font preview
+
+/*Colocar uma cor  gradient no artboard*/
+fill -> gradient
+
+/*Mover Objetos*/
+Selecione "H" ou aperte na mão
+
+Grupo: 
+Grupo e um objeto que contém varios objetos dentro
+
+/*Criar um grupo*/
+crie um objeto inclua outros objetos dentro em seguida apert "CTRL+G"
+
+/*para mascarar a imagem dentro de um quadrado*/
+CTRL + ALT + M -> Dentro do quadrado
+
+Sites de que dão exemplos de paletas de cores -> pinterest e behance
+
+Sites para colocar icones no figma -> flaticon e iconfinder

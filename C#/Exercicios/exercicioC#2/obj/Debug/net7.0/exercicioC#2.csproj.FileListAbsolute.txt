@@ -1,0 +1,14 @@
+C:\Users\pejo5\Desktop\exercicioC#2\bin\Debug\net7.0\exercicioC#2.exe
+C:\Users\pejo5\Desktop\exercicioC#2\bin\Debug\net7.0\exercicioC#2.deps.json
+C:\Users\pejo5\Desktop\exercicioC#2\bin\Debug\net7.0\exercicioC#2.runtimeconfig.json
+C:\Users\pejo5\Desktop\exercicioC#2\bin\Debug\net7.0\exercicioC#2.dll
+C:\Users\pejo5\Desktop\exercicioC#2\bin\Debug\net7.0\exercicioC#2.pdb
+C:\Users\pejo5\Desktop\exercicioC#2\obj\Debug\net7.0\exercicioC#2.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\pejo5\Desktop\exercicioC#2\obj\Debug\net7.0\exercicioC#2.AssemblyInfoInputs.cache
+C:\Users\pejo5\Desktop\exercicioC#2\obj\Debug\net7.0\exercicioC#2.AssemblyInfo.cs
+C:\Users\pejo5\Desktop\exercicioC#2\obj\Debug\net7.0\exercicioC#2.csproj.CoreCompileInputs.cache
+C:\Users\pejo5\Desktop\exercicioC#2\obj\Debug\net7.0\exercicioC#2.dll
+C:\Users\pejo5\Desktop\exercicioC#2\obj\Debug\net7.0\refint\exercicioC#2.dll
+C:\Users\pejo5\Desktop\exercicioC#2\obj\Debug\net7.0\exercicioC#2.pdb
+C:\Users\pejo5\Desktop\exercicioC#2\obj\Debug\net7.0\exercicioC#2.genruntimeconfig.cache
+C:\Users\pejo5\Desktop\exercicioC#2\obj\Debug\net7.0\ref\exercicioC#2.dll

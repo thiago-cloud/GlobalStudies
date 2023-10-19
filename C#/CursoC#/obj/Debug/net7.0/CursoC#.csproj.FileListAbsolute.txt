@@ -1,0 +1,14 @@
+C:\Users\pejo5\Desktop\CursoC#\bin\Debug\net7.0\CursoC#.exe
+C:\Users\pejo5\Desktop\CursoC#\bin\Debug\net7.0\CursoC#.deps.json
+C:\Users\pejo5\Desktop\CursoC#\bin\Debug\net7.0\CursoC#.runtimeconfig.json
+C:\Users\pejo5\Desktop\CursoC#\bin\Debug\net7.0\CursoC#.dll
+C:\Users\pejo5\Desktop\CursoC#\bin\Debug\net7.0\CursoC#.pdb
+C:\Users\pejo5\Desktop\CursoC#\obj\Debug\net7.0\CursoC#.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\pejo5\Desktop\CursoC#\obj\Debug\net7.0\CursoC#.AssemblyInfoInputs.cache
+C:\Users\pejo5\Desktop\CursoC#\obj\Debug\net7.0\CursoC#.AssemblyInfo.cs
+C:\Users\pejo5\Desktop\CursoC#\obj\Debug\net7.0\CursoC#.csproj.CoreCompileInputs.cache
+C:\Users\pejo5\Desktop\CursoC#\obj\Debug\net7.0\CursoC#.dll
+C:\Users\pejo5\Desktop\CursoC#\obj\Debug\net7.0\refint\CursoC#.dll
+C:\Users\pejo5\Desktop\CursoC#\obj\Debug\net7.0\CursoC#.pdb
+C:\Users\pejo5\Desktop\CursoC#\obj\Debug\net7.0\CursoC#.genruntimeconfig.cache
+C:\Users\pejo5\Desktop\CursoC#\obj\Debug\net7.0\ref\CursoC#.dll

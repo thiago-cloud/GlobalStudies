@@ -1,0 +1,59 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+
+body{
+    font-family: sans-serif;
+}
+
+.container {
+    border:5px cyan solid;
+    margin:10px;
+    display:grid;
+    /*grid-template-columns: 1fr 2fr 3fr;*/
+    /*grid-template-rows:auto 200px;*/
+    /*grid-auto-rows: 100px;*/
+    /*grid-gap: 30px;*/
+    row-gap:10px;
+    column-gap:10px;
+    /*grid-template-columns: minmax(0 , 1fr) minmax(300px ,400px);*//*Quero que a primeira coluna tenha um tamanho minimo de 0px e o tamanho maximo de 1fr e a segunda coluna tenha tamanho minimo de 200px e tamanho maximo de 400px*/
+    /*grid-template-columns:repeat(6, 1fr);*//*repete 1fr seis vezes dividindo os itens em 6 partes de 1fr*/
+    /*grid-template-columns: repeat(3 ,minmax(100px,1fr));*/
+    grid-template-columns: repeat(auto-fit,minmax(100px,1fr));/*o auto-fix deixa o layout responsivo em medida que a tela vai dinuindo o elementos podem ultrapassar o container o autofix deixa os elementos dentro do container e faz com que esses elementos sejam alocados para baixo*/ 
+
+
+
+
+}
+
+.item{
+    background-color:deeppink;
+    
+
+}
+
+/*
+display:grid; inicia o grid;
+grid-template-columns: 100px 100px; cria duas colunas de 100px;
+grid-template-columns: 1fr 1fr 1fr; divide em tres parte fracionando todo o espaço deixando proporcional
+grid-template-rows: auto 200px; manipula linhas a primeira linha automatico e a segunda linha 200px
+grid-auto-rows:100px; Quero que todas as linha que não foram difinidas tenham 100px automaticamente
+
+grid-gap:30px;Esse grid e reponsavel por dar espaços a entre as celulas que também chamado de espaços entre celulas
+ele e bem parecido com o margin
+row-gap:30px; coloca espaço entre as linhas das celulas
+column-gap:30px; coloca espaço entre as linhas das colunas*/
+.item-1{
+    grid-row: 1 / 5; /*Eu quero que o item-1 comece na linha 1 e termine na linha 3*/
+    
+}
+.item-2{
+    grid-column: 2/5; /*Eu quero que o item-2 comece na coluna 2 e termine na coluna 5*/
+}
+
+.item-3{
+    grid-column: 5 / span 3; /*Eu quero que comece da coluna 4 e pule 3 colunas*/ 
+}
