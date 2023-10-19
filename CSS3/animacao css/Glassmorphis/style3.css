@@ -1,0 +1,45 @@
+*{
+box-sizing: border-box;
+margin:0;
+padding:0;
+font-family: Arial, Helvetica, sans-serif;
+}
+
+body{
+    width:100%;
+    min-height:100vh;
+    background-image: url(img/bihozard.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.container{
+    background-color: transparent;/*Deixa a imagem ofuscada*/
+    width: 100%;
+    max-width:500px;
+    text-align: center;
+    border-radius: 20%;
+    border: 2px solid #fff;
+    backdrop-filter:blur(0px);/*define a quantidade de desfolque do fundo do container*/
+    overflow:hidden; /*Esconde tudo que tiver fora do container*/
+    transition: backdrop-filter 0.5s;
+    cursor:pointer;
+}
+.text{
+    color: #fff;
+    position:relative;
+    top:200px;
+    transition: 1s top; /*mostre o texto apos um segundo de baixo pra cima*/
+}
+
+.container:hover .text{
+top: 0;
+}/*Toda vez que o hover for acionado chame a classe .text que no caso aki tira o top do texto mostrando assim o texto*/
+
+.container:hover{
+    backdrop-filter: blur(10px);
+}

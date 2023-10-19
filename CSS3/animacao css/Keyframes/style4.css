@@ -1,0 +1,41 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    background-color: #fff;
+    
+    
+}
+
+/*O keyframes e muito utilizado em animações aki podemos perceber que quando o conatainer
+estiver em 0% faça uma ação em 50% faça outra ação em 100% faça outra ação*/
+@keyframes animacao{
+     0%{background-color:blue}
+     50%{background-color:red}
+     100%{background-color:green;
+           width: 20%;
+           height: 20%; }   
+}
+
+.container{
+    width: 500px;
+    height:500px;
+    animation-name: animacao; /*marcando a classe container com animação*/
+    animation-duration: 10s;/*O processo de ações durara 10 segundos */
+    animation-delay: 1s;
+    position: absolute;
+    top: 200px;
+    left: 200px;
+    border-radius:50%;
+    
+
+
+
+}
+
+
+
+

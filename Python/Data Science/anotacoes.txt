@@ -1,0 +1,5 @@
+O Jupyter Notebook é uma aplicação web de código aberto que permite criar e compartilhar documentos interativos chamados de “cadernos” (notebooks). Esses cadernos combinam elementos de código, permitindo que os usuários criem e compartilhem relatórios, visualizações de dados e análises exploratórias.
+
+Anaconda é uma distribuição das linguagens de programação Python e R para computação científica, que visa simplificar o gerenciamento e implantação de pacotes. A distribuição inclui pacotes de ciência de dados adequados para Windows, Linux e macOS.
+
+Para rodar um código no jupter e so apertar "Shift+Enter" é automaticamente vai para linha de baixo 

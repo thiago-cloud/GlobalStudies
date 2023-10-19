@@ -1,0 +1,33 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+.box1{
+    width:400px;
+    height:400px;
+    background-color:blue;
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);/*Centraliza o box1*/
+    cursor: pointer;
+    overflow: hidden;/*Esconda o que tiver fora do overflow*/
+    border-radius: 50px;
+}
+
+.box2{
+    width: 100%;
+    height: 100%;
+    background-image: url(img/img1.jpg);
+    background-size: cover;/*pega toda a imagem*/
+    background-position:center;/*Centraliza a imagem*/
+    border-radius: 50px;
+}
+
+.box1:hover .box2{
+    filter: blur(3px);/*Deixa a imagem ofuscada*/
+    transform: scale(1.2);/*Almenta o zoom da imagem*/
+    transition: 0.8s;
+}

@@ -1,0 +1,122 @@
+NPM
+É um gerenciador de pacotes
+Se você for programar em javascript você deve utilizar o npm.
+se você instalar o node vai instlar também  o npm porque o node ja vem junto com o npm.
+
+Lembrando que para criar pasta no npm e você digita mkdir nomedapasta
+
+Atualizar o vscode
+
+ctrl + shif + p -> digite reload
+
+Comandos npm 
+
+npm install -g -> o -g g de global signfica que você estar instalando o pacote na maquina inteira ao inveis de instalar o pacote somente no diretorio.
+
+npm init -> O npm init server para iniciar o npm em  um determinado diretario la ele vai perguntar como vai ser nome do pacote qual a versão,descrição, comando de teste alguma senha author nome license
+
+Já se você quiser iniciar npm de forma mais rapida sem precisar ter quer passar por varias perguntas
+
+npm init -y -> ele iniciara o npm criando package.json sem fazer as pergunta ele colocara yes para todas as perguntas.
+
+O arquivo package.json serve para descrever um determinado projeto feito em javascript.
+
+Comando para a execução dos script do package.json
+
+npm run nomedoscript
+
+ex: npm run test
+
+Comando para instalação de pacotes(dependencias)
+
+npm install nomeDoPacote -> sempre quando instalar os pacotes eles vão para pasta node_modules.
+
+ex: npm install react
+
+ou 
+
+npm i next
+
+OBS: Quando você instala um pacote npm como o react por exemplo na prática você não so estar instalando a dependencia do react, estar instalando o react mais outras dependecias que serve para o react funcionar por isso node_module onde 
+fica os pacotes e tão cheio de arquivos e pasta é também e pesado.
+
+ npm remove
+
+para remover o pacote basta digitar
+
+npm remove nomedopacote
+
+ex: npm remove react
+
+Você tambem pode remover dependencias e instalar manualmente  basta ir no package.json e ir dependencias apagar ou adicionar dependencia é depos e so ir no terminal e digitar npm i ou npm install.
+
+Dependencia de desenvolvimento
+
+É uma dependencia que so e utilizada durante o desenvolvimento da aplicação.
+para selecionar as dependencias que somente serão utilizadas para o desenvolvimento vá no package.json e coloque la "devdependencies":{} essas dependencias ficarão somente na maquina do desenvolvedor ele não vai para aplicação final ou
+ou seja o site.
+
+Para instalar como dependencia de desenvolvimento
+
+npm i nomedopacote --save-dev  ->save-dev significa que estar salvando como dependencia de desenvolvimento.
+ou
+npm i nomedopacote -D
+
+ex: npm i react --save-dev
+
+Para remover uma dependencia de desenvolvimento
+
+
+npm remove nomedopacote --save-dev
+
+ex: npm remove typescript --save-dev
+
+Subindo o projeto com npm para o github
+
+primeiro iniciar o git no vscode
+git init
+
+segundo cria o arquivo do gitignore no git ignore você colocara os arquivos a ser ignorado ex a pasta node_modeles
+.gitignore
+
+terceiro prepara para o commit
+git add .
+
+Como clonar repositorio no github
+
+vá em code https coloque copiar e digite no terminal do vscode git clone linkcopiado
+
+Para saber se o projeto e javascript no vscode e so verificar se ele tem package.json
+
+-Para Executar um projeto no vscode pelo terminal
+
+npm run nomedoscript
+
+se caso o projeto apresentar algum erro e porque ta faltando algum pacote ai voce digitara
+
+npm i
+ou
+npm install 
+
+ele adicionara os pacotes que estão faltando.
+
+se o erro persisti significa que falta instalar as dependencias do yarn ai voce digitara
+
+yarn dev 
+
+para adicionar as dependencias do yarn que estão faltando.
+
+
+Lembrando que se você tiver utilizando o yarn continue usando yarn se tiver utilizando o npm continue usando o npm porque se o projeto receber esses dois gerenciadores ele vai quebrar.
+
+YARN
+
+O que é o yarn o yarn e também um gerenciador de pacotes assim com o npm.
+
+para instalar o gerenciador de pacotes yarn 
+
+npm i corepack
+ou
+npm i -g corepack ->para instalar na maquina inteira.
+
+

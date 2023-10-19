@@ -1,0 +1,24 @@
+Borda Dinamica
+
+
+::after e ::before -> Ele permite junto com o content que criemos um elemento dentro de um elemnto sem precisar de criar um novo bloco ou linha, ele chamado de pseudo elemento
+
+
+nav a ::after{
+
+content:""; -> criara um elemento dentro da tag a
+color:black;
+width: 0; -> o elemento não mostrara so mostrara a largura e assim consequente mostrara o elemento com hover
+height: 4px;
+background-color: black; -> define a cor da barra
+position: absolute;
+bottom: 0;
+left:0;
+
+}
+
+nav a:hover::after {
+	width:100%;
+	
+
+}

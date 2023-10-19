@@ -1,0 +1,489 @@
+Python
+
+Visão Geral
+
+Analise de dados & IA
+Bibliotecas:
+Numpy
+Pandas
+Matplotlib
+Seabom
+Scikitlearn
+Frameworks:
+TensorFlow
+Keras
+Pytorch
+Theano
+MXnet
+Caffe
+CNTK
+Biblioteca de manipulação de imagens
+Pillow
+OpenCV
+
+Desenvolvimento Web 
+Framework
+Django Utilização fullstack
+Flask Utilizado para microserviço
+CherryPy
+Pyramid
+TurboGears
+Web2Py
+Bottle
+Tornado
+Falcon
+
+Desenvolvimento App
+kivy
+BeeWare
+Python for android
+PyJNius
+
+Desenvolvimento Games
+Pygame
+PyKyra
+Pyglet
+Arcade
+PyOpenGL
+Panda3D
+Ren´Py
+Cocos2d
+
+Automação Web & Scraping
+
+Urllib
+Requests
+Selenium
+Webbot
+Beaultifulsoup
+Scrapy
+PyAutoGUI
+KeyBoard
+Pyinput
+
+Automação de tarefas 
+
+OS
+RPA
+APScheduler
+Watchdog
+Paramiko
+------------------------------------------------------//---------------------------------------------------------------------
+Selecione abrir o aplicativo jupyter
+
+
+------------------------------------------------------//---------------------------------------------------------------------
+Programação Python:
+
+imprimir algo na tela
+
+print('') -> No python para imprimir uma string pode ser tanto aspas simples como aspas duplas.
+
+Comentario no python
+
+para adicionar um comentario no pytho se colocar # na frente
+ex:
+
+#Isso e um comentario
+
+Operadores Aritimeticos
+
+print(5+5) -> soma
+
+print(5-5) -> subtração
+
+print(5*5) -> multiplicação
+
+print(5/5) -> divisão
+
+print(5**5) -> exponenciação
+
+print(5//2) -> pega so a parte inteira da divisão que aki no caso e 2
+
+print(5%2) -> pega o resto da divisão
+
+-----------------------------------------------------------//----------------------------------------------------------------
+
+Variaveis
+As variaveis no python são classificadas como fortemente tipadas e dinamicas. Dinamicas porque podem ser alteradas em tempo de execução do código e fortimente tipadas porque ela consegue identificara automaticamente o tipo de
+variavel sem precisarmos declarar.
+
+= -> atribução
+
+== -> comparação
+
+=! -> diferente
+
+Função type:
+
+type(variavel) -> para saber o tipo da variavel
+
+Declaração de variavel no python 
+
+ex:
+ n1 = 10 -> no python voce não precisa falar se essa variavel e var let ou const basta apenas criar um nome qualquer e atribuir um valor automaticamente o python ja entende que é uma variavel.
+
+Variavel String:
+
+a = "Meu nome é irineu"
+
+Variavel Numerica:
+
+b = 25
+
+Variavel Input
+
+O input serve basicamente como comando de entrada ou seja para o usuario digitar algo como se fosse um leia.
+
+ex: nome = input("Digite seu nome: ")
+
+Obs: agora se você declarar o input sem dizer o tipo ele sempre aramazenara o dado como uma string mesmo que voce digite qualquer outra valor como um numero.
+
+
+	ex: 
+		idade = int(input("Qual a sua idade ") -> observando esse exemplo podemos perceber que ele armazenarar como um numero.
+
+.format() e %s
+Outra forma de colocar a variavel no campo da string
+
+ex:
+	fruta = "maçã"
+	print("comprei a %s no leve mais"%fruta) -> se a variavel conter um numero seria %d
+
+%d -> d de decimal
+%s -> s de string 
+%f -> f de float
+
+.format()
+
+E outra forma de incluir as variaveis na string sendo que de forma mais organizada 
+
+ex:
+cor1 = "amarelo"
+cor2 = "azul"
+cor3 = "verde"
+
+print("O ceu é {1} o ouro é {0} e a floresta {2} ".format(cor1,cor2,cor3))
+
+---------------------------------------------------------------//------------------------------------------------------------
+Estruturas condicionais:
+
+if else e elif
+ex: 
+	if media == 7 and media <8 :
+  print("Sua media é {0} você estar aprovado por media".format(media))
+elif media >8 and media < 9:
+  print("Sua media é {0} você estar aprovado sua nota foi boa".format(media))
+elif media > 9 and media < 10: 
+  print("Sua media é {0} você estar aprovado sua nota foi excelente".format(media))
+elif media == 10:
+  print("Sua media é {0} você atingiu a nota maxima Parabéns!".format(media))
+elif media < 7 and media > 4:
+  print("Sua media é {0} você estar de recuperação ".format(media))
+elif media < 4 or media == 0:
+  print("Sua media é {0} você estar REPROVADO!".format(media))
+else:
+  print("Valor Invalido")
+
+--------------------------------------------------------//-------------------------------------------------------------------
+Operadores logicos
+
+AND -> e
+OR -> ou
+NOT -> não
+
+ex: 
+5>2 and 5>1 = true -> ele retornara verdadeiro ja que os dois são verdade
+
+OBS: Outra coisa a se observar no python e a identanção Cuidado porque se o código não estiver bem identado ele não executa.
+
+-----------------------------------------------------------//----------------------------------------------------------------
+Operadores Relacionais
+
+MAIOR: >
+MAIOR: >=
+MENOR: <
+MENOR OU IGUAL: <=
+IGUAL: ==
+DIFERENTE: !=
+-------------------------------------------------------//--------------------------------------------------------------------
+Estrutura de Repetição:
+
+FOR:
+
+For in
+
+for i in range(5):
+	print(i)      ->execute de 0 ate 4 que é 5 vezes
+
+for a in range(5):
+	print(repitindo)  -> execute a palavra repitindo 5 vezes
+
+Lista = [0,5,'opa','oi',9,'beta']
+	for c in Lista:
+		print(c)  -> Percorra a lista
+
+
+Como diminuir as casas decimais no python 
+	{0:,.2f} -> aqui ele basicamente pegou o indice do format e diminuiu para mostrar na tela no maximo até 2 casas decimais
+
+---------------------------------------------------------------//------------------------------------------------------------
+Listas
+
+lista e uma variavel que contém uma sequencia de valores ordenados por indices
+
+A = ['irineu','jurubeba','jirino']
+
+A[:] -> mostras todos os elementos da esquerda e direita
+
+A[::2] -> Exibe a lista em 2 em 2
+
+A[0:2] -> Exibe os elementos  de  0 a 1 não exibe  o 2
+
+'irineu' in frutas -> O nome irineu estar na lista frutas ele retorna 'true' se irineu estiver contido na lista 'A'
+
+C = A + B -> criara uma nova lista C concatenando a lista A e B
+
+B = [1,2,3[10,5[20,30]]25,26] -> lista dentro de lista
+
+/*Como alterar valores de uma lista*/
+
+A[0] = 'Antonio' -> no indice 0 o nome irineu será alterado para 'antonio'
+
+
+/*Adicionar e excluir valores*/
+
+del(A[0]) -> Exclui o valor do indice 0
+
+A.append(20) -> adiciona um valor 20 a mais no final da lista
+-----------------------------------------------------------//----------------------------------------------------------------
+Tuplas
+
+Tuplas são listas que contém uma sequencia de valores ordenados por indice e que não podem sofrer alterações ou seja uma lista imutavel
+
+tupla = (1,2,3,4) -> A lista da tupla, O append e o del e  qualquer outro tipo de alteração na lista não funciona quando e uma tupla
+
+---------------------------------------------------------//------------------------------------------------------------------
+Dicionario
+
+O dicionario e uma lista que tem uma coleção de pares de valores
+
+A = {'Nome':'João','Idade':'30'} -> O dicionario e composto por chaves e valores do lado esquerdo e chave do lado direito e valores a cada par e chamado de item
+
+/*Adciona mais um item*/
+
+A[altura] = 1.75
+
+/*Exibe a idade do dicionario*/
+A['idade']
+
+/*Exibe todos os items do dicionario*/
+A.items()
+
+/*Exibe verdadeiro ou falso se incluir o devido key no dicionario*/
+'Nome' in A.keys()
+-----------------------------------------------------------//----------------------------------------------------------------
+Array - Numpy
+Para inserir uma array no python  e necessario inserir uma biblioteca chamada numpy
+numpy e uma biblioteca de algebra linear baseada em array
+O numpy permite que possamos fazer calculos com as listas no python
+
+para importar a biblioteca do numpy no jupyter antes e necessario baixar para isso: abra o programa anaconda prompt -> Digite no prompt conda install numpy -> Pronto agora e so importar no jupyter
+
+ex:
+
+	import numpy as np
+
+quantidade = [20,10,30]
+custo = [51,84,67]
+
+arr1 = np.array(quantidade)
+arr2 = np.array(custo)
+
+estoque = arr1*arr2
+
+print(list(estoque)) -> Mostrara na tela o resultado do calculo das duas arrays
+
+
+
+
+
+
+ex2:
+import numpy as np
+vogal = np.array(["a","e","i","o","u"])
+
+outro exemplo:
+import numpy as np
+print("Verifica se e vogal ou consoante")
+
+letra = input("Informe uma letra: ")
+vogal = np.array(["a","e","i","o","u"])
+
+for p in vogal:
+  if letra == p:
+    print("A letra e uma vogal")
+    break
+  else:
+    print("A letra é uma consoante")
+    break
+  
+
+função len
+	essa função serve para contar a quantidade de caracteres numa determinada palavra.
+	print(len(variavelString))
+-------------------------------------------------------//--------------------------------------------------------------------
+While
+
+inicio do contador Cont = 1
+
+condição while(cont <= 15): verdadeira? falsa?
+
+Ação     print(cont)
+
+iterador cont = cont + 1
+
+ex:
+
+cont = 0
+
+while(cont<=10):
+    print(cont)
+    cont = cont + 1
+
+#break
+
+cont1 = 0
+while(cont1<=50):
+    print(cont1)
+    if(cont1 == 25):
+        break
+    cont1 = cont1 + 1
+
+#continue
+cont2=0
+
+while(cont2<=50):
+    if(cont2 == 25):
+        continue
+    print(cont2)
+    cont2 = cont2 + 1
+
+-----------------------------------------------------------//----------------------------------------------------------------
+Funções Lambda
+
+O lambda e uma função simplificado com menos linhas em comparação ao metodo def
+
+metodo def
+
+	def vezes_dois(a):
+		c = a*2
+		return c
+	vezes_dois(5)
+
+metodo lambda
+
+	vezes_dois = lambda b : b*2
+	vezes_dois(3)	
+
+-------------------------------------------------//-------------------------------------------------------
+Outras funções
+	max, min, len e type
+
+lista = [405,999,555,112,1,0,50,331]
+
+max(lista) -> A função max mostrara na tela o maior valor da lista
+
+min(lista) -> A função min mostrara o menor valor da lista
+
+len(lista) -> mostrara o tamanho da lista
+
+type(lista) -> Mostrara o tipo de lista
+
+Função map 
+	A função map percorre uma lista e faz uma ação em cada valor da lista
+
+salarios = [1250,3000,1350,1220,5000]
+
+Método tradicional
+	def vezes_salario(x):
+		y = x + (x*0.25)
+		return y
+
+salarios_atual = map(vezes_salario,salarios)
+
+print(list(salarios_atual))
+
+Método com a função lambda
+
+salario_atual2 = map(lambda x : x+(x*0.25),salarios)
+
+print(list(salario_atual2))
+
+
+------------------------------------------------//-----------------------------------------------------------
+Biblioteca -> E um conjunto de modulos, pacotes e funções
+
+Pacotes -> É conjunto de funções
+
+Modulos -> É um conjunto de pacotes
+
+Sintaxe:
+	biblioteca.modulo.função()
+	ex: 
+		numpy.random.rand()
+
+array bidimenssional -> esse tipo de array tem linhas e colunas e como se fosse uma matriz
+
+/*Crie uma array bidimensional*/
+	numpy.zeros((5,4)) -> sera criada uma array de zeros de 5 linhas e 4 colunas
+
+/*Crie uma array bidimensional com numeros de 5 a 10 com 3 linhas e 3 colunas*/
+	variavel = numpy.random.randint(5,10,size=(3,3))
+
+/*Retorne o valor da segunda linha e primeira coluna*/
+	variavel[linha][coluna]
+	variavel[1][0] -> a contagem inicial com 0
+
+/*Retorne as linhas da array 2, 3 e 5*/
+	variavel = [[2,3,4]]
+
+-----------------------------------------------------//----------------------------------------------------------------------
+Condição no array
+
+/*Crie uma array gigantesca bidimensional*/
+	cadastro = np.random.randint(0,100,size=(50,50)) ->Foi criada uma array com valores de 0 a 100 de 50 linhas e 50 colunas
+
+/*Retorne da array cadastro valores acima de 18*/
+	cadastro[cadastro>18]
+
+/*Retorne a quantidade de valores maior que 18*/
+	cadastro1 = cadastro > 18
+	print(cadastro1.sum()) -> Mostrara na tela a quantidade de valores maior que 18
+
+-------------------------------------------------------//--------------------------------------------------------------------
+Pandas
+Pandas e uma biblioteca de python para manipulação de dados, as tabelas do pandas e chamada de series
+
+Instalação
+	Abra o ancondas prompt -> digite: conda install pandas
+
+/*Transformando uma lista em series pandas*/
+
+	lista = [10,20,30,40,50]
+
+	listaTransformada = pandas.Series(lista)
+
+/*Transformando um dicionario em series pandas*/
+Obs: as chaves do dicionario passam a ser indices
+	
+	dicionario = {'Nome':'Irineu','Sobrenome':'Silva','Idade':'50'}
+	dicionarioTranformado = pandas.Series(dicionario)
+	print(dicionarioTransformado)
+
+/*Retornando um valor de acordo com o indice*/
+	dicionerioTransformado[1] -> Será retornado o valor do indice 1
+
+	
+
+

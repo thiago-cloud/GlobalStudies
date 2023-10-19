@@ -1,0 +1,19 @@
+BIOS
+
+quando e necessario gravar a bios
+
+ja fiz a medição, placa mãe tem as tensões e mesmo assim ela nã liga!
+
+Problema com data e hora no computador, já verifiquei a bateria e está ok!
+
+Veio bloqueada por algum motivo!
+
+Formatei o pc e logo apos ele travou na tela do post!
+
+Estava fazendo uma atualização do Bios pelo pendrive ou arquivo exe e faltou luz, minha Bios ficou corrompida!
+
+Gravador de bios
+
+CH341a
+
+A bios fica localizada proxima a bateria geralmente ela e uma peça um poquinho maior em relação os outros componentes de mermo formato.

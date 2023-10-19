@@ -1,0 +1,38 @@
+*{
+    margin: 0;
+    padding:0;
+    box-sizing: border-box;
+
+}
+
+nav{
+    text-align: center;
+    margin-top: 50px;
+    
+}
+
+nav a{
+    color: black;
+    text-decoration: none;
+    padding: 0px 50px 10px 0;
+    font-size: 25pt;
+    position: relative;
+}
+
+/*Quando passar o mause a bordar aparecera*/
+/*Esse é o efeito do after*/
+nav a::after{
+    content: "";
+    width:0%;
+    height:4px;
+    background-color: black;
+    position: absolute;
+    left:0;
+    bottom: 0;
+
+}
+
+nav a:hover::after{
+    width: 100%;
+}
+
