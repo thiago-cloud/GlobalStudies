@@ -1,0 +1,58 @@
+api 
+
+tipos de api
+Api publica:
+
+Api privada:
+
+Api de Terceiros:
+
+Comunicação da api
+
+Normalmente feita atravês de xml ou json
+
+Devido a simplicidade desse tipo de dado
+
+As requisições e respostas são feitas atravês do http
+
+Verbos do HTTP
+
+Alterando os verbos podemos realizar requisições diferentes simplificando a construção da nossa api.
+
+GET: verbo para resgatar algum recuso.
+POST: envia dados a api.
+DELETE: neste queremos remover algum registro do banco
+PUT: atualização de registros
+PATCH: Atualização parcial de registros.
+
+Endpoint: são pontos que estão a receber dados de  uma conexão, além disso no backend e uma url que acessamos da api para extrair uma resposta exemplo: /user/1 - get
+
+REST
+
+É um padrão/conceito de arquitetura ligado a APIS e o protocolo HTTP
+
+se utilizamos o padrão rest o obedecemos as 6 regras ou partes do padrão rest temos uma api restful
+
+as 6 partes são: uniformidade, desacoplação, stateless, cache, arquitetura, de camadas, Code on demand.
+
+Uniformidade: varias requisições de aplicações diferentes se elas forem para o mesmo endpoint elas tem que receber a mesma resposta.
+
+desacoplação: Agente não pode unir a aplicação de frontend com os resultados da api. por exemplo se aplicação do front for acoplado a api se caso de problema no front consequentemente a api tera problemas também então devido a isso e bom 
+que seja desacoplada.
+
+Stateless: Vai ser uma requisição independente e se agente quiser salvar alguma informação ela tem que ficar a cargo de quem solicitou.
+
+Cache: Que a api crie um forma de cache para que se agente tiver 1000 requisições novamente, que a aplicação não tenha que processar essas mesmas 1000 requisições novamente melhorando o desempenho.
+
+Arquiterura de camadas: Se a arquiteura da api tem varias camadas não podemos pular da primeira camada para a ultima temos que seguir a hierarquia para manter o sistema conciso.
+
+Code on Demand: O código tem que rodar por demanda.
+
+Postman é um software que permite testar a api que agente cria. ele serve para basicamente agente testar o backend sem precisar de criar um frontend para testar o backend.
+
+Status de 201 no postman siginifica que á requisição foi correta.
+
+
+
+
+

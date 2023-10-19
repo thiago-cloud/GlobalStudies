@@ -1,0 +1,61 @@
+QA 
+Quality assurance(Garantia de qualidade)
+
+O que e uma area que visa encontrar erros defeitos e falhas no software ou seja os bugs.
+
+Bug traduzindo inseto são coisas indesejadas que pode aparecer em um software os prejuizos podem ser dos mais diversos
+prejudicar a experiência do usuario fazer com que aparece vazamentos de dados e ate mesmo acidentes fatais como o software para de 
+funcionar.
+
+O que pode ser um causador de bugs
+
+.Falha humana
+.Diferença entre ambientes
+.Falha na concepção do projeto ou na arquitetura
+.Falta de testes
+
+metodologia agil
+
+SCRUM
+PRODUCT OWNER(P.O) -> O papel do po é definir como software deve ser e qual público alvo deve atingir
+Agile Master(A.M) -> O papel do agile master ele responsavel por iplementar e dessiminar a metódologia agil dentro do time.
+COORDNADOR(cord) -> E responsável pela parte burocratica como contratações e demissões. 
+
+teste de Front end
+
+.Ao entrar em um site vá na barra de navegação e digite o nome do produto se aparecer o produto ok se aparecer um produto diferente com o nome cadastrado diferente temos um bug
+
+.Se a descrição do produto tiver e cima de outra descrição prejudicando a vizualização temos um bug de ui.
+
+.Se ao digitarmos um produto na barra de navegação e vier a imagem de outro produto mais com o nome digitado cadastrado nesse produto não 
+temos um bug temos um problema cadastral no banco de dados.
+O que podemos testar no front
+
+testar barra de navegação
+testar area de login do usuario
+testar area de cadastro
+e mais diversos testes.
+
+tipos de teste mais comum é funcional onde vericamos a função de cada item no front e a forma pode ser manual ou atravês de scripts e frameworks.
+
+Atente se ao público alvo por exemplo verifique quais são os browsers mais utilizados e teste em cada um deles
+
+Testes de Back end
+
+Primeiramente utilizaremos o postman para testar o backend que no caso e ver se estamos recebendo a resposta correta de acordo com as requisições feita na api e ver se ta sendo gravado corretamente no banco de dados.
+
+colocamos a url da api no postman definir o método se sera get ou post e colocar um send  para enviar a requisição, esse tipo de teste que estamos fazendo e baseado em chamadas da api que no caso são os request
+
+Após o apertar em send feita a requisição verificar o status code se for 200 significa que requisição foi feita com sucesso
+
+O verbos http são tipos de ações para requisições
+
+Além disso uma api pode retornar variados formatos feito uma requisição pode retornar um json um html e por ai vai
+
+O preview no postman serve para montar a página
+
+Uma forma de fazer alterações de front end em uma aplicação e atravês de requisições no backend dai você não precisa fazer um deploy da aplicação
+
+GET -> Pegar sempre quando for buscar respostas de um determinado site ou api e metodo get que vamos utilizar
+POST -> Enviar, se for para enviar informações e receber um resposta de q foi enviado com sucesso metodo post
+
