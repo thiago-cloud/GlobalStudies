@@ -1,0 +1,125 @@
+para enviar do repositorio local para o repositorio remoto agente faz um push.
+
+Untracket(U): O meu repositorio não sabe que o novo arquivo existe até fazer o primeiro commit
+
+a ordem da publicação do github 
+
+untracket(U) -> modificado(M) -> commit -> push diretamente do repositorio local para o repsitorio remoto.
+
+Git ignore
+
+Esse arquivo serve para ignorar arquivos que não serve para o repositorio como os assets bibliotecas e frameworks linkdados e baixados. isso evita que ao dar o commit o a tranferencia de arquivos não trave.
+
+para criar adcione o arquivo na pasta raiz do prjeto atravês do visual studio code inserindo .gitignore em seguida dentro do gitignore coloque os arquivos ou pasta que vão ser ignorados para ignorar arquivos a escrita é
+
+*.exe -> ele ira ignorar todos os arquvos .exe
+/imagens ->ele ira ignorar a pasta imagens
+/imagens/*.jpg -> ele ira ignorar os arquivos .jpg da pasta imagens.
+
+como saber quais arquivos serão igorados.
+
+Linguagem Markdown
+
+É a linguagem de marcação utilizada para escrever o readme no github e no Stalckoverflow
+
+
+**titulo** -> dois asterisco deixa a palavra em negrito
+*palavra* -> deixa a palavra em italico
+~~palavra~~ -> Risca a palavra
+# Titulo -> Cria um título
+## Titulo -> Cria um titulo de nivel 2 ou seja menor
+### Titulo -> Cria um titulo de nivel 3 menor que o 2.
+--- ->coloca uma linha
+__*Misturar*__ -> Cria o negrito junto do italico
+
+criar lista
+
+1. teste1
+1. teste2
+1. teste3
+4. teste
+   1. teste5
+   1. teste6
+
+ou seja sempre que você colocar um numero quaquer e um ponto ele vai ler como uma lista em ordem. os item da listas que estão dentro são enumerados como algorismos romanos basta colocar 3 espaços na frente.
+
+Cria lista não ordenada
+
+* teste1
+* teste2
+* teste3
+   * teste4
+
+como colocar caixas de alternativas
+Lista de Tarefas
+- [x] Criar página Principal
+- [] Criar página de loja
+- [] Criar rodapé
+- [] Receber pagamento
+
+Obs: A marcação so  vai funcionar se respeitar os espaçamentos
+
+Adicionar uma imagem
+É so arrastar para baixo a imagem do campo de comentarios
+
+Adicionar links
+
+[digite do que se trata o link ou qualquer coisa](url)
+
+ex:
+[Linkedin](url)
+
+
+Criando Tabelas:
+
+Número | Nome | Nota
+---|---|---
+1 | Thiago | 10
+2 | Irineu | 8
+3 | Marcos | 9
+
+Como dar enfase em um comando:
+
+'Comando'
+
+ex:
+
+Não entendo como é que funciona o comando 'document.getElementsById()' no javascript
+
+como dar enfase em um programa
+
+```
+Programa
+
+```
+
+ex: Não entendi o que fiz nesse programa
+
+```
+
+idade = int(input("Digite sua idade para saber se você é adulto: ")
+
+if idade<18 :
+	print("Você não é adulto")
+elif idade>18:
+	print("Você é adulto")
+```
+Adicionar emojis no readme no github
+
+https://github.com/ikatyang/emoji-cheat-sheet -> no repositorio desse perfil tem todos os códigos de cada emoji.
+
+todos os emojis começam com :
+
+Ou você pode ir no site do emojipedia e copiar os emojis de lá
+
+https://emojipedia.org/grinning-face/
+
+Comenta uma postagem
+
+1. va na postagem clique nos 3 pontos em seguida clique em quote reply
+
+Branches(ramificações)
+
+
+
+
