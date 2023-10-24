@@ -1,0 +1,308 @@
+Threads
+Uma Thread é um fluxo de controle dentro de um processo 
+Therad(fio,linha,filamento): também conhecida como linha de execução
+
+Um processo tradicional ou pesado, modelo visto até aqui) possui apenas uma thread de controle
+
+-Monotherad ou single-theraded (dotado de uma unica thread)
+-Permite que o processo execute apenas uma tarefa de cada vez
+
+Se um processo possui varias therads de controle, este poderá executar varias tarefas ao mesmo tempo
+Multithread ou Multithreaded dotado de multiplas threads
+
+Um processo multithread contém varios fluxos de controle distintos no mesmo espaço de endereçamento
+
+A programação multhread garanti desempenho ao programa, imagine que um determinado programa precisa de fazer leitura e calculo poderiamos criar dois processos ou criar um unico processo com duas threads,
+se criassimos um processo para leitura e outro para calculo se a leitura demorasse muito tempo o outro processo do calculo teria que esperar o processo leitura acabar para então começar isso acarretaria em um desempenho ruim, agora se criassemos um unico processo com duas threads o desempenho seria melhor porque seria um processo execuntando as duas thread a de leitura e a de calculo paralelamente ao mesmo tempo isso daria um desempenho bem melhor, Álem de garantir o mesmo espaço de endereçamento para as duas threads Porém na programação multhread requer mecanismos de sincronização para garantir acesso seguro os dados.
+
+Exemplos:
+Um navegador web pode estar fazendo download de um vídeo e ao mesmo tempo pode exibir as partes do vídeo já baixadas
+
+Um processador de texto permite que o usuario digite os caracteres e ao mesmo tempo faz correções ortograficas
+
+Um servidor web precisa tratar milhares de requisições concorrente de cliente (se for executado como um processo tradicional, com uma ´unica thread, teria que tratar cada requisição sequencialmente)
+
+O servidor pode ser implementado como um processo que aceita as requisições e para cada requisição cria um novo processo separado para atender a requisição
+
+	Problemas: A criação de processo é demorada e exige muitos recurso; cada novo processo realiza as mesmas tarefas dos outros existentes
+	
+Uma solução mais eficaz: Servidor com múltiplas threads para cada requisição de cliente, em vez de um novo processo cria uma nova theread para antender a requisição
+
+Arquitetura de servidor com várias threads
+
+	   (1)request           (2)crie um novo thread para atender a solicitação 
+Cliente 	-> 	server 		-> 		thread
+		    	 ||
+		    	 \/		
+	(3)retomar a escuta de solicitação adicional do cliente
+	
+	
+Quando abro varias abas do navegador tenho varias threads do navegador cada uma tem uma requisição
+
+A comunicação de thread e muito mais rapida e simples de que a comunicação de processos
+
+Uma thread compartilha com suas threads afins:
+Sua seção de código
+Sua seção de dados
+Seus Recursos de sistema operacional como arquivos abertos
+
+OBS: quando é criado determinado processo o sistema operacional determina um tempo para o processo, se colocarmos diversas thereads em um unico processo ficaria muito mais rápido ja que todo o procedimento
+seria feito no intervalo de tempo de um unico processo
+
+Um processo tradicional ou pesado e igual a um processo com uma unica thread
+
+Benefícios com uso de threads
+
+Capacidade de Resposta -> Um multithreading pode permitir que um programa continue executando mesmo se parte dele estiver bloqueada ou executando uma operação demorada
+
+Compartilhamento de recursos -> threads compartilham a memoria e os recursos do processo aos quais pertencem ou seja pode ser ter varias threads em um unico endreço de mememoria.
+
+Economia -> Devido ao compartilhamento de recursos é mais econômico criar e realizar trocas de contexto de threads
+
+Utilização de Arquitetura Multiprocessador -> cada thread pode estar executando em paralelo em um processador diferente ou também estar executando em nucleos de um unico processador, cada nucleo executa uma thread diferente.
+
+Desafios na programação de sistemas multicore
+
+	-Projetistas de sistemas operacionais -> Devem escrever algoritimos de escalonamento que utilizem varios núcleos de processamento para possibillitat a programação paralela.
+	
+	-Programadores de aplicações -> Modificar programas existentes e o projeto de novos programas multihread para se benificiar dos sistemas multicore
+	
+	-Principais desafios:
+	Divisão de atividades -> analisar aplicações em busca de atividades que possam ser executadas concorrentemente
+	Equilibrio -> Tarefas devem requere o mesmo esforço (computacional) para serem executadas
+	Divisão de dados -> Devem ser também separados para execução
+	Dependência de dados -> A execução de tarefas devem ser sincronizadas
+	Teste e depuração -> Mais dificeis de depurar e testar
+	
+Implementação de threads
+
+	-O suporte a threads pode ser feito:
+	 No nivel usuario (thread de usuario): Implementado acima do kernel, Atráves de um conjunto de chamadas de biblioteca no nível do usuário
+	Pelo sistema operacional(thread de kernel) -> As threads são gerenciadas pelo kernel
+	
+	Método Hibrido implementa tanto a thread de usuario quanto thread de kernel
+	
+	
+Modelos de Multithreading
+
+Há algumas estrategias Comuns para o relacionamneto entre threads de usuário e threads de  kernel
+
+Modelo muitos-para-mutitos
+
+Modelo um-para-um
+
+Modelo muitos-para-muitos
+
+Bibliotecas de threads	
+	
+	-Uma biblioteca de threads oferece uma api para a criação e gerenciamento de threads ao programador de aplicações
+	-As bibliotecas de threades:
+	No espaço do usuario -> código estrutura de dados existem no espaço do usuario
+	No nivel do kernel: Com suporte do sistema operacional. O código e estrutura de dados existem no espaço do kernel
+	
+	Três principais bibliotecas de threads em uso:
+	-Pthreads -> (padrão POSIX, pode ser fornecido como uma biblioteca no nivel usuario ou kernel
+	-Threads do Win 32 -> (Biblioteca no nivel kernel,disponivel no windows)
+	-Therads do Java -> (Como o java roda em uma JVM A implementação de threads dependera do sistema operacional e do hardware onde roda a JVM, isto é Pthreads ou Win32, dependendo do sistema)
+	
+	Na programção java eu disparo varios objetos e esses objetos começam a execução em paralelo
+	
+OBS:Toda thread em java tem que iniciar com um método "public void run()" 
+
+public void run() é public void start()
+
+o método run serve para colocar lógica exectuiva do código da thread no método run() a execução e sequencial das threads
+
+O metodo start() serve para iniciar a thread No método start a execução e me paralelo ou seja mais rapida
+
+Escalonamento de Cpu
+
+	Multiprogramação
+
+		Multiplos processo na memória compartilhando o uso da CPU
+
+		Objetivo: ter sempere um processo executando na cpu maximizar a utilização da cpu
+		
+	Escalonamento de processos
+	Havendo varios processos para serem executados(prontos) é preciso estabelecer criterios para selecionar um deles
+	
+	É função do escalonador de processos decidir qual será o proximo processo a executar na cpu - define a ordem de execução dos processos na fila de prontos
+	Função fundamental do sistema Operacional, é a base do gerenciamento de processador e da multiprogramação
+	
+	
+		Estado de execução
+		/		  \
+	       /	           \
+              /			    \Escalonamento
+	     /			     \
+	    /			      \
+ Estado de Espera ---------------Estado de Pronto
+ 
+ A execução de processo consiste de: execução de CPU (Computação e espera de E/S(operação de E/S)
+ 
+ A execução de um processo alterna entre dois estados execução de CPU(burst ou surto de uso da CPU) e espera de E/S(burst ou surto E/S)
+ 
+ Consiste em um ciclo de surto de uso da CPU e surto de E/S
+ (inicio) ->surto de CPU -> surto de E/S -> surto de CPU -> surto de E/S ->Surto de CPU (Fim)
+ 
+ Cpu-bound -> É quando eu passo mais tempo processando alem disso possui longos surtos de cpu
+ 
+ Cpu i/o-bound -> É quando o processo passa mais tempo em espera de que processando possui pequenos surto de utilização de cpu e frequentes esperas
+
+O escalonamento pode ser:
+
+Não-preemptivo -> O processo é executado do inicio ao fim pela cpu sem intervenção de fatores externo em relaçao ao uso da cpu, Geralmente esse tipo de processo predominava em Sistemas multprogramaveis antigos como o de processamento batch
+
+Preemptivo -> Um processo pode ser interrompido para a execução de outro
+O escalonamento pode ocorrer em qualquer uma das situações(1) a (4) alem diso o escalonamento preemptivo ele é mais recentes em sos  e amplamente utilizado em sistemas de tempo compartilhado
+
+Dispatcher (Executor ou despachante)
+
+Um outro componente envolvido na função de cpu é o despachante (dispatcher)
+
+	O dispatcher passa o controle da cpu ao processo selecionado pelo escalonador de curto prazo; envolve:
+
+	Mudança de contexto
+	Comutação para o modo usário
+	Desvio para a posição adequada no programa do usuário de modo a reiniciá-lo
+
+	O dispatcher precisa ser o mais veloz possível, pois é invocado a cada troca de processo.
+
+	Latência de despacho -> O tempo necessario para o dispatcher interromper um processo e iniciar a execução de outro.
+	  
+ 
+Critérios de Escalonamento
+
+	Para distintos ambientes são necessarios diferentes algoritimos de escalonamento, que melhor possam atender seus objetivos e requisitos
+	Sistemas interativos:
+	Requerem respostas rápidas a eventos(dos usuarios,rede)
+	Editores de texto navegadores Web, jogos,servidores(email,...)
+	
+	Sistemas em lote (batch)
+	Normalmente executam sem intervenção do usuário (procedimentos de backup, cálculos numéricos longos,etc.)
+	Não há restrição de tempo
+	Sistemas de tempo real
+	Há restrição de tempo, o escalonamento deve priorizar os processo críticos em detrimento de outros
+	
+Quais criterios a se verificar para comparar diferentes algoritimos de escalonamento
+
+Utilização da CPU ->
+
+Throughput(vazão) -> Número de processos completados por unidade de tempo(Menor para processos curtos e maior para processos longos)
+
+Tempo de retorno (turnaround) ->
+
+Tempo de espera ->
+
+Tempo de resposta ->
+
+Criterios de Otimização
+
+Justiça
+	Distribuição justa do processador entre os processo prontos na fila (processos semalhantes devem ter tempos de CPU semelhante)
+	Em geral, qualquer algoritimo de escalonamento busca:
+	Maximizar -> utilização da CPU, throghput(vazão)
+	Minimizar -> Tempo de retorno, tempo de resposta e tempo de espera
+	
+ Escalonanamento First-come, First-served(FCFS)
+ 
+ (o primeiro a chegar e o primeiro a se atendido)
+ 
+	 Este é o mais simples dos algoritiomos de escalonamento A CPU é atribuida ao processos na ordem requisitada por eles.
+	 
+	 A implementação utiliza uma fila FIFO (First IN, First Out) -Fila de processos prontos
+	 	processos que entram para o estado pronto entram para o final da fila
+	 	Quando a cpu fica livre, o primeiro processo na fila é escalonado é removido da fila
+	 	
+Escalonamento por prioridade
+	Uma prioridade é associada a numero do processo quanto menor o numero inteiro maior prioridade
+	Processos  com mesma prioridade usa-se FCFS para desempatar
+	Prioridade podem ser definidas com fatores externos(usuarios, departamento e etc..) ou internos( requisitos de memoria, limites de tempo, numero de arquivos abertos, razão entre surto de E/S médio e surto de cpu médio etc...
+	
+	
+Escalonamento Round Robin(RR)
+	
+	É projetado para sistemas de tempo compartilhado
+	
+	É semelhante ao FCFS (FIFO), com preempção para alternar entre os processo
+	
+	Cada processo utiliza a cpu por um tempo fixo chmado de time quantu ou fatia de tempo (imeslice), normalmente 10 a 100milissegundos
+	
+	A fila de processo prontos é implementada como uma fatia FIFO
+		novos processo são incluidos no fim da fila
+		Quando a cpu fica livre, o escalonador obtém o primeiro processo da fila
+		define um temporizado para imterromper após 1 quantum de tempo e despacha o processo
+		quando este tempo se expira o processo é interrompido e colocado no final da fila de processos prontos
+		
+
+Escalonamento por multiplas filas
+
+Processos são classificados em diferentes grupos , possuem diferentes requisitos de tempo de resposta e por isso podem ter necessidade de escalonamento diferentes
+
+Uma divisão comum é separar processos entre:
+interativos: de primeiro plano (foreground)
+Não-interativos: DE segundo plano (background)(batch)
+
+A fila de produtos é dividida em várias filas separadas (para processos foreground e processos background, por exemplo)
+
+Cada fila tem seu próprio algoritimo de escalonamento
+foreground -RR
+background - FCFS
+
+Escalonamento de threads em java
+
+Todas as threads Java recebem uma prioridade e a jvm escalona Thread executavel com a prioridade mais alta.
+
+Uma fila fifo é usada se houver múltiplas Threads com a mesma prioridade
+
+A jvm escalona uma thread para ser executada quando:
+	1. A thread sendo executada deixa o estado "executavel"
+	2. Uma thread de prioridade mais alta entra no estado "Executavel"
+	
+Sincronização entre Processos
+	O estudo de sincronização de processos se faz necessario para que não se tenham varios processos acessando o mesmo recurso é assim gerar um iconssistencia.
+	A ideia da sincronização é que cada processo acesse o recurso um de cada vez
+	Processo compartilhado: Aquele que pode afetar ou ser afetado por outros processos em execução.
+		Compartilham dados na memória principal ou utilizam um arquivo compartilhado
+	Acesso concorrente a dados compartilhados pode resutar em inconsistencia de dados e conflitos
+		Dois processos em um sistema de reserva dois sistema de passagens aéreas tentando reservar o último assento para clientes distintos (banco de dados compartilhado)
+		Comercio eletronico varios processos clientes tentando comprar um mesmo produto
+		O problema Produtor-consumidor que compartilham um buffer (produtor insere algum item e consumidor remove)
+	
+	Manter a consistência dos dados exige mecanismos para garantir a correta execução dos processos ou threads cooperativos
+	
+	Problema do produtor-consumidor
+	
+Condição de corrida
+	Situações como essa, quando dois ou mais processos estão lendo ou escrevendo algum dado compartilhado e cujo resultado final depende exatamente de quem está executando e quando são chamadas de condição de corrida (race conditions)
+		A depuração de programas que contenham condição de corrida é complicada, geralmente os testes não apresentam problemas entre tanto o programa pode apresentar um comportamento estranho e inesplicavel
+	É preciso garantir que somente um processo poderá acessar o dado compartilhado
+		Em outras palavras é preciso de  exclusão mútua (mutual exclusion) e um modo de assegurar que outros processos sejam impedidos de acessar uma variavel ou arquivo que estejam sendo  utilizados por um processo
+
+Seção crítica	
+	Em cada processo a parte do código em que há o acesso a dados compartilhados (em memória, arquivos) é chamada de região crítica (critical region) ou seção crítica (critical section)
+	
+	Produtor  <----- Seção crítica -----> Consumidor
+	 insert()				Remove()
+	
+	O importante é garantir que quando um processo estiver executando em sua região crítica, nenhum outro poderá executar em sua região crítica. ou seja não e adequado que dois processo estejão executando a mesma seção critica ao mesmo tempo 
+
+Solução para o problema da Seção critíca
+	
+	Declaramos uma seção do código como sendo crítica e, em seguida, controlamos o acesso a essa seção,alguns requsitos precisam ser satisfeitos:
+		Exclusão mútua: Se o processo P, estiver executando em sua seção crítica então nenhum outro processo estar executando em sua respectiva seção crítica
+		Progresso: Se nenhum processo estiver sendo executado em sua região crítica e outro processos estão solicitando entrar em sua região critica deve se permitir a entrada desses processos em sua região crítica
+		Epera limitada: Deve existir um limite do numero de vezes em que outros processos possam executar a sua seção crítica(Esse limite evita a starvation) 
+		
+		
+Algumas soluções para exclusão mutua
+	Em geral as soluções de hardware são complexas e as de software mais simples 
+	as soluções de software são:
+	Variavel trava (lock)
+	Chaveamento obrigatorio
+	Solução de peterson
+	Semáforo
+	Monitores
+	
+
+

@@ -1,0 +1,83 @@
+REGEX(Expressões Regulares)
+
+
+Link para fazer testes com regex
+
+https://regexr.com/
+
+
+
+Regex -> São expressões que serve para fazer validação ou filtrar certo tipos de dados que segue um padrão ex: cpf,email, idade e etc todos esse dados seguem um determinado padrão logo podemos utilizar o regex para achar esses dados em determinado documento.
+
+	Operadores regulares são senciveis a letras maiusculas e minusculas ou seja são case Sesitive
+
+ Operadores Literais -> São letras
+ 
+ \ -> Chamado de caractere de escape
+ 
+ \d -> É um meta caractere que diz digite um numero qualquer de 0 a 9 ex: \d9 ele achara em cada bloco de 2 digitos numeros 9
+ 
+ \D -> d maiusculo e um metacaracter de negação D não selecionar os numeros
+ 
+ 9\d\d\d\d -> Selecionara todos os numeros telefonicos que começara com nove
+ 
+ 
+ \w -> Seleciona todas as letras de qualquer tipo
+ 
+ \W -> W maiuscululo não seleciona metacaracter de negação
+ 
+ 
+ 
+ \. -> Selecionara todos os pontos do texto. qualque caractere que vier depois do caracter de escape sera achado ex: \* ele achara todo os caractere coringa(*) em um texto.
+ 
+ \s -> Selecionara os espaços ex: \s9 selecionara os numeros 9 que tem o espaço na frente
+ 
+ . -> Significa qualquer coisa ou seja pode ser qualque caracter
+ ex: G...A aki será selecionado uma sequencia de 5 digitos que começa com a letra G maiuscula e termina com a letra A maiuscula
+ 
+ 
+ 
+ ^ -> O metacaracter acento permite que ache apenas as primeiras letras no primeiro paragrafo
+ ex: ^Eu dentro do texto ele achara em todo primeiro paragrafo a palavra Eu  
+ 
+ ^\ -> Qualquer caractere que inicia o paragrafo
+ 
+ [1-5] -> Selecione os caracteres que estiverem no intervalo de 1 a 5
+ 
+ [abc] -> Seleciona caracteres a,b, e c
+ 
+ [^abc] -> O circunflexo dentro do colchete e um metacaracter de negação aki ele ta informando para não selecionar a,b e c
+ 
+ ^[^abc] -> No começo de paragrafo não selecione ab e c
+ 
+ \d{3} -> Esse 3 entre chaves e chamado de quantificador  e a mesma coisa de \d\d\d o digito 3 vezes.
+ 
+ c\w{3,7}o ->Pegue palavras que comecem com c que tem 3 a 7 caracteres a mais aleatorios e que apos o intervalo tenha "o"
+ 
+ colou?r -> A interrogação anterior ao serve para indicar que o caractere u pode existir ou não existir na palavra ou seja ele achara palavras colour ou palavras color sem o "u"
+ 
+ e* -> Selecione todos os caracteres "e" ou e{1,}
+ 
+ Operadores Lógicos
+ 
+ (rato | rei | rainha) -> acha as 3 palavras  rato rei e rainha no texto
+ 
+ Lucahead:
+ 
+ thiago(?!\smendonca) -> Selecione todos os thiago que não tenha sobrenome mendonca
+ 
+ thiago(?=\smendonca) -> Selecione todos os thiago que tenha o sobrenome mendonca
+ 
+ 
+thiago(?=\s)(?=\smendonca) -> Selecione thiago que venha com espaço e mendonca em seguida
+
+thiago(?!\s)(?!\smendonca) -> Não selecione o thiago com o espaço e não selecione o mendonca em seguida
+
+\b(\w+)\s\1\b -> Selecione uma palavra ou grupo de caractere repitido separado por espaço. o w e qualquer caracter, o + siginifica 1 ou mais caracter, \b server para indicar um conjunto de inicio e fim que nem <p> </p> e dentro desse conjunto selecione duas palavras repetidas.
+
+
+
+ 
+ 
+ 
+ 
