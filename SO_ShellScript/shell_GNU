@@ -1,0 +1,51 @@
+shell GNU
+
+Existe varios tipos de shells aki vamos estudar sobre o bash que o de padrão linux, o shell que era utilizado no so unix era o sh
+
+O shell tem duas formas de se trabalhar a forma interativa e não interativa
+
+interativa -> atravês da linha de comando
+não interativa -> atravês de scripts
+
+metodologia
+
+de como resolver problemas
+
+identificação -> e necessario necessario ter uma noção saber verbalizar e ate escrever qual problema
+abstração -> converter o problema em comandos para pode resolver
+Demonstração -> e necessario entender o que estar acontecendo para resolver por se propio sem copiar e colar adquirindo assim conehcimento
+
+O método também pode ser como aprender um novo idioma 
+
+Construção de vocabulario
+Repertorio de situações
+A meta e a fluência
+
+no cuso shell gnu bash
+
+Repertorio -> explorar situações diferentes
+Vocabulario -> Conehcer comandos e ferramentas
+Fluência -> Expressar o problema na forma de uma linha de comando
+
+O que é um sistema operacional 
+
+É um conjunto de programas(softeware) cuja a função e possibilitar o uso é gerenciamento de recurosos de um sistema computacional
+
+Componentes:
+
+Kernel
+Utilitarios e aplicativos
+Shell -> o shell e uma interface de linha de comando que faz uma intermediação entre o espaço do usuario e a api do kernel que interage direntamente com o kernel
+
+O sistema operacional GNU -> O sistema operacional GNU é software livre e completo compativel com sistema unix
+
+GNU -> Significa "Not Linux"
+
+Richard stallman fez o anuncio inicial do projeto GNU em setembro de 1983.
+
+Historia
+
+O objeto do projeto GNU era de criar um sistema operacional open source so que esse sistma ja tinha todos os componentes menos o kernel foi tentado des do incio do projeto em 1983 criar um kernel não tendo sucesso so que em 1991 foi lançado o kernel linux o linux quando lançado não era open source, o linux virou open source e ai teve a junçao do kernel linux com o projeto GNU em 1992. criando assim o sisetema operacional linux/GNU
+
+Existe uma licença de sigla "GPL" todos os programas que tem essa licença e porque ele segue os principios do open source 
+
