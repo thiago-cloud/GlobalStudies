@@ -1,0 +1,33 @@
+
+Primeiro logar no git pela primeira vez
+
+git config -- global user.name "Thiago Alves"
+git config -- global user.email "Thiago Alves"
+
+depois iniciar o git
+
+git init
+
+Adicionaor o projeto
+
+git add .
+
+agora preparar o arquivo e da um nome
+
+git commit -m "nomequalquer"
+
+agora e so dizer qual repositorio voce ira enviar
+dentro do gitlab va no repositorio e clique em clone e copie e cole o link 
+
+git remote add origin "https://gitlab.com/thiago.al154/testeexercicio.git"
+
+agora e so dar o comando de enviar
+
+git push origin master
+
+
+
+No caso se quiser puxar a alteração de outra pessoa e so da o comando
+não precisa dar o commit e dar o push
+
+git pull

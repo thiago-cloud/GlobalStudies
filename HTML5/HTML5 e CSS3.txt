@@ -1,0 +1,571 @@
+HTML
+São tags que serve para fazer a estruturação de uma página web
+
+Os elementos que define uma página web são:
+Blocos
+Paragrafos
+Imagens
+Listas
+TÍtulos 
+SubtÍtulos
+
+Etapas de um bom aprendizado em HTML
+
+1. Ter um bom conhecimento prévio sobre a sintaxe de tags HTML
+2. Ter conhecimento prévio sobre as tags estruturais fundamentais
+3. Saber quais as tags mais usadas em páginas web
+4. 
+
+CSS3
+Serve para aplicar o design da página web
+
+JavaScript
+Serve para aplicar a dinamica da pagina web.
+
+Alternativas de Framework HTML5 e CSS3
+
+Pure.css
+HTML5 boilerplate
+Bootstrap
+Foundation
+
+Framework mais populares js
+
+jquery
+Angularjs
+
+Pré-Processadores css
+sass
+less
+stylus
+
+Sites que dar um conhecimento 
+HTML
+
+W3C
+W3SCHOOLS
+
+Estas são as tags de elementos Nulos:
+
+As tags em html nulas não possui auto fechamento
+ex:
+
+<tag>
+
+-area
+-base
+-br
+-col
+-hr
+-img
+-input
+-link
+-meta
+-param
+
+com o advento do html5 foram adicionadas as seguintes tags:
+
+-command
+-keygen
+-source
+
+No html5 pode conter uma tag dentro da outa o que define uma hierarquia de tags no html5 o que pode ser definido pela tag externa como  elemento pai
+e a tag dentro como elemento filho.
+
+esse processo de inserir tag dentro de outra tag chamamos de aninhamento.
+
+*Tags estruturais basicas do html5
+
+tags estruturais basicas em um arquivo html5
+
+html, head, title e body 
+
+A hierarquia de tags html  consideramos como árvore de documento.
+
+<html></html> São tags que delimitam a raiz do documento
+<head></head> São tags que delimitam o cabeçalho do documento é onde se encontra outros elementos do cabeçalho
+<title></title> Corresponde ao titulo que você ve na parte superior do seu navegador (barra de ferramenta) essa tag fica contida dentro da tag head ou
+seja o cabeçalhos.
+
+<body></body> Estas tags são responsaveis por mostrar todo conteudo de uma pagina é o "corpo da página" e dentro dela que fica outras tags especificas 
+para inserção de conteúdo e de divisão de seções.
+
+-Identação 
+atraves de uma boa identação organizada e possivel fazer a localização dos elementos de forma mais facil.
+
+ex:
+<html> 
+	<head>
+		<title></title>
+	</head>
+	<body>
+	</body>
+</html>
+
+
+-Tags Necessarias
+
+<div> Dividir a página </div>
+
+<h1>título da página</h1>
+
+<p>Páragrafo</p>
+
+<strong>Serve para deixar em negrito e é uma tag semantica</strong>
+
+<em>Serve para deixa em enfáse fica no estilo italico e é uma tag semantica</em>
+
+<u>Serve para deixar sublinhado e é uma tag semántica</u>
+
+<span>É uma tag que serve para usar esteticamente mais so funciona com css sem o css não altera em nada e tambem uma tag semantica e inline</span>
+
+<br>quebra de linha</br>
+
+obs: A tag br e utilizado para fazer quebra de linha mais não e o correto, o correto seria utilar a tag <p>E adicionar um novo paragrafo</p>
+
+<ol>Para adicionar lista ordenada</ol>
+<li>Seria o item da lista ordenada</li>
+
+ex: <ol>
+	<li> Item</li>
+    </ol>
+
+<ul>Para adicionar uma lista não ordenada</ul>
+
+ex:
+	<ul>
+		<li>Item da lista</li>
+	</ul>
+
+<img src="url/Caminho de arquivo"> A tag de imagem tem fechamento propio não precisando de encerramento.</>
+
+<a href="link"><li>Item da lista</li></a> Tag a serve para colocar um link que ao clicar vai redirecionar o usuario a outro local da página
+
+Dentro da tag a podemos adicionar outra funções como:
+
+<a href="caminho" target="_blank" title="nome" alt="audio para cegos"></a>
+
+O target="_blank" tem a função de redirecionar a página para outra aba no lugar de ser na mesma aba.
+
+Indentificadores da tag
+
+id=""
+class=""
+
+Os identificadores da tag serve para dar uma identificação a tag e assim fazer alterações atraves de outra página css
+
+ex:
+
+<h1 id="Título"></h1>  Agora sabemos que a tag h1 e identificada como titulo
+
+<ul class="Animais">
+	<li>item</li>
+	<li>item</li>
+	<li>item</li>
+</ul>
+
+com a tag class podemos alterar todos os item da lista com identificado class, de classe pelo css.
+
+para localizar o id ou a class basta adicionar . para class  e # para id em outra tag o em outra folha css.
+
+ex:
+
+<ol>	
+	<li .Animais>Item</li>
+	<li #Título>Item</li>
+</ol>
+
+Pronto com o ponto na frente ele vai redirecionar ate a classe animais e com o # na frente vai redirecionar ate o h1 com o identificador de Título.
+
+*O que o HTML5 proporcionou 
+
+Armazenamneto:
+O html5 possibilitou um melhor armazenamento que faz com que o desenvolvedor possa trabalhar mesmo sem conexão graças ao indexDB E outras APIS
+
+3D e graficos e efeitos
+
+Svg Canvas e css3 com essas ferramentas do html5 podemos produzir efeitos vísuais fantasticos.
+
+
+O !DOCTYPE não e uma tag serve como declaração para os navegadores identificar qual e a versão html daquela página.
+
+Meta Tags
+
+Essas tags não serão mostradas ao usuario elas servem como declarções exclusivas que serão lida diretamente pelos robôs dos navegadores de busca (google por exemplo)
+
+existem metatags exclusivas que servem para deixar a pagina web do site mais facil para o usuario localizar quando acessa o google.
+essas tags sempre ficaram na estrutura da tag head.
+
+*Tags semanticas
+
+Antes nas antigas versões dos htmls a estrutura da página era somente organizada em divs o que dificultava a leitura do código e as altereções de css quando necessarias. foi para solucionar 
+esse problema que foi criada as tags semanticas como:
+
+<header></header>
+<nav></nav>
+<section></section>
+<article></article>
+<footer></footer>
+<aside></aside>
+
+todas essas tags são colocadas dentro da tag <body> elas servem para garantir uma melhor leitura do código tanto para o programador como para o navegador por ela ser semantica.
+
+OBS: Um section pode estar dentro de um article e visse versa, a ideia é que o article e um artigo principal de uma página enquanto o section e um documento de uma página.
+
+O css é o responsavel pela parte visual do site. e atravês dele que podemos fazer alterações de caraceteres como tamanho da fonte, cor, alterar bordas em blocos colocar cor em layout e muito mais.
+
+Usar elementos html de versões antigas para fins de apresentação como as <b> <i> <font> <center> <big> todas essas tags sao além de marcação são antigas então não e dado como um procedimento
+inteligente ao inves disso utilize css.
+
+O que é efeito cascata no css
+
+O css utiliza de efeito cascacata
+
+como: herança,especificidade e importância
+
+
+Importancia: A importancia e uma exceção da regra. Usamos a declaração "!important" Para aplica-la essa declaração dentro do css torna a especificidade do elemento que a contém maior
+do qualque declaração dentro do css.
+
+Sintaxe do css
+
+O css tem suas proprias regras ele formado por seletor propriedade e valor
+
+seletor {propriedade:valor}
+
+ex: #titulo{font-size:20px;}
+
+Tipos de seletores
+
+seletor tipo
+seletor id
+seletor classe
+seletor pseudo classe com mouse sobre eles
+seletor Universal
+
+seletor tipo:
+E quando selecionamos um elemento html que consequententemente selecionara os diversos elementos.
+
+ex: p{font-size: 20px
+
+seletor id
+E quando selecionamos um unico elemento que foi dado um devido identificador. <h1 id="titulo">Titulo 1</h1>
+ex: #titulo{color:red}
+
+seletor class
+E  quando selecionamos um elemento que contém dentro de sua hierarquia ou seja elementos filhos que ao selecionarmos vai alterar todos elementos dentro daquela classe consequentemente.
+<ul class="Animais">
+<li>cavalo</li>
+<li>Javali</li>
+</ul>
+
+ex: .Animais{color:Green}
+
+seletor de tipo "a" + pseudo classe "hover"
+
+Esse seletor e especifico para hiperlinks ele tem a função quando aplicado, de ação na hora que passa o mouse em cima do link.
+
+
+ex:<a href="www.google.com">Google</a>
+
+a:hover{color:red;}
+
+Seletor universal
+
+Esse tipo de seletor e usasdo quando se quer alterar todos elementos da página sem distinção. geralmente ele muito usado para resetar elementos da pagina ja que em alguns naegadores os elementos ja vem definido pela página.
+
+ex: *{padding:0;
+margin:0;}
+
+
+Aplicações de css existe 3 formas a primeira e fazer a alteração pelo head, a segunda e fazer a alteração atraves de uma injeçao de style no propio elemento a terceira atraves de outra folha css
+
+1. <head>
+	<style> ou <style type="text/css" media="all">
+	#titulo{color:white}
+	</style>
+	<head>
+
+o media siginifica dispositivo, o all significa todos.
+
+2. <h1 style="color:green">titulo 1</h1>
+
+3. em folha especifica de css: #p{color:green}
+
+Para Adicionar o css em outra pagina sem precisar de acessar:
+
+<head>
+<link rel="stylesheet" type="text/css" href="página2.html">
+</head>
+
+linkar uma folha de css na página
+
+<head>
+<link rel="stylesheet" type="tex/css" href="folha.css">
+</head>
+
+ou
+
+<head>
+@import url("");
+</head>
+
+
+Tag comentario
+
+<!--Comentario-->
+
+
+Propriedades mais comuns do css
+
+background-color: red;
+background-color: rgba(X%, X%, X%, x.x);
+background-color: hsl(x, x%, x%, x);  
+
+background-image: url();
+
+background-repeat: repeat-y; esse comando faz com que a imgem ja inserida atraves do background-image: url(); seja repita como uma coluna no eixo y
+  
+
+background-repeat: repeat-x; esse comando faz com que a imgem ja inserida atraves do background-image: url(); seja como uma linha no eixo x
+
+background-repeat: no-repeat; não repete nada;
+
+background-position: center top; esse comando deixa a imagem no centro e no topo.
+
+background-position: center center; deixa a imagem no centro.
+
+background-position: x% y%;
+
+abreviações
+
+podemos reduzir o comando em uma uncica linha
+
+ex
+
+background: cor url() norepeat 50% 30%
+
+background-size: cover; o tamanho de toda a imagem cobre.
+
+background-attachment: fixed; deixa a imagem fixa.
+
+font-family: arial,heveltica,san-serf; O navegador tentara encontrar as fonts se ele não encontrar a arial  tentara encontra a heveltica e a assim por diante. a primeira que ele ler sera colocada no site.
+
+font-weight: bold; Altera a expessura da font.
+
+font-weight: 700; se a font family tiver espessuras determinadas insira de acorda com a lista de tamanhos de espessuras da font family coloque a numereção de acordo com a lista aki no caso e 700.
+
+font-style: oblique; Deixa a font e formato de italico.
+
+fonte-variant: smal-caps; deixa as fontes de caixa alta em formato de caixa baixa.
+
+line-height: 60px; Determina a altura entre as linhas.
+
+text-align: center; alinhamento do texto
+
+text-transforme:uppercase ou lowercase; deixa o texto em caixa alta ou em baixa.
+
+text-align: capitaliza; todas as palavras tem a primeira letra em maisculo.
+
+text-decoration: line-through; risca todo o texto.
+
+text-decoration: overline; linha em cima do texto.
+
+texte-decoration: underline; linha em baixo do texto.
+
+text-ident: 50px; indenta o texto a direita de acordo o tamanho colocado.
+
+Seletores
+
+*{} esse e o seletor unversal ele modifica todos os elementos da página.
+
+border: 2px solid black; Coloca uma bordar de espessura de 2px do tipo solid de cor black, obs: o border deve ser escrito sempre nessa ordem. 
+
+<span> ela tem o display em linha se aplicar o background em uma span e bem provavel que ele so vai pintar a linha.
+
+display: block ou line; o display block tem a função de transforma uma tag html em linha em bloco ja o display line tem a função de transformar uma tag html em bloco em linha. e se usar none ele some tudo.
+
+position: relative; o comando position so funcionando em elementes que estão dentro de outros elementos aki no caso e relativo a algum elemento. apos colocar o posito vc pode acrescentar a seguir os comandos 
+top:
+bottom:
+left:
+right:
+z-index: 1 ou 2 ou 3 e assim por diante; esse comando serve para dar prioridade ao bloco dependendo da numeração se for um significa que esse bloco ficara na frente de todos os outro blocos.
+OBS: para o z-index funcionar é obrigatorio declarar o position seja ele absoluto fixed relative ou static geralment o mais usado e o absolute.
+
+text-shadow: 10px -20x 10px black; Esse comando tem a função de colocar sombras em texto
+
+o primeiro valor se refere a sombra para esquerda ou direita valor negativo esquerda valor positivo direita.
+o segundo valor se refere a sombra de cima para baixo negativo para cima e positivo para baixo
+o terceiro valor se refere o desfalque de toda sombra
+o quarto a cor.
+
+box-shadow: 10px 20px 30px green; Esse comando tem a mesma função do text-shadow a diferença e que ele coloca sombra em blocos no lugar de textos. além disso podemos a opção de colocar a sombra dentro do bloco se quisermos
+ex: box-shadow: inset 10px 20px 30px green; A sombra fica dentro do bloco.
+
+Manipular as pontas da bordar
+
+border-top-left-radius: 0;
+border-bottom-left-radius: 0;
+border-top-right-radius: 0;
+border-bottom-right-radius: 0;
+
+ou 
+
+border-radius: 10px 20px 30px 40px;
+
+overflow este comando serve para organizar um certo texto dentro de bloco junto width e height
+ex:
+
+overflow: scroll;
+overflow:hidden;
+overflow:visible;
+overflow:auto;
+
+Flex-Box:
+
+flex-direction: column; Insere os blocos e formato de coluna.
+
+flex-direction:column-reverse; Insere os blocos em formato de coluna so que em ordem inversa.
+
+flex-direction: row-reverse; Insere os blocos em formato de uma unica linha so que em ordem inversa
+
+flex-direction: row; insere os bloco em formato de uma unica linha.
+
+flex-wrap: wrap; Faz com que os blocos não ultrapasse a lateral. quebrando as linhas.
+
+flex-wrap: wrap-reverse: faz a quebra de linha de baixo pra cima na ordem inversa.
+
+flex-wrap: nowrap; todos os flex itens ficarão em uma só linha.
+
+Além disso podemos unir o wrap com row ou column 
+ex:
+
+flex-flow: row wrap;
+
+
+justfy-content: Os itmes se organiza horizontalmente na mesma linha.
+
+
+justfy-content:flex-start; alinha os itens junto a borda de inicio.
+
+justfy-content:flex-end; alinha os itens junto a borda fim.
+
+justify-content: center; alinha os itens no centro;
+
+justfy-content: space-between; Os itens são distribuidos de forma igual o primeiro na borda incial o do meio no centro o ultimo na borda final.
+
+justfy-content: space-around; Os espaços dos itens do meio tem duas vezes mais espaços de que os espaços dos itens do começo e do final.
+
+justfy-content: space-evenly; Os espaços da borda do começo e do final e duas vezes maior que os espaços dos itens do meio;
+
+align-items: Os items se organizar em linhas verticalmente.
+
+align-items: flex-start; Os items se organiza nas primeiras linhas.
+
+align-items: flex-end; Os items se organiza nas ultimas linhas.
+
+align-items: flex-center; Os items se organiza na linha do meio.
+
+align-items: stretch; Os items são esticados do começo ao fim.
+
+align-items: baseline; Os textos são organizado de acordo com a linha do meio que contém escrita.
+
+align-content
+Similar ao align items a diferença aqui é que no lugar de organizar os blocos em unica linha, ele pega os blocos e pula para linha de baixo se caso os blocos passar da linha lateral.
+
+align-content: flex-start; colocar os itens nas primeiras linhas.
+
+align-content: flex-end; coloca  os itens nas ultimas linhas.
+
+align-content: center; coloca os blocos nas linhas do meio.
+
+align-content: stretch; Os items de cada linha se esticam.
+
+align-content: space-between; Os items se separam uns ficam na borda incial outros no meio e outros no fim.
+
+align-content: space-around; Os items são separados a um espaço igual a cada linha.
+
+Propriedades para elementos filhos.
+
+order: numero qualquer; colocar o elemento filho em uma ordem diferente de acordo com numero de posição de definido.
+
+flex-grow: numero;  aumenta o elemento filho algumas vezes maior que os outros elementos de acordo com o numero definido.
+
+flex-shrink: numero; diminui o elemento filho vezes menor de acordo com numero definido. obs: essa propriedade so ira funcionar se estiver com o nowwrap ou seja sem quebra de linha.
+
+flex-basis: flex-basis | auto;
+
+flex: none |
+
+align-self: auto;
+
+align-self:flex-start;
+
+align-self: flex-end;
+
+align-self: flex-center;
+
+align-self: baseline;
+
+align-self: stretch;
+
+Podemos também resumir os comandos flex como o flex-shrink: numero; flex-grow: numero; flex-basis: numero;
+
+ex:
+flex-shrink: 1;
+flex-grow: 1;
+flex-basis: 300px;
+
+isso ficaria assim:
+
+flex:  1 1 300px;
+
+Background-size: contain; esse background pega a largura maxima da imagem e faz com que ela ocupe a largura maxima da div ou seja o elemento que a imagem estar inserida.
+
+background-size: cover; Esse background pega a menor dimensão da imagem e coloca para ocupara toda a div, além disso ela preenche tanto a largura como a altura de forma proporcional.
+
+background-size: 100px 100px; preenche a altura e a largura conforme os pixels digitados do lado esquerdo largura e do lado direito altura.
+
+background-position: center center; Esse background coloca a imagem na posição que for declarada no caso aqui no centro. o lado esquerdo se refere ao eixo x e o lado direito se refere ao eixo y.
+
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	 
+
+
+
+
