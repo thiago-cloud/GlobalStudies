@@ -1,0 +1,41 @@
+A -> IPv4
+AAAA -> IPv6
+MX -> Servidor de Email
+NS -> Servidor DNS
+CNAME -> Canonical Name (Apelido)
+
+HTTPS 
+
+
+SSL -> Secure Sockets Layer Protocol serve para deixar o protocolo http mais seguro ficando https
+
+TLS -> Transport Layer Security Protocol Esse protocolo e utilizado junto ao http ele server para manter http
+como https ou seja criptografado e mais seguro alem disso ele e mais atualizado de que o ssl
+
+certificado é uma coisa protocolo ssl/tls e outra
+
+Então nao se diz certificado tls/ssl se diz certificados que usados com ssl/tls
+
+
+Dados criptografados usando os protocolos TLS ou SSL
+
+Protege contra interceptação(MITM)
+
+Criptografia todas as informações: URL,cookies e headers
+
+Usa certificados digitais
+
+Os certificados são arquivos que são responsaveis por criptografar e descriptografar o protocolo https
+e necessario que ele esteja instalado tanto no browser como no servidor.
+
+Lets Encrypt -> Serve para dar suporte https nos servidores
+
+web services -> 
+
+existe dois tipos de web service o soap e o rest 
+
+Dizemos que uma aplicação e rest full quando ela segue todas as retrições arquiteturais do serviço rest
+
+arquiteturas
+
+existe dois tipos de arquiteturas arquiterura soa e a de microserviços
