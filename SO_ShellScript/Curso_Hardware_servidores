@@ -1,0 +1,382 @@
+curso de hardware de servidores
+
+Processadores
+na intel temos xeon
+na amd temos o opteron e amd epic
+
+
+
+Armazenamentos
+
+temos 
+hd sas -> ele o armazenamento mais rapido que o hd porem um pouco mais caro que o hd sata
+recomendado para servidores por conta do custo beneficio
+
+hd sata -> e o aramazenamento mais lento porem o mais barato recomendado para desktops
+
+ssd -> Esse envolve o maior desepenho de armazenamento porem o solução e a mais cara
+
+RAID-> São tipo de forma de organização dos hds e esses tipos são chamados de raids existe diversos tipos de raids raid0,raid1, raid2... e assim por diante cada raid pode conter caracteristicas no caso do raid0 garante mais desempenho de gravação e leitura ja que ele pode ser formado por no minimo dois discos e nisso a informação e dividida em duas partes uma parte fica no disco 1 e a outra no disco2.ja o raid1 e formado por no minimo dois discos também ele e mais lento para gravar e fazer leitura porem a vantagem dele e que um disco fica operando normalmente e outro e o backup por o dado ter que ser gravado duas vezes ele termina sendo mais lento como o mencionado, garante mais redundancia dos dados ou seja os dados são mais seguros.
+
+Memoria ecc
+
+Elas tem tecnologias peculiares como impedir que computadores mostre a temida tela azul da morte então ela tem um gerenciamento melhor de armazenamento
+
+
+Fontes energia redundante
+
+O recomendado na hora da montagem de um servidor que a instalação da fonte seja feita de maneira reduntante para garantir que ao retirar a fonte o servidor continue funcionando ou seja imagine que o servidor necessite de 2500 wats para funcionar e voce colocou  3 fontes cada uma de 1000wats isso daria 3000 no total o que sobraria 500wats de reserva isso não seria adequado porque se queimasse uma fonte voce ficaria apenas com 2000wats o não faria o servidor funcionar para que isso não aconteça existe um caculo para que sempre que der esse problema exista energia reserva e assim troque a fonte sem desligar o servidor
+
+Blade, Appliance é Dimenssões
+
+Blade -> são gabinetes especiais em formato de laminas que ficam racks especiais para empresas de grande porte.
+
+Appliance -> São basicamente servidores que são projetados para software especificos como firewall, proxy, 
+nse e etc... 
+
+Dimenssões
+
+Os servidores trabalha com um sistema de médidas chamado u cada u equivale 4,5cm u tambem chamado de unidade 
+
+Storages
+O storage e um local de armazenamnto de dados que pode sumir alguns tipos de serviços como servidor de arquivos, e backups.
+
+Para realizar essas devidas funções os storages se divedem em 3 tipos o DAS, NAS e SAN.
+
+Serviços
+
+Serviços de authenticação(AAA)
+
+Samba4
+LDPA
+FreeRadius
+Kerberos consortium
+AES encryption
+Novell eDirectory
+
+Serviços de armazenamentos e gerenciamento de arquivos
+
+QNAP
+openfiler
+Samba
+FreeNass
+
+Serviços de Automação e clonagem de disco
+
+OSFClone
+Redo
+Symantec GHOST
+FOG PROJECT
+Powered by Clonezilla
+
+Serviços de impressão 
+
+Serviço de pool de impressão serve para controlar todas as impressoaras na organização
+
+Unix printing System
+Print
+Paper Cut
+Print Manager
+
+Serviços de hospedagem de sites(Http e Https)
+
+Apache
+Nginx
+Tom cat -> É uma versão desenvolvida pelo apache porem para hospedar páginas java
+Xamp
+lighttpd
+Internet information
+
+Serviços de transferencia de arquivos(FTP e SFTP)
+
+ProFtpd
+CrossFTP
+vsFTPD
+IIS internet information services
+fille zilla
+
+Serviços de Email(SMTP, POP, IMAP,MAPI)
+
+POSTFIX(do mundo linux)
+Imail Toaster
+Zimbra
+CITADEL
+SOG
+EXCHANGE 2016(Do mundo da microsoft)
+
+Serviço de Filtro de Pacotes Firewall
+
+PFsense
+netfilter
+endian
+opa sense
+Check Point
+Forefront
+FirewallBuilder
+SonicWall
+
+Serviços de Proxy/Cache de Internet
+
+Squid
+ForeFront
+Nginx
+DansGuardian(O dansguardian pode também se integrar ao squid trazendo muito mais recursos ao squid)	
+
+Serviço de WLAN Hotspots/Captive
+
+Coova
+Mikrotik
+UBiquiti
+pfSense
+ChilliSpot
+FreeRADIUS
+Zentyal
+RouterOS
+
+Serviço de IDS/IPS (Intrusion Detection System | Intrusion Prevention System)
+
+SNORT
+SURICATA
+AlienVault
+OSSEC
+HLBR
+VRO
+
+Serviço de Roteamento de Pacote
+
+Open Source Routing
+MikroTik
+UBiQUITI
+OPENWRT
+VYATTA
+XORP
+VyOS
+
+Serviço de VPN (virtual Private Network)
+
+FREELAN
+OPENVPN
+Softether Corporation
+Strong wan
+Windows RRAS
+
+Serviço de dados - SGBD
+
+SUN ORACLE
+IBMDB2
+Microsoft SQL Server
+PostgreSQL
+MySQL
+MariaDB
+
+Serviço de Configuração de Endereço IP - DHCP (ISC - Internet Systems Consortium)
+
+ISC
+DHCP
+windows Server 2012
+
+Serviço de distribuição de software(Deploy)
+
+OCS Inventory ng
+opsi -> extramanete robosto
+spice works
+windows WDS
+
+Serviço de Balanceamento de carga (HA- High-Availability | LB - Load-bALANCE)
+
+Esses recurso são necessarios quando o servidor tem varios acessos simultaneno
+e divido a isso o servidor poder crachar para que isso não aconteça e bomm ter um desses serviços disponiveis em sistema
+
+DR:BD
+HA PROXY
+HighAvailability
+Heartbeat
+LINBIT
+Pacemaker
+
+Devops(Dev - DEsenvolvimento | Ops - Operação de infraestrutura)
+
+Jenkins
+ANSIBLE
+puppet labs
+GitLab
+github
+
+Linux Container - Devops
+O conceito de container e basicamente separar a minha aplicação do sistema operacional que estar rodando.
+
+LXC
+OpenVZ
+DC/OS
+origin
+docker
+openshift
+
+AntiVirus/Malware e AntiSpam Server
+
+Symantex
+McAfee
+eset
+avast
+Kaspersky
+lab Avira
+Panda
+F-secure
+bitdefender
+SOPHOS
+
+Um fato interessante e o virus wanacry que atacou ate sistemas operacionais linux
+
+Serviços de Resolução de Nomes DNS -(ISC - Internet System Consortium)
+
+O dns tem como função fazer a conversão de ip para nomes facilitando a leitura do usuario na rede, além disso existe esses serviços que são responsaveis para oferecer um local para armazenamento e validação desses dominios na rede
+
+Serviço de Backup
+
+Zmanda
+bareos
+BACULA
+REDO
+Cobian Backup
+System Center Data Protection Manager
+
+Serviço de Acesso Remoto (VNC - Virtual Network Computing | RDP -Remote Desktop Protocol)
+Esse serviço apesar de garantir acesso remotamente ele não garante segurança nos acessos então se faz necessario implementar serviços extras de segurança para garantir um acesso seguro.
+
+RealVCU
+ShowMyPC
+CrossLoop
+LogMein
+Rescue
+Citrix
+Windows Terminal Services
+Team viewer
+
+DNS and Bind
+://DNS
+Windows Server 2012
+ISC
+
+Serviço de Monitoramento (SNMP - Simple Network Management Protocol)
+Esses serviços serve para garantir o monitoramento da rede
+
+Zenoss
+Cacti
+Nagios
+Zabbix 
+Open NMS
+Spice works
+
+Serviço de Telefonia IP Voip (Voz sobre IP)
+
+digium Switchvox
+Asterisk
+Snep
+elastix
+FreePBX
+
+Serviço de Mensageria (XMPP -Extensible Messaging and Presence protocol)
+O serviço de mensageria pode ser bem interessante para que os funcionarios possam conversar entre si na empresa ou ate mesmo funconarios conversar com clientes externos atravês de chats mensagens ou alertas.
+
+XMPP
+Lync Server 2013
+OpenFIRE
+
+Serviços de Virtualização (VM Virtual Machine)
+
+Xen Server
+Hyper-V
+Open VZ
+VMware
+ProxMOX
+KVM
+VirtualBox(E uma versão academica não e recomendado para produção)
+Qemu
+
+
+Serviço de Cloud Computing(Nuvens)
+
+OpenSTACK
+Windows Azure
+JUJU
+Apachecloudstack
+
+Serviço de Cloud Privado(Nuvens)
+
+Seafile
+ProjectSend
+OpenNebula
+pydio
+ownCloud
+Nextcloud
+Windows Azure
+
+cloud public -> São serviços que estão nas nuvens que qualquer usuario pode ter acesso como google Driver
+
+Serviços de Intranet (CMS Custom Management System)
+
+Você também pode implementar serviços de intranet ou extranet no seu sistema web que o caso dos cms que são sistemas de gerenciamento customizados o unico problema e que cms existem muitas falhas de segurança.
+
+Drupal
+joomla!
+WordPress
+Xoops
+
+Serviço de CFTV (Circuito Fechado de TV)
+
+São serviços de camera de segurança
+
+Motion
+Zone Minder
+Geo Vision
+TecVoz
+intelbras
+mythbuntu
+yawcam
+
+Serviço de Log (Descrito na RFC 3164)
+
+Monitoramento de logs serve tanto para as aplicações do servidor como para os Hardware
+
+syslog-ng
+PRTG
+Microsoft eventViwer
+graylog
+Event Log Explorer
+
+ Serviço de Ticket e Help Desk (ITIL e HDI)
+ 
+ osTicket
+One help sistemas
+GLPI
+Mantis Bug tracker
+Spice works
+OTRS
+
+Serviço de Emulação de Terminal (Thin Client)
+
+NOMACHINE
+Windows Server 2008 terminal services
+Windows Multipoint Server
+open thinclient
+LTSP
+thinStation
+
+Serviço de iventario de Hardware e software
+
+openDCIM
+FUSION INVENTORY
+OCS inventory ng
+SNIPE-IT
+Spice works
+Cacic
+
+Serviço de Distribuição de Software (Deploy)
+
+opsi(Extremamente Robusto server para varios tipos de so tanto linux como windows)
+OCS inventoryng
+Windows wds spice works
+
+
+
+

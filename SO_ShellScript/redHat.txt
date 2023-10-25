@@ -1,0 +1,198 @@
+Comandos
+
+zcat.txt -> e um arquivo criado com o comando touch
+
+date -> mostra a data
+
+date +%R -> exibe a hora no formato 24h
+
+file zcat -> mostra o tipo de arquivo
+
+wc zcat -> wc para exibir o número de linhas, palavras e bytes no script zcat
+
+dmesg > zcat.txt -> colocaremos todas as informações de dmesg dentro de zcat.txt
+
+head zcat.txt -> imprime as primeiras linha de zcat.txt
+
+tail zcat.txt -> imprime as ultimas linhas de zcat.txt
+
+tail -n 20 zcat.txt -> imprime as ultimas 20 linhas de zcat
+
+history -> mostrara uma lista de comando que ja foram executados no terminal cada comando vem acompanhado de uma numeração
+digite !comandoDohistory para executar um determinado comando da lista do history
+ex: !30 
+
+!! -> volta para o comando anterior mais recente ou pode se apertar seta para cima
+
+Evitar colocar espaços em nome de arquivos se for para colocar espaços coloque tudo dentro de aspas
+
+rm -r diretorio -> exclui diretorio
+
+rmdir diretorio -> tambem exclui diretorio
+
+rm -f arquivo.txt -> força uma exclusão imediata
+
+rm -r -f diretorio -> força uma exclusão do diretorio
+
+rm -ri diretorio -> antes de excluir o i  da uma informação se deseja excluir
+
+rm -i arquivo.txt -> antes de excluir o i pergunta da uma informação se deseja realmente excluir o arquivo y para sim
+
+Atenção
+
+Se você especificar as opções -i e -f, a opção -f tem prioridade e você não será solicitado para confirmação antes que rm exclua arquivos. 
+
+Tabela de metacaracteres
+
+*	Qualquer string com zero ou mais caracteres.
+?	Qualquer caractere único.
+[abc…​]	Qualquer caractere na classe entre colchetes.
+[!abc…​]	Qualquer caractere que não esteja na classe entre colchetes.
+[^abc…​]	Qualquer caractere que não esteja na classe entre colchetes.
+[[:alpha:]]	Qualquer caractere alfabético.
+[[:lower:]]	Qualquer caractere em minúsculas.
+[[:upper:]]	Qualquer caractere em maiúsculas.
+[[:alnum:]]	Qualquer caractere alfabético ou numérico.
+[[:punct:]]	Qualquer caractere imprimível que não seja alfanumérico nem um espaço.
+[[:digit:]]	Qualquer dígito único de 0 a 9.
+[[:space:]]	Qualquer caractere de espaço em branco único, o que pode incluir tabulações, novas linhas, retornos de carro, avanços de página ou espaços.
+
+ls a* -> permite mostra todos os arquivos ou diretorios que comece com a letra a
+
+ls *a* -> permite mostrar todos os arquivos ou pasta que tenham a letra a
+
+ls [ac]* -> permite mostrar todos os arquivos e diretorios que comece com a letra "a" e "c"
+
+ls ???? -> permite mostrar diretorios ou arquivos que comtem 5 caracteres
+
+Variaveis
+
+variavel=valor -> cria uma variavel atribui um valor
+ex: HOME=/home/thiago
+
+mostrar a variavel
+
+OBS: Por convenção, as variáveis de ambiente e de shell que são definidas automaticamente pelo shell têm nomes com todos os caracteres maiúsculos. Se você estiver definindo suas próprias variáveis, convém usar nomes com caracteres minúsculos para evitar conflitos de nomenclatura.
+
+export variavel=valor -> cria uma variavel para o sistema linux
+ls -l $HOME-> mostra o valor dentro da vairavel que no caso aki e o caminho
+echo $variavel ou echo ${variavel}
+set | less -> Lista todas as variaveis no sistema
+env ->mostra tambem todas as variavei no linux
+env | grep HOME -> Serve para ver uma determinada variavel no caso aki mostra a variavel home
+export variavelExistente=${variavelExistente}:/home/user/sbin ->Essa forma serve para adicionar mais um diretorio a variavel ja existente
+sudo nano ~/.bash_profile -> esse e o arquivo de configuração do  bash do linux redhat que serve para colocar qualquer variavel e assim deixar salvo em todo bash
+
+Deletar uma variavel
+unset variavel
+
+Aliases são atalhos de comandos do bash.
+ex: alias hello='echo "hello world"'
+se digitarmos "hello" no terminal ele mostrara a mensagem "hello world"
+Para deletar um aliases
+unalias hello
+
+Para remover a exportação de uma variavel
+export -n ps1
+
+\ -> a barra invertida no shell serve para escapar a variavel ou seja quando invocada com o echo a variavel ela nã mostra o valor dentro da variavel
+ex: nome=thiago
+echo "meu nome é \$nome"
+meu nome é $nome
+
+[user@host glob]$ echo {Sunday,Monday,Tuesday,Wednesday}.log
+Sunday.log Monday.log Tuesday.log Wednesday.log
+[user@host glob]$ echo file{1..3}.txt
+file1.txt file2.txt file3.txt
+[user@host glob]$ echo file{a..c}.txt
+filea.txt fileb.txt filec.txt
+[user@host glob]$ echo file{a,b}{1,2}.txt
+filea1.txt filea2.txt fileb1.txt fileb2.txt
+[user@host glob]$ echo file{a{1,2},b,c}.txt
+filea1.txt filea2.txt fileb.txt filec.txt
+
+[user@host glob]$ mkdir ../RHEL{7,8,9}
+[user@host glob]$ ls ../RHEL*
+RHEL7 RHEL8 RHEL9
+
+
+Globbing é uma operação de análise de comandos do shell que expande um padrão de caracteres curinga em uma lista de nomes de caminho correspondentes. Metacaracteres de linha de comando são substituídos pela lista de correspondência antes da execução do comando. Os padrões que não retornam correspondências exibem a solicitação de padrão original como texto literal. A tabela a seguir lista metacaracteres e classes de padrões comuns.
+
+man -> É o manual do linux
+
+O man ficar dentro dos subdiretorios
+cd /usr/share/man
+
+o man e dividio em 9 seções são elas
+
+Seção	Tipo de conteúdo	Descrição
+1	Comandos de usuário	Tanto executáveis quanto programas shell.
+2	Chamadas do sistema	Rotinas do kernel invocadas a partir do espaço do usuário.
+3	Funções de biblioteca	Fornecidas pelas bibliotecas dos programas.
+4	Arquivos especiais	Como arquivos de dispositivos.
+5	Formatos de arquivo	Para muitos arquivos de configuração e estruturas.
+6	Jogos e protetores de tela	Seção histórica para programas de lazer.
+7	Convenções, padrões e páginas diversas	Protocolos, sistemas de arquivos.
+8	Administração do sistema e comandos com privilégios	Tarefas de manutenção.
+9	API do kernel do Linux	Chamadas de kernel internas.
+
+man seção topico -> permite acessar uma seção do manual e um topico da seção ex: "man 5 passwd" mostra o topico de senha do manual
+
+man passwd -> acessa diretamente o topico de passwd
+
+Tabela 4.2. Navegação em páginas do man
+Comando	Resultado
+Spacebar 	Avançar uma tela (para baixo).
+PageDown 	Avançar uma tela (para baixo).
+PageUp 	Recuar uma tela (para cima).
+DownArrow 	Avançar uma linha (para baixo).
+UpArrow 	Recuar uma linha (para cima).
+D 	Avançar meia tela (para baixo).
+U 	Recuar meia tela (para cima).
+/string 	Procurar string avançando (para baixo) na página do man.
+N 	Repetir a pesquisa anterior avançando (para baixo) na página do man.
+Shift+N 	Repetir a pesquisa anterior recuando (para cima) na página do man.
+G 	Acessar o início da página do man.
+Shift+G 	Acessar o final da página do man.
+Q 	Sair do man e retornar ao prompt de comando do shell.
+ 
+ 
+
+Leitura de páginas do man
+
+As páginas do man separam cada tópico em várias partes. A maioria dos tópicos compartilha os mesmos cabeçalhos e segue a mesma ordem. Normalmente, um tópico não apresenta todos os cabeçalhos, porque nem todos os cabeçalhos se aplicam a todos os tópicos.
+
+Os cabeçalhos comuns são:
+
+Tabela 4.3. Cabeçalhos
+Cabeçalho	Descrição
+NOME	Nome do tópico. Geralmente um comando ou nome de arquivo. Uma breve descrição.
+SINOPSE	Sumário da sintaxe de comando.
+DESCRIÇÃO	Descrição para fornecer uma compreensão básica do tópico.
+OPÇÕES	Explicação das opções de execução do comando.
+EXEMPLOS	Exemplos de como usar o comando, a função ou o arquivo.
+ARQUIVOS	Uma lista de arquivos e diretórios relacionados à página do man.
+VEJA TAMBÉM	Informações relacionadas, normalmente outros tópicos de páginas do man.
+BUGS	Bugs conhecidos no software.
+AUTOR	Informações sobre quem contribuiu para o desenvolvimento do tópico.
+
+
+man -k passwd -> Mostra topicos referenciado a palavra passwd a se pesquisar.
+
+whereis passwd -> mostra onde fica todos os diretorios do topico passwd do man
+
+man -k zip -> lista a pagina do man com com informações detalhadas sobre um arquivo zip
+
+man -k boot -> lista a página do man com uma lista de parametros que pode ser passada para o kernel no momento do boot
+
+man -k ext4 ->  para encontrar o comando que ajusta o parametro do sistema de arquivo ext4
+
+O processo pai da red hat e o systemd
+
+
+
+
+
+
+
+

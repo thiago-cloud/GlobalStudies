@@ -1,0 +1,87 @@
+30 Comandos basicos no linux
+
+o pipe | siginifica que estamos pegando a saida do comando
+
+man ls -> mostra informações do manual do linux a respeito do comando ls
+
+man cat -> mostra informações do cat
+
+clear -> limpa o terminal ou aperta a tecla ctrl + l
+
+mkdir nomeDoDiretorio -> cria diretorios
+
+mkdir "diretorio de fotos" -> cria um diretorio com nome composto com o aspas, se não tivesse o aspas criaria 3 diretorios
+
+cd diretorio -> navega para outros diretorios
+
+cd "diretorio de fotos" -> navega ate o diretorio que tem o nome composto
+
+tecla TAB -> Serve para completar as informações
+
+pwd -> mostra o caminho do diretorio do trabalho
+
+whoami ->mostra o nome do usuario
+
+touch arquivo.txt -> cria um arquivo
+
+nano arquivo.txt -> E um dos editores de texto do terminal que serve para editar arquivos também temos o vim
+
+cat arquivo.txt -> O cat e comando de vizualização de conteudos de arquivos 
+
+mv arquivo.txt jurubeba.txt -> esse renomeia o arquivo para jurubeba ele tambem serve para mover o arquivo para outro lugar
+
+cp arquivo2.txt ~/dir1/dir2 -> permite vc fazer uma copia do arquivo aqui no caso a copia foi para o diretorio dir2
+
+find . -name arquivo.txt -> esse comando serve para procurar um determinado arquivo a partir do diretorio atual em seguida ele mostra o caminho onde o arquivo estar localizado
+
+head e tail serve para ler trexos de textos de arquivos geralmente e usado para vizualizar arquivos muito grande ja que se fosse ler todo arquivo poderia travar a maquina
+
+head -n 5 arquivo.txt -> ler as primeiras 5 linhas do texto do arquivo arquivo
+
+tail -n 2 arquivo.txt -> ler as utimas 2 linhas do arquivo
+
+less arquivo.txt -> tem a mesma serventia do head tail a diferença de desse comando e que ele vai carregando o arquivo aos poucos para não travar a memoria
+
+rm arquivo.txt -> deleta o arquivo
+
+rm -r arquivo.txt -> deleta um diretorio
+
+rmdir -> deleta um diretorio vazio
+
+ip a -> mostra todas as informações de rede da maquina
+
+ip a | grep inet -> serve para filtra as informações de ip da maquina
+
+free -h -> serve para mostrar a quantidade de gigas da memoria, o -h significa que o formato da informação e etendivel humana
+
+free -m -> Serve para informação mostrada e em megabytes
+
+top -> e comando bem utilizado em servidores que mostra todos os processos do so alem de outra informações em tempo real
+
+htop -> e tem a mesma função do top a diferença e que ele tem que ser instalado com o sudo e ele traz uma interface mais entendivel comparado ao top
+
+ps aux -> Esse comando lista todos os processos e não tem  atualização em tempo real geralmente ele serve para ser utilizado com o grep pegar informação de um processo especifico
+
+ps aux | grep processo -> mostra a informação de um processo especifico ex: ps aux | grep gnome-terminal ou ps aux | grep 14341
+
+pgrep gnome-terminal-> mostra o numero do processo
+
+kill numeroDoProcesso -> esse comando serve para finalizar um determinado processo ou seja aquele programas quen não estar respondendo
+
+df -h -> mostra as partiçoes que estaão contidas dentro do diretorio dev junto de algumas informações de queanto de usado e de espaço total
+
+ncdu -> Esse comando scaneia o disco e depois mostra em ordem de maior utilização os diretorios, e ai vc pode deletar o arquivo não desejado ou diretorio basta teclar "d" em cima do arquivo ou pasta que quer deletar para sair tecle ctrl + c
+
+uname -> mostra o kernel do linux
+
+uname -r -> mostra a versão do kernel do linux
+
+lscpu -> mostra informações a respeito do cpu
+
+lsusb -> mostra informações a respeito das usb
+
+lspci -> mostra informações da pci
+
+lsblk -> mostra as informações do disco em formato de bloco alem disso podemos combinar com grep para filtrar alguma informação desejada
+
+

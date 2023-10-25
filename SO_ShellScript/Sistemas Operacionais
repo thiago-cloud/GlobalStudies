@@ -1,0 +1,52 @@
+Sistemas Operacionais
+
+Sistemas Multiprocessadores ou paralelos
+Sistemas paralelos mais comuns
+Assimetrico
+Simetrico
+Sistemas Distribuidos
+Estrutura Geral dos sistemas Cliente-Servidor
+Sistemas de Tempo Real
+Rtos
+Ambientes de Computação:
+Computação Tradicional
+Pcs,Servidores, Acesso remoto limitado
+
+Computação baseada na Web
+Cliente-Servidor e Web Services, acesso remoto coviniente, servidores sem local fisico conhecido, Ênfase na conexão em rede
+
+Computação Embutida(ou Incorporada)
+sao pequenos sistemas como firewalls dedicados, mecanismos de automoveis, geladeira, microondas e etc pouca interface ou nenhuma, acesso remoto
+recursos de sistema operacional bastante limitado.
+
+Caching
+
+
+pid = Indentificador de Processo
+ppid = mostra o processo pai
+comandos terminal
+
+ls = verificar o que a dentro de uma pasta
+mkdir = Criar pasta 
+cd mkdir = acessar pasta
+
+
+Processos
+
+Criando um Processo que comeCPU
+
+1 Criar pasta  mkdir nome
+2 acessar pasta cd nome
+3 Criar arquivo vim nome.c
+4 cria laço de repitção for in no vim
+5 colocar para compilar gcc demora.c -o demora.e (compilado)
+6 colocar processo para executar ./demora1.e
+7 monitorar em outro termianl ps au
+8 cancelarexecução de processo ctrl+c
+
+remoção de processos
+1 remover o processo pai ps -ef
+2 remover processo definido kill numeropid
+3 para saber o tempo que um processo vai demorar em execução time ./demora.e
+
+

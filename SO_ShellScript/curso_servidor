@@ -1,0 +1,458 @@
+curso de servidor Linux
+
+aula 1 o que e o kernel do linux
+
+aula 3
+
+Lema dos servidor bom -> servidor bom e aquele que so tem o que é necessario
+
+Geralmente um servidor é dedicado a um tipo de serviço
+
+podemos ter um servidor com um firewal e um proxie
+
+um servidor de banco de dados com o apache
+
+Lamp -> E um servidor com linux apache mysql e php
+
+um servidor de email e etc
+
+a instalação dos servidores deve ser planejada em funções dos serviços
+
+		Planejamento das partições dos discos 
+Tipo de partição	Ponto de montagem	Descrição
+primaria       	                /		 Raiz do sistema
+logica			      /var		 logs principais serviçoes
+logica			      swap		 Memoria virtual	
+logica			      /tmp		 Arquivos Temporario
+logica			     /home		 usuario
+
+OBS: /var e onde fica tambem o servidor web e  o banco de dados
+
+LVM: lvm(logical volume manegment) gerenciamento de volume logico e um gerenciador logico de particionamento de disco existe alem disso pode se exister 3 estagios ate chegar no lvm o estagio 1 pv esse local e onde são enserido os discos fisicamente cada um pode ter volume variados como 300 gb 500gb e etc, estagio 2 vg nesse estagio organizamos os discos em grupos fisicamente e logicamente aki poderiamos juntar 500gb + 300gb que seria igual a 800gb, estagio 3 aki particionamos logicamente via software poderiamos particionar os 800gb em 8 partes que seria 100 gb.
+
+GRUB: É o gerenciador de boot do linux
+
+Atraves do grub podemos fazer uma configuração que ao entrar podemos logar diretamente como root inserindo o login root
+
+E necessario logar como root no debian
+logo quando inicia voce digita para logar como root
+root
+thiago456
+
+para ter acesso a alguns comandos como o reboot shutdown entre outros
+
+A distribuição usada no curso e o debian
+
+ 
+ nome usuario thiago
+ 
+ login
+ usuario: thiago
+ senha thiago123
+ 
+ Aula 04
+ Comandos basicos 
+pwd -> Mostra a localidade do diretorio
+cd -> serve para navegar entre os diretorios  
+clear ->
+ls -> 
+date -> 
+cal -> exibe um calendario
+; -> executa varios comando ao mesmo tempo ex: date;cal
+rm -r ->
+rm arquivo ->
+cat ->
+tac -> E a mesmma coisa do comando cat a diferença e que le mostra a vizualização na ordeminversa
+mv ->
+cp ->
+ 
+Systemd
+
+Systend e um dos processos mais importantes do linux ele e o primeiro a iniciar junto com o processo init que é processo pai.
+systemd-analyze-> ele mostra quanto tempo demora para o sistema carregar no boot
+systemd-analyze blame -> mostra o tempo de carregamento de cada processo no boot
+hostnamectl -> mostra informações do kernel o nome do servidor a vesão do kernel
+systemctl -> Mostra todas as unidades do sistema 
+systemctl status sshd.service -> Mostra informações sobre o serviço de ssh
+systemctl is-enabled sshd.service -> Esse comando e uma pergunta se o ssh inicia junto com o servidor se ele retornar enabled e porque inicia todos os serviços com status de enabled e por que iniciam ao dar o boot no sistema
+systemctl stop sshd.service -> imterrompe o serviço
+systemctl cat sshd.service -> vizualiza o arquivo sshd
+eneble -> iniciar o serviço com o boot
+disable -> não inicia o serviço com o boot
+start -> inicia o serviço instanteamente
+stop -> imterompe o serviço istanteamente
+restart -> reinicia o serviço
+status -> mostra informações do serviço
+
+REDES
+Configuração da rede no servidor
+Tipos de servidor:
+servidor de redes
+arquivo
+banco de dados
+web
+
+cenario 2
+
+esses servidor e responsavel pelo compartilhamento da internet e da segurança da rede local
+Firewal
+Proxy
+
+lspci -> Esse comando mostra todos os dispositivos de redes conectados
+ip address ou ip a ou ip addr-> mostra as informações dos dispositivos de redes como ip
+
+informações do ip a
+
+Loopback e uma interface de rede que pemite que o usuario se comunique pelo protoco tcp/ip
+
+enp0s3 -> interface de rede do usuario ou placa de identificado da placa de rede esse nome pode variar dependo da maquina e da placa de rede essa aki e a 0 ou seja a principal
+
+link/ether -> endereço fisico conhecido tambem como mac address esse endereço e o indentificado da placa de rede uma analogia seria com a placa do carro e o chassi a placa seria o ip que pode mudar
+e o chassi seria a numeração mac address que não muda
+
+inet -> Seria o ip do computador
+
+brd -> broadcast
+
+Modo bridge -> esse modo permite conectar o pc a rede local e como se tivesse um swith com o cabo conectando as maquinas
+
+Apos fazer alterações de rede voce pode reiniciar a maquina ou colocar o comando ifdown identificador_da_placa_de_rede 
+ex: ifdown enp0s3
+
+ifdown enp0s3 -> Zera as configurações da placa de rede enp0s3
+
+ifup enp0s3 -> A máquina recebe um novo ip na rede
+Geralmente o servidor tem uma unica interface que o terminal que server para um melhor desempenho
+
+DHCP -> O dhcp e responsavel por disparar os ips na rede domestica
+
+Geralmente em redes maiores como empresas escolas e etc não se usa modo bridge o ideal e o nat
+
+ipfixo -> Serve para servidores por exemplo porque se alterarmos o ip do servidor ele fica inacecivel tanto para os usuarios como aplicações que estão conectadas a ele. ou seja imagine que o banco de dados acesse o servidor da aplicação oa apache pelo ip se o ip mudar o a conexão do banco com apache se torna inacessivel
+
+Formas de colocar um ipfixo -> A primera forma de fixa um ip é criar uma reserva no modem responsavel pela distribuição de ip
+
+Podemos fazer a configuração de ips tanto  pelo roteador quento pelo servidor
+Configuração de ip fixo pelo servidor
+cd /etc/network -> ls -l -> vim interfaces
+Antes de fazer alteração e recomendado fazer um backup com o comando cp do arquivo interfaces
+apos modificar o arquivo interfaces para deixar o ip do servidor fixo e so configurar o dns
+
+vi /etc/resolv.con -> arquivo responsavel pela configuração do dns
+vi /etc/network/interfaces -> arquivo responsavel por fazer a alteração em deixa o ip fixo
+
+Dentro do arquivo interfaces
+
+#The primary network interface
+allow-hotplug enp0s3
+#iface enp0s3 inet dhcp ->#Comentario
+auto enp0s3 -> Esse code garante que o dispositivo enp0s3 sera iniciado apos o boot do servidor
+iface enp0s3 inet static -> Faz com que o dispositivo enp0s3 seja fixo
+address 192.168.1.200 -> atribuir um ip qualquer acima da faixa min=0 e max=199
+netmask 255.255.255.0 -> mascara da rede essa e do tipo c
+network 192.168.1.0 -> o primeiro valor do ip que começa em 0
+broadcast 192.168.1.255 -> broadcast do ip 192.168.1.200 de mascara 255.255.255.0
+gateway 192.168.0.1 -> ip interno do roteador principal
+
+
+
+Alem disso temos a opção de não calcularmos o broadcast o netmask que e mascara de rede e host min max basta istalarmos o ipcalc
+
+ipcalc ipDesejadoParaOservidor -> esse comando faz todos os calculos necessario para a configuração de rede não precisa calcular o broacas basta colocar um ip desejado e ele mostrara o calculo
+
+systemctl restart networking -> reiniciar a configuração de todos os adaptadores de rede
+
+-------------//--------------
+
+O servidor pode ser um dhcp um firewal com o iptarble um proxie com o squid esses tipos de servidor protege outros servidores de ataques hacker ele serve como um escudo na linha de defesa alem de gerenciar e monitorar o uso da internet
+
+No virtual box configure para rede no modo nat e o outro adaptador da rede no modo rede interna
+em seguida de um lspci para ver se o sistema reconheceu o outro dispositivo 
+enp0s3 = 00:03
+enp0s8 = 00:08
+
+apos a configuração da rede e so digitar o comando ping para ver se a internet do servidor estar funcionando
+
+Inserindo na tela de login do servidor o nome debian a logo
+
+cd /etc -> A logo padrão do servidor fica no diretorio /etc o arquivo que contém a logo e o issue para visualizar issue*
+
+apt-get install linuxlogo -> Para instalar a logo em etc para ficar na tela de login
+
+cat issue.linuxlogo > issue -> transfere a logo para o arquivo issue com o operador de redirecionamento
+
+Criar um pendrive e um hd_externo dentro do servidor linux
+
+No diretorio tmp crie duas pastas pendriver é hd_externo
+
+mkdir pendriver -> Cria uma pasta pendriver
+
+mkdir hd_externo -> Cria uma pasta chamada hd_externo
+
+mount /dev/sdb1 /mnt/pendrive -> esse arquivo ser ver para montar o pendirver ou seja apartir dai o toda vez que se espetar um pendriver na maquina debian o pendriver vai aparecer no diretorio pendrive
+
+mount -t ntfs-3g /dev/sdc1 /mnt/hd_externo -> Esse comando server para montar o hd externo no diretorio hd_externo
+
+umount /dev/sdb1 -> Serve para desmontar o pendriver
+umount /dev/sdbc1 -> Serve para desmontar o hd_externo
+
+fdisk -l -> Serve para listar os dispositivos que estão conectados como pendrive hd_externo e etc..
+
+pode ser que der um erro se o pendriver for feito pelo sistema de arquivos ntfs basta instalar
+apt-get install ntfs-3g
+
+para a maquina virtual reconhecer o pendriver va na barra superior da maquina virtual em dispositivos/usb/selecione_o_pendriver
+
+Backup 
+
+wget https://wordpress.org/latest.tar.gz -> Esse comando baixa e instala o wordpress no servidor
+
+latest.tar.gz -> diretorio baixado compactado me gzip chamando latest do wordpress.
+
+latest: É o nome do arquivo
+tar: É informa que dentro do arquivo latest a pastas arquivos e sub-pastas. O tar é um comando nativo do linux
+gz: E o tipo de compactação do arquivo
+
+tar xzvf latest.tar.gz ->  O x siginifica que eu quero extrair esse arquivo o z siginifica que vou descopmpactar o arquivo no formato .gz ou gzip o v de verbose para exibir a extração dos arquivos e o f indica que o resultado sera do tipo arquivo
+
+Apos extrair o arquivo wordpress aparecera o nome wordpress quando der o ls
+
+alt+f2 -> Abre outro terminal no servidor
+alt + f1 -> volta para o terminal 1 do servidor
+
+podemos criar no hd_externo um backup do do home ou de qualquer outro diretorio
+
+tar czvf backup.tar.gz /home -> Criar um novo backup do diretorio home compactado com o zip
+c de criar z de zip v de verbose exibir a extração e f indica que o resultado e do tipo arquivo
+
+tar xzvf backup.tar.gz -C / -> Extrai o arquivo backup.tar.gz para um local desejado o -C pergunta em qual local sera extraido aki no caso foi extradido na raiz
+
+Atualização do servidor 
+
+A atualização do servidor e fundamental para evitar ataques invasões e roubos
+
+hostnamectl -> Mostra informações da distribuição e do kernel
+
+uname -a -> Mostra versão do debian
+
+apt-get update -> Faz uma atualização do repositorio do debian
+
+apt-get -u full-upgrade -> Faz uma atualização completa de todos os pacotes
+
+Principais comandos para inspenção e monitoramento do servidor
+
+O diretorio proc -> e respnsavel pelo armazenamento de informações referente ao hardware
+
+O less permite que na visualização da pagina possa ter um scroll que role para cima e para baixo.
+
+cat cpuinfo | less -> Mostra informações de cpu
+cat meminfo | less -> Mostra informações da memoria
+cat version | less -> Mostra informações da versão
+lspci | less -> Mostra informações dos dispositivos
+lsmod | less -> lista todos os modulos
+uptime -> mostra a uma sequencia o de uso o primeiro referese ao processador o segundo a memoria e o terceiro o hd
+free -m -t -> Referese ao uso de memoria o m mostra em megabytes e o t e o total
+df -h -> Este comando mostra o uso do disco por partição
+
+Var -> É o diretorio responsavel pelos logs nele temos tambem outros diretorisos importantes como o www que de servidor web
+
+/var/log -> Aki os logs mais importantes e o de mensagens(messages) e o de sistema(syslog)
+cat messages | less -> Exibe informações das mensagens
+tail -f syslog -> Exibe as ultimas linha de informação do syslog o -f quer dizer em tempo real
+---------------//-----------------------------
+LVM
+
+O lvm cria um grande disco virtual formado por discos fisicos permitindo o gerenciamento de volumens logicos
+
+A grande vantagem do uso do lvm é permitir o redimensionamento das partições de modo dinâmico ou seja sem parar o servidor
+Outras vantagens:
+
+Flexibilidade
+Escalabilidade
+Menos tempo de outage(Tempo de servidor parado)
+Snapshot(fazer copias o que serve também de backup)
+Redução de custo
+
+PV -> Phisical Volume
+Ou seja pv e o volume fisico o chamado de hd
+
+VG -> Volume group
+Ou seja  e o grupo de volume é o disco virtual formado pelos dispositivos físicos(HDs)
+
+LV -> Logical volume
+Equivale a uma partição de disco tanto em um vg como pode ser no unico pv
+
+fdisk -l | less -> Para mostrar todas as partições do servidor
+
+df -h -> Mostra o uso do armazenamento em relação aos diretorios do linux
+
+pvdisplay -> Mostra os dispositivos de armazenamento conectados
+
+vgdiplay -> Mostra o tamanho do grupo de volume e o nome e outra informações
+
+lvdisplay | less -> Mostra as partições que foram feitas logicamente com o lvm
+
+1º instala o novo disco, 2º agente prepara o novo disco, 3º transforma ele em volume fisico
+
+Preparação da nova partição fisica
+
+fdisk /dev/sdb -> Prepara uma nova partição fisica ja criada 
+1º tecle "m" para ver ajuda 
+2º tecle "n" para adicionar uma nova partição, 
+3º tecle "p" para ser uma partição do tipo primaria 
+4º vai mostrar 1 ao 4 tecle 1 pra selecionar a numeração da partição 
+5º em seguida aperte so enter para criar 
+6º apos criada tecle "w" para salvar o que foi feito.
+
+
+Criando o sistema lvm na nova partição
+
+fdisk /dev/sdb: 
+1º tecle "t" para criar ou modificar uma partição
+2º ele perguntara codigo em hexadecima de qual sistema de arquivo tera a partição tecle "L" para ver os tipos e selecione o "8e" digitando. 
+
+pvcreate /dev/sdb1 -> Esse comando ele cria um volume fisico baseado no novo hd apos isso digite pvdisplay
+
+Agora podemos adicionar o novo hd para o volume group primeiro digite vgdisplay para vizualizar quantos gbs existe no volume group e para o nome do vg
+
+vgextend debian-vg /dev/sdb1 -> Esse comando adiciona o volume do novo hd para o vg(volume group) debian-vg e o nome do volume group
+
+
+Podemos tabem alocar mais espaço para um determinado diretorio
+
+1º digite df -h para ver quanto os diretorios estão utiizando de armazenamento
+2º digite lvdisplay | less para ver o caminho do diretorio que recebera mais espaço de armazenamento o caminho:
+LV Path    caminhodo diretorio 
+LV name    nome do diretorio
+3º lvresize -L +5GB /dev/debian-vg/var Esse comando permite adicionar mais 5gb de espaço ao diretorio /var
+
+lvresize -L +5GB caminho_do_diretorio -> esse comando permite adicionar mais 5gb de espaço ao diretorio determinado
+
+resize2fs /caminho_do_diretorio_alterado -> esse comando atualiza a nova alteração feita no diretorio como almento de espaço em gb do diretorio
+
+apos atualizar e so dar df -h para ver que o diretorio agora tem mais gbs apos isso digite vgdisplay e vera que agora tem menos espaço livre
+
+-----------------------------//-----------------
+
+Segurança de Redes 
+
+Objetivos 
+
+Disponibilidade -> Um servidor seguro tem uma garantia maior de estar sempre disponivel ja que um servidor parado e prejuizo.
+
+Desempenho -> Um servidor seguro garante mais produtividade
+
+Evitar Roubo dados
+
+Principais Problemas
+
+Falta de backup -> O servidor pode estar com todas as opções de seguranças preenchidas porem isso não garante que servidor seja hackeado e por essa razão e bom ter sempre o backup
+
+Infraestrutura -> e necessario ter uma boa organização fisca dos servidores
+
+Invasão -> Aki estar relacionado ao roubo e sequestro de informações
+Malware -> Virus de computador como trojans, spyware e keyloggers os trojans costumam a derrubar a defesa os keylogers capturam tudo que é digitado 
+Usuarios -> Os usuarios podem estar mal-intencionados podem usar a rede de forma indevida as vezes sem saber clicar em links suspeitos abrir emails infectados e isso causa varios problemas de segurança
+
+Soluções
+
+Regra numero 1 "backup" -> crie uma pólitica de backup use storages, use as nuvens lembre-se que o backup não pode ficar apenas na empresa e o mais importante e sempre testar o backup faça simulação de desastres e tenha certeza que o backup foi feita de maneira correta.
+
+Redundancia -> Os equipamentos tem que ser de boa qualidade para não queimar com facilidade
+as fontes e os discos são as peças que mais dão problemas em hardware, alem disso se faz necessario criar um arranjo para espelhamento e distribuição dos dados isso e chamado de raid
+
+Certificação -> Uma empresa terceirizada testara toda a infra-estrutura para ver se estar de acordo com as normas e assim emitir um certificado mostrando que toda parte de infra estar de acordo com as normas
+
+Firewall -> Imagine o firewall como uma portaria para entrar preciso estar de acordo com algumas exigencias como se identificar e não portar objetos que possam trazer riscos a segurança e para sair não se pode levar nada sem autorização, ele divide a sua rede privada do resto do mundo(intrnet) o firewall protege de uma serie de ações maliciosas, no linux temos um firewal acoplado ao kernel chamado de netfilter com ele temos dois arquivos de configuração que e o iptables firewalld.
+
+impedir a entrada de códigos maliciosos
+impedir a saída de informações sigilosas
+impedir acessos não autorizados
+impedir o uso abusivo da internet
+
+iptables
+O iptables e ferramenta utilizada para configurar o firewall netfilter na internet os dados são trafegados em forma de pacotes o iptables trabalha no conceito de gancho ele puxa esses pacotes
+
+O iptables trabalham com 3 tabelas o filter o nat Mangle.
+
+Chains são listas de regras que podem ser aplicadas as tabelas as ações das regras podem ser accept, drop, reject
+accept-> O pacote é aceito
+Drop -> pacote e descartado sem aviso
+reject -> o pacote e descartado porem o emissor é avisado
+
+O iptables funciona da seguinte forma ele colocar uma lista com 6 regras e o firewall obriga o pacote a percorrer essa lista para ver se o pacote se adequa a alguma regra se ele se adequar a alguma dessas regras o pacote passa e as demais regras é ignoradas.
+
+Comandos básicos do iptables
+
+iptables -L -> Lista as regras
+iptables -I -> Adiciona a regra no inicio da lista
+iptables -i 3 -> Adiciona a regra na posição da lista 3
+iptables -A -> Adiciona a regra no final da lista
+iptables -D -> Apaga uma regra do firewall
+iptables -F -> Apaga todas as regras do firewall
+
+Parâmetros
+
+-p -> especificar o protocolo
+-s -> especificar a origem
+-d -> especificar o destino
+-i -> especificar a interface de saida
+-o -> especificar a interface de saida
+--sport -> especificar a porta de origem
+--dport -> especifica a porta de destino
+-j -> especificar a ação (Accept Drop Reject)
+
+ex: 
+iptables -I INPUT -p ICMP -j DROP -> cria uma regra de bloqueio do ping
+iptables -I INPUT -p ICMP -j DROP -> cria uma regra de bloqueio do ping porem retorna uma mensagem
+
+Atenção: quando colocamos uma regra no firewall ao reiniciarmos a maquina a regra desaparece
+
+
+icmp -> E o protoculo do ping que permite que os pacotes trafeguem
+
+Proxy -> Normalmente o proxy trabalha junto com o firewall é usado pra gerenciar a internet e melhorar a experiencia do usuario alem diss ele canaliza o fluxo de internet e armazena em cache o conteúdo acessado com mais frequencia o squid e o proxy mais utilizados para redes de computadores. 
+vantagens: 
+1º o proxy trabalha com firewall criando regras de acesso
+2º armazenar conteudo frequentes em cache
+3º Bloqueio personalizado isso define que o gestor de ti defina o que não de ser acessado e possivel criar regras de bloqueios por endereço e também por palavras chaves agente também pode personalizar por usuarios ou grupo além também definir horarios que certos conteudos poderam ser acessados, alem de tudo isso ele tambem permite fazer monitoramento e gerar relatorios de acessos.
+4º Podemos também colocar um segundo link de trabalho por que caso falhe um link a internet não pare incluindo assim um redundancia
+
+UTM
+utm é uma plataforma que une uma serie de recursos de segurança em uma unica solução
+Firewall o endian firewall é o pf sense são as plataformas utm mais populares.
+Antivírus
+Controle de acesso a internet e a sites
+Prevenção de intrusões de rede
+Balaceamento de links de internet
+VPN(rede virtual privada)
+Filtro de conteúdo
+controle de acesso wireless
+relátorios
+
+Criar um script para o firewall que inicie quando o servidor iniciar
+
+Esse script para quando iniciarmos o servidor a regra do firewall não seja perdida
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

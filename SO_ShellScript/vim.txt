@@ -1,0 +1,141 @@
+
+Vim é um editor de arquivo dos sistemas operacionais linux e unix
+
+O vim tem 3 modos de operação 
+o modo de inserção -> serve para alterar o texto digite qualquer letra para ativar
+
+o modo de comando -> serve para colocar comandos digitar comandos como o :set cursorline para ativar aperte Esc + :
+
+o modo visual -> que serve para selecionar o texto para ativar o modo visual digete v
+
+Para sair do vim
+Esc + : + q + <Enter>
+para forçar uma saida
+Esc + : + q! + <Enter> -> sair sem salvar
+Esc + : + qw + <Enter> -> sair e salvar
+Esc + : + x + <Enter> -> Sair e salvar também q nem o qw
+/palavra -> serve para destacar uma palavra de um texto ou seja um filtro para achar alguma coisa
+
+as teclas hjkl permite mover o curso mais para isso não pode estar no mode iserção
+
+tecle Esc -> para sair do modo de iserção
+
+h -> cursor para o lado esquerdo
+l -> cursor para o lado direito
+k -> para cima
+j -> para baixo
+
+w -> movimenta para o começo de cada palavra 
+2w -> podemos combinar numeros com w para movimentar o cursor aki no caso
+movimenta duas palavras
+
+b ->  Volta para o começo de cada palavra
+e -> vai para o final de cada palavra
+
+deletar 
+d + w -> combina com w deletando cada palavra
+d+d -> apaga uma linha inteira
+u -> para desfazer
+ctrl + r -> desfaz o desfazer
+quando apagamos uma linha ela fica armazenada no buffer do vim para recuperarmos a linha podemos simplesmente aperta "p" no local onde o cursor estar e a linha aparecera ou apertamos shift + "p" para aparecer em cima de uma linha
+
+
+mostrar nome do arquivo
+
+ctrl + g -> mostra o tipo e nome do arquivo que estar aberto no vim
+
+
+
+Voce tambem pode digitar o numero a ser percurrido pelo cursor e colocar uma das letra hjkl
+ex: 10j -> o cursor percorrer 10 linhas para baixo
+
+shift+g -> vai para o final do texto
+g+g -> vai para o começo do texto
+shift + a -> vai para o final da linha ao lado direito ou teclar "end" ou s "shift + $ "
+shift + m -> vai para o meio da tela
+
+
+shift + o -> abre uma linha acima
+teclar "home" -> vai para começo da linha no modo de comando ou teclar "0"
+
+Como deixar uma configuração padrão no vim
+Basta acessar o arquivo do vim
+
+vi ~/.vimrc -> arquivo de configuração nele é possivel colocar qualque set para modificar o padrão do vim em seguida e so salvar
+
+
+x -> permite que você apague os caracteres sem estar no modo de inserção
+~ + ~ -> Permite deixar a letra maiuscula sem estar no modo de inserção
+r+n -> ao segurar r e apertar qualquer caractere alteramos o caractere
+
+
+
+vimtutor -> Mostra um tutorial do vim em inglês no terminal
+vimtutor pt -> Mostra um tutorial do vim em português
+
+vim arquivo.txt -> permite criar um arquivo de texto dentro vim so que so fica salvo o arquivo se for escrita alguma coisa nele ai em seguida e so salvar e sair
+
+Esc+shift+:version -> mostra a versão do vim
+
+Esc+shift+:help -> para obter ajuda sobre como mecher no vim
+Esc+ shift +:q -> Para sair do help
+
+Substituiçao na linha
+
+:s/antigaPalavra/nova -> substitui a palavra porem o curso tem que ficar na linha da palavra ser substituida
+
+:2,5s/antigaPalavra/PalavraNova/g -> Das linhas 2 ate a linha 5 substitua a palvra determinada, o g faz com que substitua em toda linha que estar o cursor
+
+:%s/palavra1// -> apague em todas as linha onde tiver a palavra1
+
+Comando i 
+:help i -> mostra para que serve o comando i
+
+:set number -> exibe o numero das linhas, antes e necessario apertar esc
+:set nonumber -> tira o numero de linhas
+:set cursorline -> sublinha as linhas
+:set cursorcolumn -> exibe uma sombra da coluna em que meu cursor estar
+:set relativenumber -> serve para contar um determinado numero de linhas apartir da localização do cursor o que facilitar contar numero de linhas para fazer copias
+
+Copia
+yy -> copia uma linha no local onde o cursor estar
+p -> cola a linha no local onde o cursor estar
+2yy -> copia duas linhas voce pode altera o numero para o que achar melhor
+
+Visual
+
+tecle v -> para entrar no modo visual
+ctrl + v -> ajuda a selecionar
+ 
+ctrl+w+v -> dividi a tela do vim
+ctrl+w+s -> dividi a tela na horizontal
+ctrl + w + w -> move o cursor em tela e tela
+Esc + :q -> para sair de uma tela
+Esc + :qa -> para sair de todas as telas
+
+Abrir um terminal no vim na horizontal
+Esc + : + term
+
+Esc + :vertical + :term -> abri um terminal na vertical
+
+exit -> exit para sair do terminal
+
+para colocar as informações de um comando no vim ls e pwd
+
+:r! ls -> mostra o ls do terminal no vim
+:r! pwd -> mostra o caminho do diretorio no vim
+
+Indentação 
+
+shift + >>
+
+desfazer a identação
+
+shift + <<
+
+indentação de 3 linhas
+
+3 shift + >> 
+
+shift + > i shift + { -> indenta dentro de bloco de codigo de chaves
+

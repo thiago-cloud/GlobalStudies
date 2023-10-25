@@ -1,0 +1,452 @@
+Sistemas Operacionais
+
+O que é um sistema operacional
+
+É um programa que atua como intermediario entre o usuario e o hardware de um comptador, alem disso ele tem função de gerenciar todos os recuros do computador.
+
+Objetivos do sistema operacional
+
+-Executar programas do usuaario e facilitar a resolução de seus problemas.
+
+-Tornar o uso de computador conviniente
+
+-Usar o hardware do computador de maneira efiiciente
+
+-Alguns SO são criados para serem eficinetes como os mainframes(Servidores) e outros para ser convinientes para pcs usuario comum e outros para a combinação disso(estações de trabalho, computadores portateis)
+
+Sistemas Mainframe
+
+Sistema de Mesa (Desktop)
+
+Sistemas Multiprocessadores ou paralelo
+
+Sistemas Distribuidos
+
+Sistemas Agrupados ou em Cluster
+
+Sistema de tempo Real
+
+Sistemas Portateis
+
+Migração de recurosos
+
+Ambientes de computação
+
+Aula 2
+
+Sistema de Computação
+
+Um sistema de computação consiste em uma ou mais cpus e em uma serie de controladores de disposistivos conectados atravês de um barramento comum 
+
+Processadores 
+
+
+Componentes da CPU -> uc, ula e registradores
+
+Ciclo básico de execução de cpu
+
+Inicio -> Busca a proxima instrução -> Interpreta (decodifica) instrução-> executa a instrução -> Fim
+
+Pipeline
+
+Processadores pipelines e superescalares
+
+Hierarquia de armazenamento
+
+Aula 3
+
+Dispositivos de entrada e saida (E/S) Input e Output
+
+O Dispositivo de entrada e saida e constituido de duas partes o controlador do dispositivo
+e o dispositivo em si
+
+Cada controlador e responsavel pelo seu proprio dispositivo controla fisicamente o dispositivo e interage com o so
+
+O controle do dispositivo e na maioria das vezes muito complicado e cheio de detalhes
+
+Em geral os S.O oferece um driver para cada controlado de dispositovo junto de uma interface para o usuario poder acessar
+
+Aula 4 
+
+Conceito de Processo
+
+Um processo é uma intancia em execução de um programa executavel.
+
+Escalonamento de  Processos
+
+Operações sobre Processos
+
+Processos Cooperativos
+
+Comunicação entre Processos
+
+Um sistema operacional executa uma variedade de programas
+
+Sistemas Batch- executam tarefas (jobs)
+
+Sistema de Tempo Compartilhado -> executam programas de usuario ou tarefas
+
+O livro texto usa os termos tarefa e processo de forma intercambiável
+
+Processo -> um programa em execução a execução do processo precosa ocorrer de maneira sequencial
+
+Um Processo inclui
+
+Contador de Programa -> PC: indica a próxima instrução a ser executada.
+
+Pilha (Stack): contém dados temporarios,como as variáveis locais, os parâmetros de métodos e endereços de retorno
+
+Seção de dados> contêm as variáveis globais
+
+Um programa se torna um processo quando um arquivo executavel é carregado na memória
+
+Processos na memoria ->  1 stack, 2 heap, 3 data, 4 texte
+
+Estados do processo 
+
+Durante a execução um processo pode estar em um dos estados
+
+Novo(new): O processo estar sendo criado
+
+Pronto(Ready): o processo estar pronto para ser atribuido ao processado ou seja ele ja estar pronto para ser lido pelo processador.
+
+Executando(running): As instruções estão sendo executadas 
+
+Esperando(waiting): O processo esta esperando algum evento (por exemplo, o termino de uma operação de E/S)
+
+Terminado(terminated): O processo terminou a sua execução
+
+Atenção: Somente um processo pode estar executando em um processador
+
+PCB -> Cada processo e representado pelo sistema operacional como pcb (process control block) e no pcb onde estar toda as informações do processo
+como:
+Estado do processo
+Numero do processo
+Contador de programa
+Registradores de CPU
+Informações de escalonamento de CPU
+Informações de gerenciamento de memoria
+Informações de contabilização Informações de Status de E/S
+
+OBS: Um ponto a se levar em consideração é que ao criarmos um software os processos do software não pode invadir os espaços de memoria de outros processos
+
+
+Escalonamento de Processos
+-Fila de escalonamento de processos
+Como um sistema com um único processador o processaodr pode apenas executar um processo de cada vez enquanto isso os outros processos aguardama em fila
+
+Fila de tarefa(job Queue): Conjunto de todos os processos do sistema
+
+Fila de processosprontos(Ready queue): Conjunto de processos residindo em memoria principal aguardando para serem executados pelo processador
+
+Fila de dispositivos (Devie queue): conjunto de processos aguardando um dispositivo E/S.
+
+Escalonadores 
+
+Com a multiprogramação diversos processos disputam recursos disponiveis no  sistema, dentre eles o tempo da  cpu
+
+Uma vez que pode existir mais de um processo pronto para a execução e necessario escolher um deles
+
+O escalonamento de processo permite escolher um dos processos dentre um conjunto de processo, para a execução das instruções na cpu
+
+Para isso a 3 tipos de escalonadores
+
+Escalonador de longo prazo(ou escalonador de tarefa):
+Decide efetivamente quando um processo deve ser criado a criação pode ser adiada caso a carga no computador esteja muito grande
+controla o grau de multiprogramação e é chamado raramente(segundos ou minutos) quando a cpu esta com pouco trabalho ele traz outro processo para a fila
+então quando agente clica em um icone um programa por exemplo estamos chamando o escalonador de longo prazo ja que o programa vai demorar cerca de alguns minutos para criar os processos e executalos
+
+
+
+Escalonador de curto prazo(ou escalonador de cpu): seleciona um dos processos da fila de prontos e aloca na cpu
+É o mais importante chamado com alta frequencia(milissegundos(, e precisa ser veloz para escolher um dos processo na fila de prontos
+
+
+Escalonador de medio prazo: o escalonador de medio prazo suspende processos não privilegiados quando o sistema estar sobrecarregado ou seja ele pega esses processos ja prontos coloca no hd como salvo que é chamado de swapout e escalar outros processos mais privilegiados do hd para memoria que e chamado swapin.
+esse esquema de troca e chamado de swapping
+É utilizado para retirada de um processo temporariamente possibilitando a liberação de espaço em memoria
+
+O escalonador trabalha com outra entidade que e o despachador
+
+Criação de processos
+
+Processos podem ser criados e removidos dinamicamente do sistema
+
+Um processo chamado de processo pai pode criar um ou mais processos chamados processos filhos e estes por sua vez  podem criar outros processos formando uma arvore de processos
+
+O sistema possui inumeros processos:
+Inicialmente ao carregar o sistema operacional são criados varios processos
+
+O usuario ao exexutar programas processos para cada programa
+
+É possivel tambem criar processos atravès de chamadas de sistema (system call) a partir de outro processo
+
+Pid -> O so indentifica os processos atravês de uma numeração chamada pid(identificador de processos)
+
+Quanto ao compartilhamento de recuros:
+pai e filho compartilham todos os recursos ou
+Filhos compartilham um subconjunto dos recursos do pai ou
+pai e filho não compartilham recurso algum
+
+Quanto á execução (sincronização)
+Pai e filhos são utilizados concorrentementes
+Pai espera até que os filhos terminem a respectiva execução
+
+Quanto ao espaço de execução de endereçamento:
+Processo-filho é uma duplicata do processo-pai
+Processo-filho contém um novo programa carregado nele
+
+Tipos de criação de processo -> fork() exec() wait().
+
+Termino do processo
+
+abort -> e quando pai termina a execução dos processos filhos
+
+Init -> quando o processo pai termina os filhos receberão como novo pai o processo init
+
+Comando no-wrap -> esse comando faz que o sistema web fique sempre me execução mesmo que haja uma desconecção
+
+Comunicação de processos
+
+Processos cooperativos
+
+Os processos que estão em execução em um sistema podem ser cooperativos ou independentes.
+
+Um processo é independente se não puder afetar ou ser afetado por outro processo em execução no sistema
+
+Um processo cooperativo pode afetar ou ser afetado pela execução de outros processos
+
+Qualquer processo que compartilhe dados com outro é processo cooperativo
+
+Vantagens da cooperação de processos:
+Compartilhamento de informações(por ex: arquivo compartilhado)
+
+Velocidade na computação (se o computador possuir mais de uma CPU)
+
+Modularidade é importante para sistemas grandes
+
+Conviniencia um usuario pode editar imprimir e compilar em paralelo
+
+Processos cooperativos precisam de mecanismos de comunicação entre processos (interprocess Communication -IPC) para possibilitar a troca de dados e informações
+
+Areas de memorias especificas
+Sistema Operacional (buffers,pipes,area de transferencia) 
+
+Pipe: área de memoria (buffer) do Sistema Operacional para a transferencia de dados de E/S entre processos
+
+Spooling 
+Área de impressão de documentos
+
+Implementação: Fila de arquivos
+
+Todos os processos enviam documentos para o controlador do spool que os organiza para então imprimi-los
+
+uma regiao de memoria e estabelecida para ser compartilhada entre processos (no espaço de endereços do processo criador)
+
+A comunicação entre processos ocorre pela leitura/escrita de dados na região para a comunicação) 
+
+O método de comunicação entre processo e chamado de troca de mensagens ou passagem de mensagens
+
+O mecanismo oferece pelo menos duas operações:
+Send(Mensagem)
+Receive(Mensagem)
+
+Se P é Q desejam se comunicar eles precisam: 
+estabelecer um enlace ou canal de comunicação ente eles
+
+Troca de mensagem através de send/receive
+
+Inplementação do enlace de comunicação
+
+Fisico (memoria compartilhada, barramento de hardware ou rede)
+
+Logico(propriredades lógicas)
+
+Métodos de inplementação logica:
+A ideia e que o so possa fornecer metodos de gerenciar a comunicação dos processos.
+
+Comunicação direta ou indireta
+Comunicação sincrona ou assincrona
+Com a utilização de buffer ou não
+
+Comunicação direta:
+Nomeação: todo o processo que deseja se comunicar deve ter uma nomeação para se identificar
+send-> enviar uma mensagem ao processo p por exemplo
+receive-> recebe uma mensagem do processo q por exemplo
+
+Propriedades do enlace de comunicação
+Os enlaces são estabelicidos automaticamente
+
+Um enlace é associado a exatamente um par de processos de comunicação
+
+Entre cada para existe exatamente um enlace
+
+O enlace pode ser unidirecional mais normalmente é bidirecional
+
+Comunicação indireta
+
+Diferente da comunicação direta na comunicação indireta podem ser enviada varias mensgens para diversos recebidores que vão receber de acordo com a identificação do processo.
+
+As mensagens são enviadas e recebidas através de caixas de correios (mailbox)
+
+Cada caixa de correio possui uma identificação exclusiva
+
+Os processos so podem se comunicar se tiverem uma caixa de correio compartilhada
+
+As primitivas são definidas como send e receive
+Send(A,mensagem) -> envia uma mensagem a caixa de correio A
+Receive(A, mensagem) -> Recebe uma mensagem da caixa de correio A
+
+Um enlace so é estabelicido se os processos compartilharem uma caixa de correio em comum
+
+Sincronização -> Bloqueante ou seja esse tipo de processo ficda parado aguardando uma mensagem, exemplo o scanner do java que para o programa para receber uma mensagem do usuario
+
+Assincrono -> Esse processo não para ele não fica aguardando uma mensagem ele faz outras coisas enquanto a mensagem não chega as mensagens chegam nesse processo como se fosse uma notificação.
+
+Quando o send e o receive forem bloqueantes ocorre um ponto de encontro entre anbos chamado (rendezvous) entre o remetente e o receptor.
+
+Buffering
+
+Utilizado tanto na comunicação direta quanto na indireta as mensagens são armazenadas em uma fila temporaria(buffer)
+Um buffer pode ser implementado de 3 maneiras:
+
+Capacidade zero -> Nenhuma mensagem armazenada o emissor precisa bloquear e esperar o receptor (rendzvous)
+
+capacidade limitada -> Tamanho finito para n mensagens armazenadas
+
+Capacidade ilimitada -> tamanho infinito o emissor nunca espera
+
+O caso da capacidade zero e também chamado de sistema de mensagem sem bufferin os outros casos e chamado de sistema de mensagens de buffering automatico.
+
+ A fila de dados e um buffer onde você tem um  insert e o remove que o send e o insert e receive e o remove
+
+Escalonamento de Cpu
+
+	Multiprogramação
+
+		Multiplos processo na memória compartilhando o uso da CPU
+
+		Objetivo: ter sempere um processo executando na cpu maximizar a utilização da cpu
+		
+	Escalonamento de processos
+	Havendo varios processos para serem executados(prontos) é preciso estabelecer criterios para selecionar um deles
+	
+	É função do escalonador de processos decidir qual será o proximo processo a executar na cpu - define a ordem de execução dos processos na fila de prontos
+	Função fundamental do sistema Operacional, é a base do gerenciamento de processador e da multiprogramação
+	
+	
+		Estado de execução
+		/		  \
+	       /	           \
+              /			    \Escalonamento
+	     /			     \
+	    /			      \
+ Estado de Espera ---------------Estado de Pronto
+ 
+ A execução de processo consiste de: execução de CPU (Computação e espera de E/S(operação de E/S)
+ 
+ A execução de um processo alterna entre dois estados execução de CPU(burst ou surto de uso da CPU) e espera de E/S(burst ou surto E/S)
+ 
+ Consiste em um ciclo de surto de uso da CPU e surto de E/S
+ (inicio) ->surto de CPU -> surto de E/S -> surto de CPU -> surto de E/S ->Surto de CPU (Fim)
+ 
+ Cpu-bound -> É quando eu passo mais tempo processando alem disso possui longos surtos de cpu
+ 
+ Cpu i/o-bound -> É quando o processo passa mais tempo em espera de que processando possui pequenos surto de utilização de cpu e frequentes esperas
+
+O escalonamento pode ser:
+
+Não-preemptivo -> O processo é executado do inicio ao fim pela cpu sem intervenção de fatores externo em relaçao ao uso da cpu, Geralmente esse tipo de processo predominava em Sistemas multprogramaveis antigos como o de processamento batch
+
+Preemptivo -> Um processo pode ser interrompido para a execução de outro
+O escalonamento pode ocorrer em qualquer uma das situações(1) a (4) alem diso o escalonamento preemptivo ele é mais recentes em sos  e amplamente utilizado em sistemas de tempo compartilhado
+
+Dispatcher (Executor ou despachante)
+
+Um outro componente envolvido na função de cpu é o despachante (dispatcher)
+
+	O dispatcher passa o controle da cpu ao processo selecionado pelo escalonador de curto prazo; envolve:
+
+	Mudança de contexto
+	Comutação para o modo usário
+	Desvio para a posição adequada no programa do usuário de modo a reiniciá-lo
+
+	O dispatcher precisa ser o mais veloz possível, pois é invocado a cada troca de processo.
+
+	Latência de despacho -> O tempo necessario para o dispatcher interromper um processo e iniciar a execução de outro.
+	  
+ 
+Critérios de Escalonamento
+
+	Para distintos ambientes são necessarios diferentes algoritimos de escalonamento, que melhor possam atender seus objetivos e requisitos
+	Sistemas interativos:
+	Requerem respostas rápidas a eventos(dos usuarios,rede)
+	Editores de texto navegadores Web, jogos,servidores(email,...)
+	
+	Sistemas em lote (batch)
+	Normalmente executam sem intervenção do usuário (procedimentos de backup, cálculos numéricos longos,etc.)
+	Não há restrição de tempo
+	Sistemas de tempo real
+	Há restrição de tempo, o escalonamento deve priorizar os processo críticos em detrimento de outros
+	
+Quais criterios a se verificar para comparar diferentes algoritimos de escalonamento
+
+Utilização da CPU ->
+
+Throughput(vazão) -> Número de processos completados por unidade de tempo(Menor para processos curtos e maior para processos longos)
+
+Tempo de retorno (turnaround) ->
+
+Tempo de espera ->
+
+Tempo de resposta ->
+
+Criterios de Otimização
+
+Justiça
+	Distribuição justa do processador entre os processo prontos na fila (processos semalhantes devem ter tempos de CPU semelhante)
+	Em geral, qualquer algoritimo de escalonamento busca:
+	Maximizar -> utilização da CPU, throghput(vazão)
+	Minimizar -> Tempo de retorno, tempo de resposta e tempo de espera
+	
+ Escalonanamento First-come, First-served(FCFS)
+ 
+ (o primeiro a chegar e o primeiro a se atendido)
+ 
+	 Este é o mais simples dos algoritiomos de escalonamento A CPU é atribuida ao processos na ordem requisitada por eles.
+	 
+	 A implementação utiliza uma fila FIFO (First IN, First Out) -Fila de processos prontos
+	 	processos que entram para o estado pronto entram para o final da fila
+	 	Quando a cpu fica livre, o primeiro processo na fila é escalonado é removido da fila
+	 	
+Escalonamento por prioridade
+	Uma prioridade é associada a numero do processo quanto menor o numero inteiro maior prioridade
+	Processos  com mesma prioridade usa-se FCFS para desempatar
+	Prioridade podem ser definidas com fatores externos(usuarios, departamento e etc..) ou internos( requisitos de memoria, limites de tempo, numero de arquivos abertos, razão entre surto de E/S médio e surto de cpu médio etc...
+	
+	
+Escalonamento Round Robin(RR)
+	
+	É projetado para sistemas de tempo compartilhado
+	
+	É semelhante ao FCFS (FIFO), com preempção para alternar entre os processo
+	
+	Cada processo utiliza a cpu por um tempo fixo chmado de time quantu ou fatia de tempo (imeslice), normalmente 10 a 100milissegundos
+	
+	A fila de processo prontos é implementada como uma fatia FIFO
+		novos processo são incluidos no fim da fila
+		Quando a cpu fica livre, o escalonador obtém o primeiro processo da fila
+		define um temporizado para imterromper após 1 quantum de tempo e despacha o processo
+		quando este tempo se expira o processo é interrompido e colocado no final da fila de processos prontos
+	
+	
+	
+	
+	
+	
+
+
+
+
+
+

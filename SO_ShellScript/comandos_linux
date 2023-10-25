@@ -1,0 +1,1256 @@
+
+senha do usuario teste: thiago456
+
+Para abrir o terminal -> ctrl + alt + T
+
+sudo apt update -> Atualiza o linux
+
+shell
+
+shell -> e um tipo de interpretador de comando existe varios tipos de shell temos o bash, zsh, e o fish. O bash e o mais utilizado nas distro linux e o mais antigos temos zsh para o shell do mac e o fish o mais novo dos shell criado em 2005 quase totalmente diferente dos anteriors que o bash e o zsh. existe uma padronização do shell chamada posix que todos os sistemas operacionais podem seguir para ter uma determinada semelhança com os demais ou seja compatibilidade.
+
+cat /etc/shells -> permite vc vizualizar todos os shsells em forma de caminho /etc/bash disponiveis na maquina
+chsh -> altera o shell na maquina em seguida ele o pedira a senha e depois mostrara o shell atual e perguntara qual sera o novo shell coloque /etc/zsh para alterar o shell para o zsh
+
+
+
+
+
+Apagando caracteres
+
+teclas de atalhos
+
+ctrl + u -> apaga todo o lado esquerdo do cursor
+
+ctrl + k -> apaga todo o lado direito do curor
+
+ctrl + y -> desfaz
+
+ctrl + d -> fecha o terminal
+
+ctrl + r -> permite que voce possar digitar no historico de terminada letra  de um comando que não consegue lembra to e assim o terminal mostra algumas opções de comandos que tem aquela letra
+
+texto longo 
+
+shift + pageup -> permite rolar o texto para cima
+
+shift + pagedown -> permite rolar o texto para baixo
+
+
+comandos
+cat arquivo.txt -> Serve para visualizar o conteudo que tem dentro do arquivo sem precisar do editor de texto como o vim por exemplo ou a nano
+
+cat /etc/shells -> esse comando serve para mostrar os interpretadores de comando no s.o
+
+cat /etc/hosts -> permite vizualizar o localhost
+
+
+dmesg -> esse comando mostra todas as informações que estar acontecendo com o sistema operacional mais para acionalo e necessario digitar sudo su para ganhar privilegios no terminal
+
+history -> mostra todos os comandos que foram digitados no terminal
+
+history | grep echo -> esse comando permite filtrar todos os comandos que tem o echo e mostra na tela o grep faz funçao de filtrar
+
+echo $HISTSIZE -> mostra a quantidade de comandos que pode ser armazenada no historico do terminal
+
+export HISTSIZE=6000 -> permite armazenar ate 6000 comando no historico do terminal o 6000 podemos alterar para qualquer valor desejado
+
+history -c -> apaga todo o historico
+
+echo -e '\U1F413' -> -e imprime caracteres especiais esse aqui imprime um galo
+
+logout -> serve para deslogar do sistema
+
+exit -> serve para finalizar algo
+
+sudo shutdown -h now -> serve para desligar a maquina na hora
+
+sudo shutdown -h 9:00 -> podemos especificar um horario que vai ser desligada a maquina 
+
+sudo shutdown -r 9:00 -> reiniciar a maquina aki no caso de 9 da manhã
+
+no lugar do shutdown poderiamos usar o poweroff ou reboot tem a mesma função
+
+shutdown -c -> cancela o desligamento ou reiniciamneto se for o caso
+
+árvore de diretorios:
+
+/bin -> Esse diretorio contem arquivos binarios executaveis inclusive os comandos comuns como ls,ps,ping,cp e etc...
+
+/sbin ->Esse diretorio também contem arquivos binarios executaveis do sistema como por exemplo ipTables,reboot,fdisk,ifconfig, e etc...
+
+/etc -> contem arquivos de configurações necessarios por todos os programas contém também scripts de iniciação e finalização de programas.
+
+/dev -> contém arquivos de disco rigido e dispositivos usb.
+
+/proc -> contém informações sobre os processos do sistema.
+
+/var -> contém arquivos de variaveis mudam com o tempo como por exemplo arquivos de log no diretorio /var/log arquivos de pacotes de bases de dados /var/lib, fila de impressão em var/spool; etc...
+
+/tmp -> Contém arquivos temporarios criados pelo sistema do usuario;
+
+/usr -> Contém arquivos binarios bibliotecas,documentações e código fonte de programas de segundo nivel.
+
+/home -> Contem o diretorios ded todos os usuarios e seus arquivos pessoais
+
+/lib -> Contem arquivos de bibliotecas que suportam os binarios localizados em /bin e/sbin
+
+/opt -> Contem aplicativos de fornecedores individuais
+
+/mnt -> diretorio temporario de montagem de sistema de arquivos
+
+/media -> diretorio temporario de dispositivos removiveis por exemplo /media /cdrom /media /floopy
+
+/srv -> contem dados especificos de alguns serviços.
+
+para verificar o começo de toda arvore(diretorio raiz) e so digitar -> cd /
+
+em seguida para ver todos os diretorios do sistema digite um -> ls 
+
+cd / -> responsavel por acessar determinados diretorios
+
+cd .. -> Volta para o diretorio anterior
+
+cd . -> continua no mesmo lugar
+
+cd -> volta para o diretorio /home/usuario
+
+cd - -> volta para o diretorio que estava antes
+
+cd ~ -> Volta para o diretorio usuario se estiver como usuario ou volta para root se estiver como adm.
+
+ls -> mostra o que tem dentro do diretorio
+
+pwd -> mostra o caminho onde voce estar ou seja o diretorio
+
+ls -1 ->mostra o que tem dentro do diretorio sendo que por linha
+
+ls -l ->mostra todas as informações dentro dentro de um diretorio, como seus arquivos e diretoios que estão dentro.
+
+lrwxrwxrwx -> se tiver um l no começo esse processo estar referenciando um link
+-rw-r--r-- ->se tiver um traço na frente e um  arquivo
+drwxr-xr-x -> e um diretorio 
+
+ls -ld /diretorio -> informa determinadas informaçõesdo diretorio
+
+sudo fdisk -l -> Mostra uma lista da quantidade de disco que existe no sistemas e tambem informações sobre o disco
+
+ls -al -> mostra todas as informações que a em arquivos e diretorios e ate ocultos dentro de um determinado diretorio.
+
+Classificando arquivos e diretorios 
+"/" para diretorios
+"*"  para executaveis
+"@" para links simbolicos
+"=" para sockets e fifos
+
+ls -lh -> mostra o tamanho o arquivo ou diretorio
+Criando arquivos
+touch arquivo.c -> Cria um arquivo vazio
+
+touch arquivo{1..20}.txt -> criara 20 arquivos .txt esse formato permite criar multiplos arquivos em um diretorio
+
+Criando diretorios
+mkdir diretorio -> cria um diretorio
+
+mkdir -p diretorio1/diretorio2 -> Permite criar o diretorio e sub diretorios 
+
+mkdir dir{1..2} -> permite criar mais de um diretorio ou mais
+
+tree -> permite ver todos os diretorios dentro de um diretorio como o ls, alem de observar tambem os subdiretorios ele mostra o visual de estrutura de arvore mas para o comando funcionar e necessario baixar.
+
+Duplicando diretorios ou copiando diretorios
+
+cp \caminhoOrigem \caminhoDestino -> copia o arquivo para uma pasta destino
+
+cp arquivo*.c \diretorioDestino -> copia todos os arquivos que tenha o nome arquivo com extensão .c para pasta diretorioDestino 
+
+cp teste1.c teste2.c teste3.c \codigo -> podemos copiar mais de um arquivo tambem para a pasta destino
+
+cp ~/diretorio1/arquivo{1..2}.txt . -> copia os dois arquivos para o diretorio1 determinado
+
+cp arquivo1.c arquivo2.c -> duplicamos o arquivo 1 a defierença agora e que ele tem outro nome
+
+cp -r diretorio1/ diretorio2/ -> Fizemos uma copia do diretorio1 que e o diretorio2 sempre utiliza -r na frente em caso de copia de diretorio.
+
+O Comando de remoção de diretorios e arquivos rm
+
+rm diretorio/*.c -> apaga todos os arquivos dentro do diretorio que tenha a extensão .c
+
+rm *.* -> apaga todos os arquivos
+
+rm -R diretorio -> apaga um diretorio
+
+
+Imagine que voce tem na tela graças ao um comando informações que voce quer salvar em algum lugar
+
+dmesg > arquivo.txt -> aki voce estar salvando as informações de dmesg dentro do arquivo.txt (dmesg e um comando que mostra todas as informações do s.o) > pega todo o resultado de um comando e joga dentro de um arquivo.
+
+mv nomeAntigo novoNome -> Serve para trocar o nome de um arquivo
+
+mv origemArquivo destinoArquivo -> Serve para mover o arquivo para um diretorio destino
+ex: mv /home/thiago/arquivo.txt /home/thiago/Documentos
+
+Como alterar a data no terminal
+
+date MêsDiaHoraAno
+
+Criando softlink
+ln -s arquivo1.txt arquivo2.txt -> cria um link arquivo 2 que aponta para o arquivo1 ja criado.
+
+Criando Hardlink
+ln arquivo1.txt arquivo2.txt -> cria um link arquivo 2 que aponta para o arquivo1 ja criado. a diferença aki e que ao excluir o arquivo 1 o arquivo 2 continuara existindo. E como se tivesse feito uma copia
+
+ln arquivo
+
+VIM
+
+vim arquivo.txt -> abri o arquivo no vim
+
+:wq -> salva a alteração do arquivo no vim e sai.
+
+echo "Irineu voce nem sabe e nem eu" | cut -c 1-6 -> imprime uma parte dos caracteres  no caso aki os 6 primeiros caracteres
+
+seq
+
+imprime uma sequencia de numeros 
+
+seq inicio fim
+
+seq 1 100 -> imprime uma sequencia de 1 a 100
+
+seq 1 3 200 -> imprime uma sequencia de 1 a 200 de 3 em 3
+
+seq 1 0.5 100-> imprime uma sequencia numerica de 1 a 100 a cada 0.5
+
+cat sequencia.txt | tr ',' ';' -> troca as virgula pelo ponto e virgula da sequencia que estar dentro do arquivo sequencia.txt
+
+fmt
+
+fmt -w 20 letraGot.txt -> Esse comando serve para alterar a largura do texto aki no caso alterar para 20
+
+Comando que serve para filtrar palavras ou numeros em um texto de arquivo
+
+egrep '(palavra)' arquivo.txt -> aparecera a as plavras marcada no texto do arquivo
+
+ou
+
+cat arquivo.txt | grep palavra
+
+egrep 'sozinho' letraGot.txt | egrep -v 'acontecer' -> esse comando filtra a palavra sozinho e a palavra acontecer o sozinho e mostrado e a a palavra acontecer e tirada
+
+dmesg | fgrep @ -> Mostra na tela os arrobas da informação do comando dmesg o fgrep serve para filtrar caracteres especiais
+
+head -5 arquivo.txt -> server para mostrar as primeiras cinco linhas do topo do arquivo o numero podemos alterar para um qualquer
+
+tail -20 arquivo.txt -> serve para mostrar as ultimas 20 linhas do arquivo
+
+file arquivo.txt -> serve para mostrar o tipo de arquivo
+
+Para logar como superusuario
+pode se usar sudo, su, ou PolicyKit
+
+sudo -i -> alterna para o modo superusuario ou seja o modo root
+
+sudo -s -> altera para o modo root tambem so que sem os scripts interativos
+
+A diferença de sudo su para sudo su -
+
+sudo su -> Esse comando privilegios ao usuario comum
+
+sudo su - -> Esse comando permite acesso a conta root ou seja o usuario passa ser o root.
+
+su - usuario -> alterna para outro usuario
+
+Gerenciamento de usuarios grupos e permissões
+
+sudo adduser nomeDoUsuario -> adiciona um novo usuario no linux ou seja criando um novo usuario
+
+useradd -> adiciona um usuario também porem e mais limitado ele so por não cria um diretorio home para este usuario so cria mais um usuario no diretorio /etc/passwd
+
+sudo userdel nomeDousuario -> deleta o usuario
+
+usermod -c "comentario" usuario1 -> Adciona um comentario ao usuario1 e possivel vizualizar esse comentario com cat /etc/passwda
+
+cat /etc/passwd -> vizualiza quais os usuarios existente no linux esse aequivo passwd e responsavel por armezenar informações de um ususario
+
+Algumas contas usam o shell /﻿sbin/nologin para proibir logins interativos com essa conta.
+
+
+Politica de vencimento da senha do usuario
+
+Procedimento para determinar o tempo para expiração da senha de uma conta usuario
+
+date +%F -> exibe a data atual
+
+date -d "+30 days" +%F -> Determiana que aconta vai dura 30 dias apartir da data atual
+
+Alterção de data de expiração
+
+chage -E $(DATE -D "+30 DAYS +%F) usuario1 -> esse comando pemite alterar a data de quando a conta do usuario será expirada.
+
+chage -l usuario1 | grep "Account expires" -> esse comando mostra a data de quando a conta usuario1 vai expirar ou seja mostra a politica de vencimento da senha
+
+chage -d 0 usuario1 -> solicita ao usuario a trocar a sua senha quando ele for logar
+
+date -d "+45 days" -u -> calcula uma data de acordo com um valor colocado. ex: aki no caso foi colocado 45 dias o linux vai pegar a data atual somar mais 45 dias e mostrar qual sera data apos 45 dias
+
+Restrição de acesso
+
+usermod -L usuario1 -> esse comando bloqueia o usuario, e nisso o usario não consegue mais fazer login
+
+usermod -L -e 2022-08-14 usuario1 -> esse comando bloqueia a conta e expira a conta, serve para quando um determinado usuario sair de uma empresa apartir de uma determinada data
+
+usermod -U -e 2022-08-14 usuario1 -> Hbilita a conta do usuario apartir de uma determinada data.
+
+sudo passwd usuario -> altera senha do usuario
+
+passwd -> muda a senha do usuario
+
+sudo login -> permite fazer login pelo terminal
+
+logout -> para logar em outros usuarios
+
+whoami -> Mostra o usuario no sistema
+
+users -> Mostra os usuarios logados na máquina atual
+
+id -> O comando id permite ver o usuario atual e os grupos que ele pertence
+
+id usuario -> Mostra informações de um determinado usuario
+
+usermod -s /sbin/nologin usuario2 -> esse comando bloqueaia a tentativa de logar pelo terminal em outro usuario mostrando a mensagem "This account is currently not available." quando vc tenta logar como su - usuario2
+
+Grupos
+
+Grupos primarios e secundarios
+
+Primarios -> são os grupos que so pode aparecer uma unica vez na conta do usuario o usuario so pode pertencer a um grupo primario por conta.
+
+Secundario -> são grupos adcionais que dão acesso a determinados arquivos e diretorios o usuario pode ter varios
+
+Secundario -> são os grupo
+
+sudo addgroup nomeDoGrupo -> adiciona um novo grupo
+
+sudo groupadd -g 10000 nomedoGrupo -> cria um grupo e define o numero do grupo no caso aki a gid e 10000
+
+sudo groupadd -r group02 -> o -r permite criar um grupo com uma gid do intervalo de gids dos sistema, e possives observaro intervalo de gids do sistema no arquivo /etc/login.defs, na parte SYS_GID_MIN e SYS_GID_MAX.
+
+groupmod -n group0022 group02 -> altera o nome do grupo para group02
+
+groupmod -g 30000 group02-> o -g permite altera a gid do grupo
+
+
+usermod -aG group01 user03 -> Adiciona o usuario a um grupo secundario aki no caso um grupo chamado group01
+
+newgrp group01 -> alterna o grupo primario do usuario para group01 mas o usuario so pode alternar se para um grupo secundario e que ele ja participa desse grupo.
+
+
+sudo delgroup nomeDoGrupo -> remove um grupo
+
+Dando permissão ao usuario a fazer parte do grupo sudo
+
+sudo adduser nomeDoUsuario sudo -> quando o usuario e criado ele não tem permissao para acessar no modo sudo su ai damos a permissão a esse usuario com esse comando ou seja o usuario passa ter privilegios administrativo quando se coloca sudo su
+
+cat /etc/group -> vizualiza todos os grupos criados no linux
+
+grep grupoCriado /etc/group -> mostra apenas o grupo que foi criado
+
+grep usuario /etc/group -> mostra os grupos que o usuario faz parte
+
+sudo adduser nomeDoUsuario grupo -> adiciona um usuario ao grupo defenido
+
+sudo deluser usuario grupo -> Remove o usuario de um determinado grupo
+
+As senhas dos usuarios não são mais armazenadas em /etc/passwd esse fato se deu por conta que qualquer usuario tinha acesso ao passwd é la estava as senhas criptografadas e nisso acontecia diversos ataques de dicionario as senhas armazenadas no passwd. agora são armazenadas /etc/shadow que so pode ser acessado no modo root la as senha estão criptografadas
+
+
+Permissões
+
+rwx
+
+r -> quando o arquivo tem o r e pq ele tem permissão para leitura que é 1
+w -> quando o arquivo tem o w ele tem permissão para gravar que é um 1
+x -> e quando o arquivo ou diretorio tem permissão para executar scripts que e um 1
+
+as permissões tem dois estados ligado e desligado
+
+- -> se aparecer um traço no lugar da letra e porque a permissão estar desligada que e o 0 ligada eclear 1
+
+exemplo de um arquivo 
+
+rwxr-xr-x -> as 3 primeira letras se refere as premissões do usuario as 3 do meio ao grupo as 3 ultimas para todos
+
+rwx -> usuario
+r-x -> grupo
+r-x -> todos
+
+Binario para decimal = 421
+r   w   x
+4 + 2 + 1 = 7
+
+r   -   x 
+4 + 0 + 1 = 5
+
+
+r   -   x
+4 + 0 + 1 = 5
+
+     - é um arquivo regular.
+
+    d é um diretório.
+
+    l é um link simbólico.
+
+    c é um arquivo de dispositivo de caracteres.
+
+    b é um arquivo de dispositivo de bloco.
+
+    p é um arquivo de pipe nomeado.
+
+    s é um arquivo de soquete local.
+    
+
+sudo chmod 700  diretorio/ -R -> esse comando permite alterar as permissões 7 para todas as permissões para o usuario 0 para nenhuma permissão ao grupo e mais um 0 para nenhuma permissão a todos.(Colocar numeração para permissões e chamdo de metodo octal)
+
+sudo chown usuario1 diretorio/ -R -> esse comando coloca o usuario1 como novo dono do diretorio.
+
+chmod +x arquivo -> esse comando torna um arquivo de script sheel executavel apos se tornar executavel e so digitar arquivo que ele executara
+
+sudo :grupo Documentos -> altera o proprietario do grupo que Documentos faz parte
+
+sudo chonw -R usuario1 Documentos -> Esse comando faz com que o diretorio documentos seja de propriedade do usuario1 ele e todos os seus diretorios.
+
+chown user:group Documentos -> altera o proprietario usiario e altera o grupo do diretorio documentos ao mesmo tempo
+
+sudo chgrp grupo1 diretorio/ -R -> esse comando coloca o diretorio a um novo grupo que e o grupo1 ou seja altera o grupo
+
+Método simbolico de dar permissões:
+
+chmod ugo-rwx arquivo.txt -> esse comando remove a permissao de leitura gravaçao e execução do usuario do grupo e de outros u de usuario g de grupo e o de outros 
+
+chmod a+x arquivo.txt->adiciona a permissao de execução do arquivo para todos "a de all". outro exemplo 
+
+chmod -R g+rwx /home/user/arquivo.txt -> dar a permissao ler gravar e executa de grupo ao arquivo.txt atraves da localização de estrutura de arvore.
+
+Permissões especiais
+
+suid -> Essa permissão faz com que apenas o usuario sudo possa fazer qualquer alteração como troca de senha o numero dela e "4"
+
+guid -> Essa e uma permissão especial para grupo "2"
+
+stick -> Essa é uma permissão especial para todos "1"
+
+ex: sudo chmod 4755 /usr/bin/passwd -> o "4" -> dar uma permissao especial para o arquivo passwd essa permissao garante que toda vez que o usuario deseje trocar a senha digitando passwd não funcionara pois o arquivo usr/bin/passwd e o arquivo responsavel pela troca de senha e a agora como ele tem a permissao especial usid isso faz com que esse procedimento so seja possivel se o usuario logar como sudo  
+
+Umask
+
+Umask e um comando que serve para definir permissões padrões ao criar arquivos
+
+Umask -> Mostra a numereção de permissão umask, essa permissão e a permissão padrão que um arquivo ou diretorio ja vem ao ser criado no sistema
+
+calculo umask
+
+Imagine que voce quer que todos os diretorios ao ser criado tenha a permissão 755 voce tera que eftuar um calculo para saber qual e a umask que definira o padrão 755 para diretorios:
+
+777 -> para calcular diretorios
+
+666-> para calcular arquivos
+
+777-755 = 22 -> a umask que define o padrão de permissão 755 para diretorio é 0022 e como consequencia os arquvivos desse diretorio também serão alterados.
+
+666-0022 = 644 -> todos os arquivos que forem criados dentro do diretorio tera a permissão 644.
+
+
+
+
+
+
+
+
+
+echo "varios" | tee arquivo{1..10}.txt -> cria varios arquivos 
+ e ainda coloca a mensagem do echo dentro
+cat arquivo* -> permite ver todos os arquivos
+
+| -> o pipe serve como se fosse um tubo de saida de um comando ele canaliza a saida e joga em outro comando com a ajuda do tee
+
+tee -> Tem a função de jogar a saida em outro comando ou arquivo
+
+ex: ls -l | tee arquivo.txt -> aki agente ver um exemplo pratico onde o tee joga a saida no arquivo.txt
+
+Aula 30 até 45
+
+dmesg | more -> esse comando facilita o carregamento de um arquivo longo ou seja quando o texto carregar ele sera representado com um scroll passando pagina por pagina
+
+paste arquivo1.txt arquivo2.txt -> esse comando uni o conteudo de dois arquivos em forma de colunas
+
+paste arquivo1.txt arquivo2.txt > resultado.txt -> permite juntar os dois arquivos
+
+nl -> esse comando permite enumerar as linhas do texto de um arquivo ex: cat arquivo.txt | nl, ex2: dmesg | more | nl
+
+echo "String" | rev -> O comando rev permite inverter a string
+
+cat lista | sort -n -> permite vizualizar a lista em ordem alfabetica di cima para baixo
+
+cat lista | sort -r -> permite vizualizar a lista de forma reversa de baxo para cima
+
+look palavra1 arquivo.txt -> o comandi look procura dentro do arquivo.txt se tem a palavra1
+
+cat arquivo.txt | uniq -> o comando uniq permite que palavra repitidas sejam mostradas uma unica vez
+
+Comando  wc
+Esse comando permite contarmos palavras linhas e o tamanho do arquvo
+
+wc -l arquivo.txt -> conta a quantidade de linhas
+
+wc -c arquivo.txt -> conta a quantidade de bytes
+
+wc -w arquivo.txt -> conta a quantidade de palavras
+
+free -> O comando free serve para mostrar a quantidade total de memoria o buffer e  o swap
+
+Script
+
+Como criar um  script no vim e depois compilar
+
+vim teste.c -> Arquivo do tipo c
+
+gcc teste.c -o teste.e -> compila o arquivo teste .c
+
+./teste.c -> executa o arquivo teste.c
+
+Processos no linux
+
+O estado do processo (S) pode ser um dos seguintes estados:
+
+    D = Hibernação ininterruptível
+
+    R = Em Execução ou Executável
+
+    S = Em Hibernação
+
+    T = Interrompido ou Rastreável
+
+    Z = Zumbi
+    
+
+ps -> Mostra apenas os processos do shell atual
+
+-a -> ver todos os processos em um terminal
+
+-u -> ver os usuarios que associado aos processos
+
+ps -au
+
+ps -ef -> esse comando permite mostrar tanto o processo pai como o processo filho.
+
+ps -lax -> mostra todos os processos com detalhes
+
+ps aux -> mostra todos os processos com mais detalhes ainda comparando -ef e o lax
+
+ps aux | grep 5110 -> Esse comando mostra todas as informações so bre um processo em especifico aki no caso e processo de pid 5110
+
+ps -ef --forest -> exibe todos os processos em formato de arvore
+
+jobs-> esse comando mostra a tarefea que foi colocada recentemente tantos as que esta em execução como as paradas mostra o pid e tambem o status se estar em exxecução ou não
+
+bg %1-> executa o primeiro porcesso da lista jobs
+
+fg %3 -> esse comando seleciona o processo 3 da lista de jobs em seguida seleciona ctrl + z para parar o processo ctrl + c para terminar o processo
+
+kill -l -> Lista os tipos de kills
+
+kill -SIGTERM 9032 -> Termina um processo de pid 9032
+
+kill -SIGSTOP %1 -> Pausa o primeiro processo da lista jobs
+
+kill 8323 -> encerra um processo
+
+killall control -> termina todos os processo que estão sendo eecutados pelo arquivo de script control
+
+ctrl + z -> suspende o processo
+ctrl + c -> encerra o processo
+ctrl + / -> despeja a memoria do processo
+
+tail -f ~/arquivo_saida -> Mostra a saida do arquivo ou seja ao criarmos um script em outro arquivo definimos no script de repipetição que a sai da desse arquivo ao ser executado saira no arquivo_saida.
+
+arquivo argumento -> inicia a execução de um arquivo ou seja um processo que e um arquivo com um script dentro, em primeiro plano
+
+arquivo argumento & -> inicia a aexecução do arquivo em segundo plano
+
+pgrep firefox -> Esse comando mostra o numero do processo do firefox
+
+pgrep -x firefox -> Esse comando mostra o numero do processo do firefox tambem.
+
+
+Os processos zumbis que são os porcessos que ja foram finalizados recebem o rotolo de exiting ou defunct
+
+Seção-> e o e vc estar logado em akguma coisa
+
+ppid -> mostra o numero do processo pai
+pid -> numero do processo
+
+tty -> exibe a numeração do terminal como /dev/pts/0, /dev/pts/1
+o /dev siginifica que o terminal se encontra no diretorio /dev o /pts e um diretorio com o nome abreviado que siginifica pseudoterminal e o 0 e porque e o primeiro terminal na maquina
+o e segundo terminal e assim sicessivamente
+
+pgrep -t tty0 -l-> mostra todos os processos que estão no terminal 0
+
+pgrep -n -> mostra o pid do processo mais recente do sistema n de new
+
+pgrep-t tty2 -c -> mostra a quantidade de processos no terminal 2 o c e de count que contar em inglês
+
+pgrep -o -> mostra o processo mais antigo do sistema operacional
+
+para ver o nome do processo adicione -l nos pgrep
+
+w -> O comando w exibe informações sobre os usuarios que estão logados no sistem a parte jcpu mostra o tempo em que processos de segundo plano estão executando atulamente pcpu -> mostra o tempo do processo atual
+
+uptime -> esse comando serve para mostra a data autal e a hora atual a quantidade de usuario logado e uma media de threads esperando para ser executada junto como o processo na cpu
+os 3 valores aparecendo indica se a carga estar aumentando ou diminuindo
+
+O que é backdoors 
+backdoors-> E um método So 
+de escapar de uma autenticação ou criptografia normais em um sistema.
+
+
+Daemons
+
+Daemons são processos que gerencia outros processos são os daemosn que são responsaveis por monitorar e gerenciar outros processos geralmente os daemons no so começãm com pid 1 assim que e dado o boot no so so o daemon e inciado dando inicio aos outros processos gerenciando e monitorando o daemon do linux e o systemd todo diretorio ou arquivo que termina com d e um daemon no linux concluindo o daemon e processo adiminstrador de outros processos
+
+O objetivo do sistema init ou seja o sistema systemd e iniciar os componentes do sistema apos o kernel do linux ser iniciado. o sistema init e tambem utilizado para gerenciar serviços e daemons para o servidor em tempo de execução.
+
+O systemd possui uma coisa chamada unidades de serviço que compoem a estrutura do sistema operacional
+
+.service -> no comando se apresenta como extenção .service representam o serviço do sistema
+
+.soquet -> representa a cominicação e monitoramento de processos no sistema operacional a sua extensão é .soquet
+
+.path -> São reponsaveis por atrasar a ativação de um serviço de um serviço ate que ocorra uma alteração especifica do sistema de arquivo ele e utilizado para serviços que usam diretorios de spool,como um sistema de impressão
+
+systemctl -> comando utilizado para gerenciar unidades
+
+para saber os tipos de unidade que no sistema operacional
+
+comando systemctl -t help
+
+
+
+systemctl
+
+O systemctl e o comando responsavel para fazer gerenciamento das daemons em linha de comando
+
+systemctl stop mysqld.service -> interrompe o processo
+
+
+systemctl list-units --type=service -> esse comando lista a unidade do tipo service
+
+systemctl list-units --type=path -> Esse comando lista as unidades do tipo path 
+
+existe outras unidade basta colocar a unidade que quer listar depois do =.
+
+na lista são mostrada colunas que são:
+
+UNIT -> essa coluna e responsavel pelos nomes
+
+LOAD -> essa coluna e responsavel pelo carregamento da unidade em memoria
+
+ACTIVE -> essa coluna indica se foi iniciado com exito a unidade
+
+SUB -> Informa de que maneira a unidade e executada
+
+DESCRIPTION -> Uma breve descrição da unidade.
+
+
+systemctl list-units --type=service --all -> o comando anterios so lista as unidades active ja o all vai listar todas idepedente das que estiverem ativas ou não.
+
+
+systemctl -> lista todas as unidade que estão ativas
+
+systemctl status sshd.service -> lista a unidade do tipo service do daemon de sshd
+
+ao digitar o comandoanterior se apresenta uma coluna sobre o daemons especificado nessa coluna se apresenta algumas informações 
+a respeito do estado do daemon
+
+
+
+
+Campo	Descrição
+Loaded	Se a unidade de serviço estiver carregada na memória.
+Active	Se a unidade de serviço estiver em execução e, em caso afirmativo, há quanto tempo.
+Docs	Onde encontrar mais informações sobre o serviço.
+Main PID	A ID do processo principal do serviço, incluindo o nome do comando.
+Status	Mais informações sobre o serviço.
+Process	Mais informações sobre processos relacionados.
+CGroup	Mais informações sobre grupos de controle relacionados.
+
+
+
+
+Essa tabela mostra os status que as unidades podem apresetar com o comando ctl
+
+loaded	O arquivo de configuração da unidade foi processado.
+active (running)	O serviço está em execução com processos contínuos.
+active (exited)	O serviço concluiu uma configuração única com sucesso.
+active (waiting)	O serviço está em execução, mas aguardando por um evento.
+inativo	O serviço não está em execução.
+enabled	O serviço é iniciado no boot.
+disabled	O serviço não está definido para iniciar no boot.
+static	O serviço não pode ser habilitado, mas uma unidade habilitada pode ser iniciada automaticamente.
+
+verificação dos estados apresentado na unidade
+
+systemctl is-active sshd.service -> Esse comando e uma pergunta para o so, se o servicço ssh do sysntemd do tipo service estar ativado ele retornara como inactive ou seja estar desativado.
+
+
+systemctl cat arquivo.service -> esse comando lista informações sobre um determinado arquivo da unidade service ex: systemctl cat acpid.service. para ver todos o arquivos que a unidade service tem digite systemctl list-units --type=service --all.
+
+systemctl list-dependencies apport.service -> esse comando mostra todas as dependencias do em forma de arvore do arquivo apport da unidade service.
+
+systemctl list-dependencies apport.service --all -> lista todas as dependencias independetes do estado
+
+systemctl list-dependecies apport.service --reverse -> lista todas as dependecias que dependem do apport para funcionar.
+
+systemctl show apport.service -> exibe informações das propriedades do arquivo apport da unidade service em formato key value
+
+systemctl show apport.service -p propriede -> Esse comando lista a informação sobre uma determinada propriedade do arquivo service ex: systemctl show apport.service -p perpetual
+
+sudo systemctl mask apport.service -> esse comando permite marcar um arquivo de uma unidade aki no  caso o arquivo apport da unidade service, e deixar totalmente não iniciável de modo automatico ou manual ligando ao /dev/null isso e chamado de mascara a unidade e possivel com mask isso impedi que arquivo apport seja iniciavel automaticamente ou manualmente enquanto tiver mascarado. para verificar se foi mascarado o arquivo basta digitar systemctl list-unit-files. o statudo arquivo mostra como mask
+
+systemctl edit ua-timer-timer -> esse comando permite criar um fragmento do arquivo ua-timer da unidade timer para poder fazer alterações localizado em /etc/systemd/system o arquivo de editado ganhara uma extensão a mais .d
+
+sudo rm -r /etc/systemd/system/nginx.service.d -> permite remover o arquivo editado nginx.service.d
+
+sudo rm /etc/systemd/system/nginx.service -> remove um arquivo de modificação completo não o fragmaento
+
+sudo systemctl daemon-reload -> esse comando serve para atualizar a daemon apos excluir os arquivos ou fazer qualquer alteração digite esse comando.
+
+hostnamectl -> Mostra informações do linux como a versão
+
+runlevel
+
+runlevel são niveis de execuçao do sistema operacional. ela possui 6 niveis
+
+
+niveis de runlevels
+
+0 ->  O nivel responsavel pelo desligamento da maquina
+1-> Essa runlevel e chamada mono-usuario sem acesso a rede isso acontece quando o usuario acessa o linux pelo grub
+2->multi-usuario sem acesso a rede
+3-> multi-usuario com acesso a rede
+4 -> Propositos especiais
+5 -> Servidor grafico
+6 -> reiniciar a maquina
+
+OBS: alguns sistemas liniux possui runlevel diferente como o o gentu e o slackware
+
+
+runlevel -> mostra em qual level seu sistema operacional se encontra
+
+systemctl get-default -> mostra o level que se encontra atraves do systemd
+
+/sbin/init ou /sbin/telinit ->esse comando permite alterar entre run levels
+
+/sbin/init/0 -> alterna para primeira runlevel que e desligar o pc
+
+Servidor
+RAID
+
+RAID: É uma tecnologia usada para combinar os discos rigidos de seu equipamento essa tecnologia visa um melhor gerenciamento e performace dos discos
+
+Como o raid funciona -> O raid funciona da seguinte forma imagine que voce tem dois discos rigidos fisicos de 500gb cada, O raid vai pegar vai juntar os dois discos rigidos e transforma em um unico disco virtual de 1TB o SO vai enetender como se fosse um unico disco de 1tb e assim esse metodo visa garantir mais performace, O disco virtual abrevidado e VD.
+
+
+RAID 0: O raid 0 conhecido como striping array, ele serve para pegar um dado e dividir em pequenos fragmentos e colocar em cada disco
+
+Paridade: E metodo de adicionar mais uma bit no dado no ato da transmissão para assim detectar possiveis erros
+
+RAID 1: O raid 1 e o espelhamento do dado imagina que vc tem dois discos se vc colocar o dado em um dos discos esse dado vai espelhar no outro do disco como se fosse uma replica isso server porque caso um dos discos falhar o disco dois pega o dado que foi espelhado e sobe para vd. atenção no raid 1 um dos disco não e para armazenamento serve so para espelhar o dado então então se temos dois discos de armazenamento de 500gb transformando em vd ficaria so 500gb para armazenamento por os outro 500gb serve apenas para esephar os dados do outro disco.
+
+RAID 5: O raid 5 funciona da seguinte forma imagine que temos um pacote de 10gb o tamanho e precisamos armazenar esse pacote em um local esse local de armazenamento tem 3 discos cda um de 500gb no raid 5 ele vai pegar o pacote e dividir em 3 partes parecida com raid 0, o calculo e valor do pacote de 10gb divido pelo numero de discos, essa e meio ineficiente ja ja que se perdemos um disco a vd ficar fazendo bastante calculo na tentativa de poder completar o pacote que ficara faltando o pedaço e isso prejudica o desempenho.
+
+
+RAID 10: Raid 10 e a combinação do raid 0 com o raid 1
+
+RAID de Software vs Raid de Hardware
+
+RAID de software: e feita diretamente pelo proprio so e nisso que fica responsavel pelo gerenciamento do disco e o processador da maquina
+
+Raid de Hardware: E um controlador fisico que tem um processador dedicado so para os gerenciamento dos discos uma coisa interessante e a bbu da controlado a bbu e uma bateria que server nos casos de queda de energia ela evita a perda de dado de configuraçao
+
+
+SSH
+
+ssh -> e um protocolo de comunicação entre duas maquinas de forma criptografada ou seja segura
+O ssh e constitui-se de duas chaves a chave privada e a chave publica que se chama de conexão assimetrica cada maquina que possui ssh tem duas chaves a privada e a publica 
+
+quando acontece a conexão a chave publica da maquina cliente faz uma copia e manda ao servidor e la no servidor essa chave fica armazenada no local chamado authentic keys, em seguida a maquina cliente envia a chave privada para o servidor o servidor compara a chave privada com a copia de chave publica se as duas 
+forem equivalente a conexão e feita com sucesso.
+
+
+
+para ter um conexão ssh primeiramente e necessario o servidor ter o ssh instaldado para receber a conexão de um devido usuario
+
+sudo apt install openssh-server -y -> esse comando instalar o ssh que vai receber a conexão
+
+ss -l | grep 22 -> esse comando permite verificar se a porta 22 se encontra habiltada que no caso e a porta de recibimento do cliente que fara a conexão ssh se não mostrar nada e porque o ssh não foi instalado no servidor
+
+a segunda parte e instala o ssh na maquina do usuario que era se conectar ao servidor pelo ssh
+
+sudo apt install ssh openssh-client -> instala o ssh na maquina do cliente
+
+a terceira parte e digitar ip a  na maquina server esse comando mostra o ip do servidor para se conectar na maquina cliente geralmente 192.168.1.103
+
+ ip a -> mostra o ip da maquina
+
+a quarta parte e conectar o cliente no servidor
+ssh nomeDousuarioserver@ipDoServer
+
+a quinta parte coloque a senha do server e estara conectado
+
+vi /etc/ssh/sshd_config -> Esse arquivo e responsavel pela configuração ssh ele e responsavel pela escuta da porta 22
+
+Nesse arquivo podemos alterar a porta 22 para qualquer numero e salvar
+
+e em seguida e so dar um restart no ssh do servidor
+
+service ssh restart -> Esse comando serve para reiniciar o serviço de ssh para fazer valer a alteração de configuração do ssh
+
+quando ja estiver configurado o ssh voce se conecterar dessa forma
+
+ssh usuario@ipDaMaquina -p numeroDaPorta -> comando para conctar a maquina do servidor quando o ssh ja estiver configurado.
+ex: ssh thiago@192.168.1.103 -p 22
+
+Arquivo Hostkey são arquivos responsaveis pela chave publica e privada 
+
+hostkey
+etc/ssh/ssh_host_rsa_key
+etc/ssh/ssh_host_ecdsa_key
+etc/ssh/ssh_host_ed25519_key
+
+as informaçõessobre o caminho estar no aequivo de configuração do ssh que é:
+vi /etc/ssh/sshd_config
+
+PermiteRootLogin
+O PermitRootLogin fica dentro do arquivo de configuração ssh se colocarmos yes
+o usuarios com acesso ssh possa entrar como root no servidor se for no usuario cliente não pode acessar o root se for prohibit-password so e possivel acessar o root com chave publica ou privada
+
+PubkeyAuthentication -> ao colocar yes permite fazer autenticação quando das chaves quando o ssh cliente acessar
+
+cd /etc/ssh -> Onde estar localizado as chaves ssh em seguida e so listar com ls
+
+Alem disso podemos cadastrar a authenticação da chave publica e privada
+
+ssh-keygen -t rsa -> esse comando permite criar 
+a chave privada e publica na maquina
+
+ssh-keyge -b 4096 -> Tambem cria chaves a diferença que com essas chaves não vai precisar de senha para logar
+
+ssh-keygen -f .ssh/chaves -> permite criar as chaves no aqruivo chaves
+
+para verrificar se foi criada a chave digite cd .ssh para ir ao diretorio em seguida vai mostrar as chaves com comando ls
+id_rsa: Chave privada
+id_rsa.pub: Chave publica
+
+dentro de cada chave tem a criptografia
+
+Agora e so copiar o conteudo que estar dentro da chave publica e colar dentro do arquivo authorezedkey do servidor
+
+cd .ssh/authorized_keys -> Aki colamos a criptografia da chave publica do ssh client, que foi criada as chaves assimetrica
+
+Criar chave assimetrica serve para conectar ao servidor sem precisar da senha do servidor no caso a maquina cliente cria propria senha quando gera as chaves
+
+ssh thiago@192.168.1.101 -vvv -> conecta ao servidor e mostra as informações de log o seja o que estar sendo feito ao se conectar,alem disso pode se alternar para -v, -vv, qunatos mais v mais informações detalhadas
+
+Defina o parâmetro StrictHostkeyChecking como yes no arquivo vim /etc/ssh/sshd_config valido para todo o sistema para que o comando ssh sempre anule a conexão se as chaves publicas não corresponderem
+
+ssh-keygen -l -f /etc/ssh/ssh_host_ecdsa_key.pub -> Esse comando serve para ver chave digital o comando -f server para especificar outro arquivo ssh sem ser o padrão que no caso aki e o ssh_host_ecdsa_key.pub
+
+scp id_rsa.pub thiago@192.168.1.101:~/.ssh/authorized_keys -> copia a a chave publica e cola dentro do arquivo authorized_keys do servidor responsavel por armazenar as chaves publicas porem ele apaga as outras chaves que estão la
+
+
+sudo find . -name "nome_do_arquivo" -> Esse comando permite achar um arquivo pelo nome em seguida ele dar o caminho que o arquivo estar localizado
+
+Atenção sempre que forem feitas a alteração no arquivo /etc/ssh/sshd_config e necessario
+fazer um reset da daemon sshd para que as alterações entrem em vigor
+
+sudo systemctl reload sshd.service -> reinicia o serviço daemon sshd
+
+----------------------------------//-------------------------------------------
+Log
+É o ato de armazenar informações devido a algum evento ocorriodo em um sistema, os logs tem uma relação direta com segurança da informação, Ratreabilidade, alem de ser essenciais para encontrar anomalias em sistemas. 
+
+systemd-journald -> Esse serviço e responsavel por gerenciar todas as mensagens de log do sistema e e ele quem envias mensgens de log para rsyslog. as mensagens que estão systemd -journal não persiste ao reiniciar o sistema
+
+rsyslog pegas as mensagens que chegam a ele, ler e grava e classifica para assim armazena em arquivos especificos, as mensagens de syslogs gravadas pelo rsyslog persistem ao reiniciar o sistema.
+
+journalctl -> Exibe todas as mensagens de log
+
+journalctl -f -> Exibe as utimas 10 linhas do sistema de log
+
+systemctl restart rsyslog -> Reinciar o serviçode log
+
+Adiminstrando um servidor linux (inspeção,monitoramento e log)
+
+Na raiz digite: ls 
+
+/var/log -> esse diretorio e resonsavel por armazenar todas as informações que mostram o que estar acontecendo no servidor no diretorio /var ele tambem e responsavel por manter além dos logs o serviço web os mais utilizado no diretorio log e o messages e o syslog
+
+syslog -> mostra informação em tempo real
+
+proc -> e o diretorio responsavel pelas informações de hardware
+	cat cpuinfo -> mostra informações de cpu
+	cat version -> mostra informações do kernel e do sistma operacional
+	uname -a -> especifica e versão o kernel
+	lspci -> mostra informações sobre os dispositivos pci
+		lspci -s 00:03.0 -v -> 00:03.0 é id do dispositivo pci esse comando é responsavel por mostrar informações sobre o dispositivo
+	lsmod -> mostra todas as informações de modulos dos drivers dos dispositivos
+	lsusb -> Mostra informaççoes dos dispositivos usb
+	free -> mostra informações sobre a memoria
+	df -h -> Mostra informações de disco de quanto cada diretorio estar utuilizando	
+	top -> esse comando monitora o uso dos recursos de acordo com os processos
+	uptime -> esse comando e responsavel para ver e forma decrescente ou crescente a demanda de caga media de thread por cpu
+	ifdown enp0s3 -> comando zera as configurações na placa enp0s3
+	ifup enp0s3 -> serve para renovar a configuração da placa no caso aki a placa enp0s3 imagine que voce alterou a configuração da placa de rede do modo bridge para o modo nat ai vc usa esse comando	
+
+Niveis de prioridade dos logs em ordem crescente debug, info, notice, warning, err, crit, alert e emerg 
+
+
+journalctl -> esse comando e responsavel por mostrar todas os ultimos logs do sistema
+
+journalctl -n 5 -> lista as ultimas 5 linhas de logs
+
+journal -p err -> listas os logs que tem a prioridade err ou superior
+
+journalctl -u sshd.service -> Esse comando permite mostrar logs da daemons sshd da unidade service
+
+Podemos utilizar --since e until para determinar periodos de log
+
+journalctl --since today -> verifica os logs do dia
+
+journalctl --since "2022-03-11 20:30" --until "2022-03-14 10:00" -> Verifica o log do dia 11 ate o dia 14 as 10:00 am
+
+journalctl --since "-1 hour" -> verifica os logs nas ultimas uma hora
+
+     _COMM é o nome do comando.
+
+    _EXE é o caminho para o arquivo executável do processo.
+
+    _PID é a PID do processo.
+
+    _UID é a UID do usuário que está executando o processo.
+
+    _SYSTEMD_UNIT é a unidade do systemd que iniciou o processo.
+    
+
+journalctl _SYSTEMD_UNIT=sshd.service _PID=2110 -> Esse comando mostrar o log do pid 2110 da daemons sshd da unidade serivece do sistema systemd_unit de unidade
+
+journalctl -o verbose -> exibe informaçoes detalahadas
+
+Páginas do man journalctl(1), systemd.journal-fields(7) e systemd.time(7)
+
+cd /run/log/journal -> armazena os log em memoria ou seja são logs que deixam de existir apos a reinicialização do sistema
+
+cd /var/log/journal -> armazena arquivos persistente quem mesmo apos reinciar eles ficam salvos como se fosse um historico, porem mesmo sendo persistente esse logs são apagados temporarialmente
+geralmente duram cerca de mês e o armazenamento duram do diretorio nunca pode passar de   por cento
+
+vim /etc/systemd/journald.conf -> esse arquivo e responsavel por fazer a alteração do tempo dos logs persistente
+
+journalctl -b 1 -> Esse comando mostra os logs quando o sistema e reiniciado pela primeira vez
+
+journalctl --list-boots -> Mostra todos os eventos após o boot do sistema ou seja ps logs
+
+
+journalctl -b -1 -> Mostra o ultimo boot anterior
+
+Organização de hora e data
+
+timedatectl -> Lista o fuso horario a data e a hora no sistema
+
+timedatectl list-timezones -> lista um banco de dados de fusos horarios
+
+timedatectl set-timezone America/Recife -> Coloca o fuso horario para recife
+
+timedatectl set-time 09:00 -> define um horario manualmente pra sempre na maquina caso de erro desative a sincronização de hora automatica com o comando: timedatectl time-ntp false
+
+timedatectl set-ntp true -> sincroniza automaticamente a data e a hora
+
+tzselect -> esse comando mostra diversos fusos horarios para ser selecionado
+
+Redes
+
+O sistema de rede garante comunicação aos equipamentos eletronicos.
+
+cat /etc/services -> Mostra uma lista de portas e de protocolos que  são registrada no sistema
+
+ip link -> Lista apenas as interface de redes ou seja os mac address
+
+ip route -> Esse comando e responsavel por demonstrar informações de roteamento
+
+tracepath access.famonline.instructure.com -> Mostra todos os salto da maquina local ate o endereço destino determinado, saltos são roteadores
+
+ss -ta -> Mostra informações estatisticas de soquete que a comunicação entre processos
+
+Opções para o ss netstat
+
+-n 	Mostra números em vez de nomes para interfaces e portas.
+-t 	Mostra os soquetes de TCP.
+-u 	Mostra os soquetes de UDP.
+-l 	Mostra somente os soquetes que estão escutando.
+-a 	Mostra todos os soquetes (os que estão escutando e os estabelecidos).
+-p 	Mostra o processo que usa os soquetes.
+-A inet 	Exibe conexões ativas (mas não soquetes de escuta) para a família de endereços inet. Ou seja, ignore os soquetes de domínio UNIX locais. Para o comando ss, as conexões IPv4 e IPv6 são exibidas. Para o comando netstat, somente as conexões IPv4 são exibidas. (O comando netstat -A inet6 exibe conexões IPv6, e o comando netstat -46 exibe IPv4 e IPv6 ao mesmo tempo.)
+
+
+
+
+netstat -A 46 -> Exibe conexões de ipv4 e ipv6
+
+ping -c3 192.168.0.1 -> testa a conexão da maquina atual a ater o endereço definido no caso aki o ip 192.168.0.1
+
+Configurar e gerenciar redes de dispositivos com o serviço networkManager
+
+systemctl status NetworkManager.service -> Mostra informações sobre o serviço de gerenciamento de redes no sistema
+
+
+NetworkManager -> É um programa de gerenciamento de rede e monitoramento de rede do sistema linux criado pela redhat o networkManager armazena perfis de redes em um diretorio chamado /etc/networkManager/system-connections
+
+expressões do comando
+
+Além disso os comandos de nmcli podem ser abreviados, como nmcli device disconect abreviado ficaria nmcli dev disconect
+
+
+nmcli dev --status -> esse comando mostra os status das redes na maquina
+
+nmcli con show -> Exibe uma lista de todas as conexões
+
+nmcli con add con-name rede2 type ethernet ifname rede2 ipv4.addresses 192.168.0.5/24 ipv4.gateway 192.168.0.254 -> Esse comando além de adicionar uma nova conexão ele adiciona o tipo de rede que é ipv4 do tipo ethernet da um novo ip que é o addresses e um novo gateway
+
+nmcli connection add con-name rede2 type ethernet ifname rede2> Adiciona uma conexão de rede2 tipo ethernet chamada rede2
+
+nmcli con show ->  Lista todos os dispositivos conectados
+
+nmcli con show --actives -> Lista todos os dispositivos que estão conectados e ativos
+
+nmcli con add con-name rede3 type ethernet ifname rede3 ipv6.addresses 2001:db8:8:0:1
+
+nmcli dev disconect ens3 -> Desativa uma conexão de rede
+
+nmcli dev up wlp3s0 -> Ativa para a conexão anterior
+
+nmcli connection modify -> Faz a atualização de uma conexão
+
+nmcli con mod wlp3s0 +ipv4.dns 8.8.8.8 -> Altera o dns da rede wlp3s0 para o dns 8.8.8.8 se for um - remove o dns se for + altera
+
+nmcli con del wlp3s0 -> deleta uma rede
+
+nmcli con reload -> recarrega todas as as redes e um comando que serve nos casos de alteração com modify
+
+nmcli con reload wlp3s0 -> Recarregar a interface de rede especifica aki no caso o wlp3s0
+
+nmcli gen permissions -> Mostra uma lista com todas as permissões
+
+host ip -> Mostra uma tela afirmando que o ip e valido.
+
+getent hosts www.google.com -> Mostra o ip do site
+
+dig www.google.com -> Testa a conectividade dos servidor dns
+
+Transferencias de arquivos e arquivamento(Compactação e descompactação)
+
+Comando tar
+O comando tar e responsavel por extrair compactar e descompactar arquivos além de transferencias.
+
+Ele pode conter diversas opções
+
+     -c ou --create : criar um arquivo.
+
+    -t ou --list : listar o conteúdo de um arquivo.
+
+    -x ou --extract : extrair um arquivo.
+
+     -v ou --verbose : mostrar os arquivos sendo arquivados ou extraídos durante a operação tar.
+
+    -f ou --file : siga essa opção com o nome do arquivo a ser criado ou aberto.
+
+    -p ou --preserve-permissions : preservar as permissões do arquivo original ao extrair.
+
+    --xattrs : habilitar o suporte a atributos estendidos e armazenar atributos de arquivos estendidos.
+
+    --selinux : habilitar o suporte ao contexto do SELinux e armazenar contextos de arquivo do SELinux.
+    
+   Além disso o comando tar pode trabalhar com diferentes algoritimos de compactação e descompactação como o Compress, gzip, bzip2 e xz 
+   
+   a ou --auto-compress : use o sufixo do arquivo para determinar o algoritmo a ser usado.
+
+-z ou --gzip : use o algoritmo de compactação gzip, resultando em um sufixo .tar.gz.
+
+-j ou --bzip2 : use o algoritmo de compactação bzip2, resultando em um sufixo .tar.bz2.
+
+-J ou --xz : use o algoritmo de compactação xz, resultando em um sufixo .tar.xz.
+
+-Z ou --compress : use o algoritmo variante de LZ, resultando em um sufixo .tar.Z.
+
+ex: 
+tar -cf mybackup.tar myapp1.log myapp2.log myapp3.log -> -c informa que estar criando e f informa que é um arquivo o tar indica que que mybackup sera um arquivo compactado que contera outros 3 arquivos .log dentro, porem esses arquvos .log ja tem que ser existente para ficar dentro do arquivo compactado
+
+tar -tf backup.tar -> O -t permiti listar os arquivos que existe dentro do backup
+
+tar -xf backup.tar -> -x permite extrair o arquivo backup.tar
+
+tar -xpf /home/user/myscripts.tar -> o p permite preservar as permissões do arquivo myscripts.tar ao ser extraido
+
+tar -czf /tmp/etc.tar.gz /etc -> Cria uma copia compactado em gzip do diretorio /etc dentro do diretorio tmp
+
+tar -tzf /tmp/etc.tar.gz -> lista todos os arquivos dentro etc.tar.gz
+
+gzip -l etc.tar.gz -> Mostra informações sobre o arquivo gzip como o tamanho
+
+transferencia de arquivos via sftp 
+
+sftp usuarioRemoto@ipHostRemoto -p 22 -> acessa uma maquina remota para fazer tranferencia de arquivos como importação e exportação
+ex: sftp thiago@192.168.1.101 -p 22
+
+put /home/irineu/arquivo.txt -> transfere o arquivo da maquina local para a maquina remota (importa)
+
+put -r /home/thiago/Documents -> transfere o diretorio Documents além e todos os seus arquivos para maquina remota
+
+get /home/jurubeba/arquivo.txt -> Transfere o arquivo da maquina remota para a maquina local (exporta)
+
+existe outras duas formas de transferir  arquivos scp e o rsync 
+
+Rsync e um utilitario que permite a copia e a sincronização de arquivos e diretorios a copia pode ser somente local ou local para servidores. outra coisa interessante é que o rsync pode utilizar o ssh
+
+whereis rsync -> Permite vizualizar se o rsync estar instalado.
+
+o comando rsync se divide em  3 partes
+
+rsync opções origem destino
+
+
+
+-h -> Mostra a leitura da copia mais facil mostra em kilbyte ou megabyte
+-v -> de verbose mostra o que ta fazendo
+-r -> recursivo serve para fazer copias incluindo diretorios
+-a -> Copia tudo e preservar todas as permissões
+
+rsync -hvr /home/thiago/Docs thiago@192.168.1.101:/home/server1 -> Permite fazer a copia dos diretorios e arquivos para o servidor o /home/server1 e o destino onde o diretorio Docs vai ficar
+
+rsync -hv /home/thiago/Arquivos thiago@192.168.1.101:/home/server1 -> Sem o R copia so os arquivos
+
+rsync -ahv
+
+
+sudo ss -tulpn | grep :80 -> Verifica existe processos na porta 80 em execução
+
+
+
+ShellScript
+
+executa o script
+
+./nomeDoArquivo_de_script
+
+FOR
+
+for variavel in lista; do echo $variavel; done
+ex: for animais in cachorro gato passarinho; do echo $animais; done
+
+Comparação de strings 
+0 e verdadeiro em boleano
+1 e falso
+
+
+[[abc = abc ]]; echo $? -> abc e iigual a abc se sim responda 0
+0
+
+[[abc == def ]]; echo $?
+1
+
+
+ex:
+if [[ $? -ne 0]]; then sudo systemctl start psacct; fi -> se o psacct não estiver ativo, "ative"
+Esse comando e mesma coisa de digita sysmtectl is-active psacct
+
+ex2:
+se o psacct não estiver ativado,ative senão desative
+
+if  [[ $? -ne 0 ]]; then \
+sudo systemctl start psacct; \
+else \
+sudo systemctl stop psacct; \
+fi
+
+Remover pacotes no linux
+
+sudo apt-get remove nome_do_programa -> remove um programa no linux
+
+--------------------------------//-------------------------------------------
+Agendamento de Tarefa
+
+crontab -> É um tipo de agendador de tarefa que existe na maiorias das distribuições linux.
+
+O crontab chamado de agendado continuo serve para executar tarefas de script em uma data hora determinada repitidas vezes.
+
+
+
+cat /etc/crontab -> Esse comando serve para mostrar as tarefas que estão agendadas no linux
+
+vim /etc/crontab -> Serve para inserir uma nova tarefa para ser executada
+
+
+minuto Hora diaDoMês Mês diaDaSemana usuário /etc/script.sh
+
+ex: 25 14 31 2 7 root /etc/script.sh
+    25 14 * * * root /bin/script1.sh
+    25 14-16 * * * root /bin/script1.sh -> O traço representa o intervalo aki no caso executara a tarefa das 14 as 16 horas
+    25 14,18 * * * root /bin/script1.sh -> A virgula representa as horas especificas em que a tarefa será executada
+    
+crontab -l -> mostra se o usuário tem crontab
+
+crontab -l -u irineu-> Mostra se o usuário irineu tem crontab
+ 
+ls /etc/cron.daily -> Mostra os arquivos executaveis diariamente
+
+ls /etc/cron.weekly -> Mostra os arquivos executaveis semanalmente
+
+ls /etc/cron.month -> Mostra os arquivos executaveis mensalmente    
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

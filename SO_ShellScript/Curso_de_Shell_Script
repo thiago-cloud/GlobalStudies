@@ -1,0 +1,359 @@
+Curso de Shell Script
+
+Shell -> É um interpretador de comandos existem varios tipos de shell o bash,zsh,fish é etc...
+
+which bash-> Mostra aonde  o bash está localizado
+
+Sempre que for criar um arquivo de script e necessario colocar como extensão o sh ex:
+
+touch hello.sh -> Cria uma arquivo de script do shell
+
+Sempre que se for iniciar um script do shell e necessario colocar
+
+#! /bin/bash
+
+#! -> Chamado de hashbang
+/bin/bash -> Serve para mostrar para o shell que é um script do tipo bash
+
+./hello.sh -> Executa o arquivo de shell script
+
+chmod +x hello.sh -> Caso não execute der a permissão de execução com esse comando
+
+Comentarios
+
+# comentario -> sempre que colocar um comentario em shell script coloque # na frente e se for do lado de um escopo
+
+Variaveis
+
+Variavel=valor
+
+ex: HOME=/home/thiago -> Variavel definida
+
+echo $HOME -> O echo imprimi a variavel na tela
+
+read variavel -> Serve para ler o que o usuario digitou
+
+read -p 'string' -> Além de ler com -p '' pode imprimir qualquer string sem precisar do echo
+
+read -sp 'password: ' pass_var -> -s esconde a senha que o usuario digitou 
+
+read -a var_nome -> Ler e o -a cria a matriz var_nome e adiciona
+ex: 	read -a var_nome
+	echo "Nomes: ${var_nome[0]}, ${var_nome[1]}" 
+
+	
+echo $var_nome1 $var_nome2
+
+./arquivo.sh jurbeba irineu -> ao executar o arquivo ele vai imprimir os dois nomes 
+
+
+args=("$@") -> Cria uma array em que pode se colocar argumentos dentro
+
+para testa execute o arquivo e coloque ao lado o argumento ex: ./arquivo argumento1 argumento2
+
+echo $@ -> Imprime a array
+
+echo $# -> Imprime a quantidades de argumentos da array
+
+echo ${args[0]} -> Imprime o indice 0 da array
+
+=================================//=========================================
+
+Estruturas condicionais
+
+iF then, if then else, if elif else
+
+Sintaxe básica
+	
+	if [condição]
+	then
+		declaração
+	fi
+	
+Operadores de comparação	
+-eq : (equal), igual.
+-lt : (less than), menor que.
+-gt : (greather than), maior que.
+-le : (less or equal), menor ou igual.
+-ge : (greater or equal), maior ou igual.
+-ne : (not equal) diferente.	
+-z String e nula, que tem comprimento 0
+
+ou podemos utilizar porem, esse operadores so funciona na estrutura ((  ))
+
+= (Igual a) Verifica se os valores são iguais
+!= (Diferente de) Verifica se os valores são diferentes
+< (Menor que) Verifica se o primeiro valor é menor que o segundo
+> (Maior que) Verifica se o primeiro valor é maior que o segundo
+
+count=10
+
+if [ $count -eq 8 ]
+then
+	echo "verdadeiro"
+fi
+
+ou
+
+if (( $count > 8 ))
+then
+	echo "verdadeiro"
+fi
+
+ex2:
+
+if [ $count -eq 8 ]
+then
+	echo "verdadeiro"
+else
+	echo "falso"
+fi
+
+ex3:
+
+if [ $count -eq 8 ]
+then
+	echo "verdadeiro"
+elif [ $count < 9 ]
+then
+	echo "menor que 9"
+else
+	echo "falso"
+fi
+
+---------------------------------------//------------------------------------
+
+-e -> serve para interpretar a barra invertida 
+ex: echo -e "Digite um arquivo \c"
+if [ -e $nome_arquivo ]-> o -e também serve para verificar se uma determinada variavel tem algum valor.
+
+-f -> Serve para verificar se uma variavel tem um valor e se esse valor e um arquivo existente
+
+-d -> Serve para verificar se uma variavel tem um valor e se esse valor e um diretorio existente
+
+-s -> Serve para verificar se uma variavel tem um valor e esse valor e um arquivo não vazio.
+
+-r -> Serve para verificar se uma variavel tem um valor e esse valor e um arquivo que tem permissão de leitura.
+
+-w -> Serve para verificar se uma variavel tem um valor e esse valor e um arquivo que tem permissão de gravação.
+
+ex: echo -e "Digite um nome de um arquivo: /c"
+    read nome_arquivo
+    
+    if [ -d nome_arquivo ]
+    then 
+    	" $nome_arquivo diretorio encontrado"
+    else
+    	" $nome_arquivo diretorio não encontrado"
+    fi
+\c -> serve para manter o cursor na mesma linha do comando
+
+
+OBS:
+[ dentro do colchetes e necessario ter espaços no shell script para o codigo compilar ]
+
+-------------------------------------------//------------------------------------------
+Como escrever um script para anexar alguns texto para uma arquivo
+
+
+#! /bin/bash
+
+
+echo -e "Digite o nome de um arquivo: \c"
+read nome_arquivo
+
+
+
+if [ -f $nome_arquivo ]
+then
+    if [ -w $nome_arquivo ]
+    then
+        echo "Digite algo dentro do arquivo: 'press ctrl+d para sair'"
+        cat >> $nome_arquivo #Redireciona o conteudo para dentro do arquivo
+    else
+        echo "Você não permissão para gravar neste arquivo"
+    fi
+else
+    echo "Arquivo não existi"
+fi
+
+
+
+
+
+
+
+
+
+------------------------------------//------------------------------------------------------
+Operador Logico and
+
+sempre que utilizamos &&(and) podemo colocar colchetes duplos nas duas condições ou não
+ex:
+	age=25
+	if [[ $age -gt 18 && $age -lt 30 ]]
+	then
+		echo "Você estar com a idade adequada"
+	else
+		echo "Você não tem a idade adequada"
+	fi
+
+-------------------------------------//--------------------------------------------------
+
+operações aritimetica
+
+ex:
+
+num1=20
+num2=50
+
+num3=1000
+num4=2000
+
+
+echo $(( num1 + num2 )) 
+echo $(( num2 - num1 ))
+echo $(( num1 * num2 ))
+echo $(( num2 / num1 )) 
+echo $(( num1 % num2 ))
+
+OU
+
+echo "-------------------------------------//--------------------------------------------
+
+echo $(expr $num3 + $num4 )
+echo $(expr $num4 - $num3 )
+echo $(expr $num3 \* $num4 )
+echo $(expr $num3 / $num4 )
+echo $(expr $num3 % $num4 )
+----------------------------------------------//-----------------------------------------
+
+bc -> É uma linguagem de calculadora de precisão do shell script que tem no linux
+Esse operador serve para fazer calculos de pontos flutuantes como 10.5, 29.3 e etc...
+
+
+ex: 
+num1=9
+num2=10
+
+echo "10.5+10" | bc
+echo "$num1 + $num2" | bc
+echo "scale=2; 20.22 * 20" | bc
+echo "scale=5; 500 - 100" | bc
+echo "scale=1; sqrt($num1)" | bc
+echo "scale=0; $num2^2" | bc
+
+sem o bc valores de ponto flutuante não funciona
+O scale serve para definir a quantidade casas decimais que valor terá
+sqrt() é uma função de raiz quadrada
+^ é a potencia
+
+-----------------------------------//----------------------------------------------------
+Case
+#! /bin/bash
+
+
+
+echo "Digite uma Opção de aluguel: "
+echo " 1 - Carro"
+echo " 2 - Van"
+echo " 3 - Caminhão"
+echo " 4 - Onibus"
+echo " 5 - Moto"
+echo " 6 - Bicicleta"
+echo "  "
+
+valor=carro
+
+
+
+case $valor in 
+    "carro" )
+        echo "Você selecionou a opção carro custa R$ 30,00/h";;
+    "van" )
+        echo "Você selecionou a opção Van custa R$ 40,00/h";;
+    "caminhão" )
+        echo "Você selecionou a opção caminhão custa R$ 50,00/h";;
+    "onibus" )
+        echo "Você selecionou a opção onibus custa R$ 60,00/h";;
+    "moto" )
+        echo "Você selecionou a opção moto custa R$ 55,00/h";;
+    "bicicleta" )
+        echo "Você selecionou a opção bicicleta R$ 3,00/h";;
+    * )
+        echo "Ops opção não identificada!";;
+esac
+
+
+-------------------------------------------//-------------------------------------------
+
+[a-z] -> Esse padrão informa que o programa espera que o usuario digite uma letra de a á z minuscula
+
+[A-Z] -> Esse padrão informa que o programa espera que o usuario digite uma letra de a á z maiuscula
+
+[1] -> Esse padrão informa que o programa espera que o usuario digite o numero 1
+
+[0-9] -> Esse padrão informa que o programa espera que o usuario digite o numero qualquer de 0 a 9
+
+
+----------------------------------------//-----------------------------------------------
+Array
+
+
+os=('Windows','Linux','Mac')
+
+android[3]='android' #adiciona um valor no indice 3
+unset os[2] #Remove o valor do indice 2
+
+echo "${os[@]}" # Mostra todos os indices
+echo "${os[1]}" # Mostra o valor do indice 1 
+echo "${!os[@]}" # Mostra os indices que existe dentro do array
+echo "${#os[@]}" #Mostra a quantidade de valores dentro do array
+
+
+string=asdasdasd
+
+echo "${string[@]}" #Mostra todos o valor da variavel
+echo "${string[0]}" #Mostra a variavel
+echo "${string[1]}" #Não mostra nada
+echo "${#string[@]}" #Mostra a quantidade de valores dentro do array ou seja o tamanho da variavel
+
+
+--------------------------------------//------------------------------------------------
+
+#! /bin/bash
+
+
+n=1 #variavel inicia em 1
+
+
+
+while [ $n -le 10 ]
+do
+    echo "$n" #imprimi a variavel
+    n=$(( n+1 )) #incremente +1 a variavel n enquanto menor ou igual a 10
+done
+
+ou
+
+n=1
+
+while (( $n <= 10 ))
+do
+	echo "$n" #imprimi a variavel
+	(( n++ ))
+done
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,89 @@
+nano Editor de texto do terminal linux
+
+em 10 janeiro de 2000 o então chamado TIP(This is not) que era chamado o nano passou a ser chamado nano, antes do nano existia um outro editor chamado de pico
+ele foi chamado de nano porque ele era 1000 vezes maior que o pico.
+
+Comparando o nano com o pico
+
+Coloração de texto
+Busca e substituição utilizando expressões regulares
+Rolagem suave
+Mútiplos Buffers
+Suporte a mudanças de teclas e atalhos
+Até 70% mais rápido que o Pico
+O nano assim como o pico e orientado a teclas o que torna simples para inciantes ja o vim e orientado a comandos
+
+^ -> CTRL
+M -> ALT
+M\ -> ALT + M
+
+nano --version -> mostra a versão do nano
+
+nano -> Esse comando abre o nano
+
+nano arquivo{1..2}.txt -> no nano podemos abrir mais de uma arquivo de ao mesmo tempo
+
+^ + o -> para salvar como
+
+^ + x -> para sair
+
+^ + c -> cancela
+
+^ + s -> salvar
+
+^ + g -> ajuda
+
+^ + k -> Recorta
+
+^ + w -> achar uma determinada palavra no texto apos vc ter achado a palavra pode ficar apertando mais ^ + w + Enter para ir achando mais palavras
+
+M + c -> Liga o caseSenssitive
+
+^ + \ -> substituir palavras do  texto
+
+^ + shift + r -> Aparece um campo para voce digitar o nome ou caminho do arquivo que deseja abrir porem dessa forma faz com que o arquivo a ser aberto seja enbutido dentro do arquivo que ja estar aberto no nano
+
+M + f -> Salva o arquivo no new buffer mais antes e ncessario teclar ^+shift + r e colocar o caminho do arquivo que deseja e em seguida teclar M + f para salvar no newbuffer e assim poder abrir em outra pagina o arquivo 
+
+M + > -> avança para proxima página
+
+M + < ->Volta para proxima página
+
+M + a -> serve para marcar o texto 
+
+M + a -> faz uma copia (ao fazer a copia ela fica armazenada no cat buffer que e a memoria temporaria do pc)
+
+^ + u -> cola o texto
+
+
+
+
+
+No nano quando agente modifica o arquivo aparece um asterisico
+
+ctrl + o em seguida colocar o caminho ex: /home/usuario -> Salvar o arquivo como, em outro lugar
+
+M + x -> disabilita o painel que fica na parte inferior
+
+^ + c -> mostra informações de onde o cursor estar localizado
+
+m + y -> Ativa/desativa syntax highlighting/Colorir código
+
+Identação 
+
+m + shift + }
+m + shift + {
+
+ou 
+
+tab
+
+Comentar 
+
+# -> comenta
+m + 3 -> comentar a linha atual
+
+m + shift + 3 -> coloca numeração nas linhas
+
+m + / -> Joga tudo para baixo para comentar
+
